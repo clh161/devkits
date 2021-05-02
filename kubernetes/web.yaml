@@ -3,8 +3,6 @@ apiVersion: apps/v1
 metadata:
   name: devkits-web
   namespace: default
-  uid: 6b2dbea9-4aeb-405d-9d04-2bd733b61be2
-  generation: 1
   labels:
     k8s-app: devkits-web
   annotations:
