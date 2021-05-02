@@ -54,8 +54,8 @@ jobs:
             ${{ runner.os }}-
       - uses: actions/setup-node@v1
       - run: yarn install
-#       - run: yarn run relay .
-#       - run: yarn run eslint .
+      - run: yarn run relay .
+      - run: yarn run eslint .
   docker-build:
     if: github.ref == 'refs/heads/master'
     defaults:
