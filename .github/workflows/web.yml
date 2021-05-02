@@ -65,8 +65,10 @@ jobs:
       - name: Push Docker image to Digital Ocean
         run: |
           doctl registry login
-          docker tag webkits-web registry.digitalocean.com/jbb/webkits-web:$(git log -1 --format=%ct)
-          docker push registry.digitalocean.com/jbb/webkits-web
+          docker tag devkits-web registry.digitalocean.com/jbb/devkits-web:$(git log -1 --format=%ct)
+          docker tag devkits-web registry.digitalocean.com/jbb/devkits-web
+          docker push registry.digitalocean.com/jbb/devkits-web:$(git log -1 --format=%ct)
+          docker push registry.digitalocean.com/jbb/devkits-web
   deploy:
     if: github.ref == 'refs/heads/master'
     needs: [ eslint, docker-build ]
@@ -82,4 +84,4 @@ jobs:
           kubectl apply -f ./kubernetes/frontend.yaml
           kubectl set image deployment/auction-hack-frontend auction-hack-frontend=registry.digitalocean.com/jbb/auction-hack-frontend:$(git log -1 --format=%ct)
           kubectl rollout restart deployment/auction-hack-frontend
-  
+
