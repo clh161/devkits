@@ -79,9 +79,9 @@ jobs:
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
       - run: |
-          doctl kubernetes cluster kubeconfig save k8s-1-18-8-do-1-lon1-1601905894353
-          kubectl config use-context do-lon1-k8s-1-18-8-do-1-lon1-1601905894353
-          kubectl apply -f ./kubernetes/frontend.yaml
-          kubectl set image deployment/auction-hack-frontend auction-hack-frontend=registry.digitalocean.com/jbb/auction-hack-frontend:$(git log -1 --format=%ct)
-          kubectl rollout restart deployment/auction-hack-frontend
+          doctl kubernetes cluster kubeconfig save 76857a2c-c3c9-4e27-a500-65e359f42b0d
+          kubectl config use-context do-lon1-devkits
+          kubectl apply -f ./kubernetes/web.yaml
+          kubectl set image deployment/devkits-web devkits-web=registry.digitalocean.com/jbb/devkits-web:$(git log -1 --format=%ct)
+          kubectl rollout restart deployment/devkits-web
 

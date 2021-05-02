@@ -1,0 +1,44 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: devkits-web
+  namespace: default
+  uid: 6b2dbea9-4aeb-405d-9d04-2bd733b61be2
+  generation: 1
+  labels:
+    k8s-app: devkits-web
+  annotations:
+    deployment.kubernetes.io/revision: '1'
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      k8s-app: devkits-web
+  template:
+    metadata:
+      name: devkits-web
+      creationTimestamp: null
+      labels:
+        k8s-app: devkits-web
+    spec:
+      containers:
+        - name: devkits-web
+          image: registry.digitalocean.com/jbb/devkits-web
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: Always
+          securityContext:
+            privileged: false
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+      schedulerName: default-scheduler
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600
