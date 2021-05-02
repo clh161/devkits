@@ -1,0 +1,85 @@
+name: Web
+
+on:
+  push:
+    paths:
+    - 'web/**'
+    - 'kubernetes/web.yaml'
+    - '.github/workflows/web.yml'
+  pull_request:
+    paths:
+    - 'web/**'
+    - 'kubernetes/web.yaml'
+    - '.github/workflows/web.yml'
+
+jobs:
+  eslint:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./web
+    steps:
+      - uses: actions/checkout@v2
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ./web/node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('./web/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - uses: actions/setup-node@v1
+      - run: yarn install
+#       - run: yarn run relay .
+#       - run: yarn run eslint .
+  docker-build:
+    if: github.ref == 'refs/heads/master'
+    defaults:
+      run:
+        working-directory: ./web
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ./ebay-helper-frontend/node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('./web/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - run: yarn install
+      - run: yarn run build
+      - name: Dockerize
+        run: docker build -t devkits-web .
+      - uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+      - name: Push Docker image to Digital Ocean
+        run: |
+          doctl registry login
+          docker tag webkits-web registry.digitalocean.com/jbb/webkits-web:$(git log -1 --format=%ct)
+          docker push registry.digitalocean.com/jbb/webkits-web
+  deploy:
+    if: github.ref == 'refs/heads/master'
+    needs: [ eslint, docker-build ]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+      - run: |
+          doctl kubernetes cluster kubeconfig save k8s-1-18-8-do-1-lon1-1601905894353
+          kubectl config use-context do-lon1-k8s-1-18-8-do-1-lon1-1601905894353
+          kubectl apply -f ./kubernetes/frontend.yaml
+          kubectl set image deployment/auction-hack-frontend auction-hack-frontend=registry.digitalocean.com/jbb/auction-hack-frontend:$(git log -1 --format=%ct)
+          kubectl rollout restart deployment/auction-hack-frontend
+  
