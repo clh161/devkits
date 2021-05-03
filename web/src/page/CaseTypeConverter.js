@@ -5,7 +5,7 @@ import { Grid, TextField, Typography } from '@material-ui/core';
 import { Helmet } from 'react-helmet';
 import lodash from 'lodash';
 
-type CaseTypeKey = 'normal_text' | 'camel_case' | 'snake_case';
+type CaseTypeKey = 'normal_text' | 'camel_case' | 'snake_case' | 'kebab_case';
 
 type CaseType = {
   label: string,
@@ -31,6 +31,12 @@ const CASE_TYPES: Array<CaseType> = [
     label: 'Snake Case',
     key: 'snake_case',
     getTextFromNormalText: (text) => lodash.snakeCase(text),
+    getNormalText: (text) => lodash.lowerCase(text),
+  },
+  {
+    label: 'Kebab Case',
+    key: 'kebab_case',
+    getTextFromNormalText: (text) => lodash.kebabCase(text),
     getNormalText: (text) => lodash.lowerCase(text),
   },
 ];
