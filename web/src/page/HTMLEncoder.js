@@ -30,25 +30,25 @@ export default function HTMLEncoder(): Node {
       </Helmet>
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Typography variant="h4" component="h1">
+          <Typography component="h1" variant="h4">
             HTML Encoder
           </Typography>
         </Grid>{' '}
         <Grid item xs={12}>
           <TextareaAutosize
             onChange={onDecodedHTMLChanged}
+            placeholder="Decoded HTML"
             style={{ width: '100%', minHeight: 160 }}
             value={decodedHTMLText}
-            placeholder="Decoded HTML"
           />
         </Grid>
         <Divider />
         <Grid item xs={12}>
           <TextareaAutosize
-            style={{ width: '100%', minHeight: 160 }}
-            placeholder="Encoded HTML"
-            value={encodedHTMLText}
             onChange={onEncodedHTMLChanged}
+            placeholder="Encoded HTML"
+            style={{ width: '100%', minHeight: 160 }}
+            value={encodedHTMLText}
           />
         </Grid>
       </Grid>

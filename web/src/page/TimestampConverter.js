@@ -55,28 +55,28 @@ export default function TimestampConverter(): Node {
 
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Typography variant="h4" component="h1">
+          <Typography component="h1" variant="h4">
             Unix Timestamp Convertor (UTC)
           </Typography>
         </Grid>{' '}
         <Grid item xs={12}>
           <TextField
+            label="Timestamp"
+            onChange={onUnixTimestampChange}
             type="number"
             value={unixTimestamp}
-            onChange={onUnixTimestampChange}
-            label="Timestamp"
           />
         </Grid>
         {datetime.map((dt: DatetimeConfig) => {
           return (
-            <Grid key={dt.name} item xs={2}>
+            <Grid item key={dt.name} xs={2}>
               <TextField
-                type="number"
                 label={dt.name}
-                value={dt.value}
                 onChange={(event) => {
                   onDatetimeChange(dt.name, event);
                 }}
+                type="number"
+                value={dt.value}
               />
             </Grid>
           );

@@ -16,7 +16,7 @@ ReactDOM.render(
       <div>
         <Switch>
           <App>
-            <Route path="/" exact>
+            <Route exact path="/">
               <Home />
             </Route>
             <Route path="/html-encoding">

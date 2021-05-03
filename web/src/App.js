@@ -60,25 +60,25 @@ export default function Dashboard(props: Props): Node {
     <div className={classes.root}>
       <CssBaseline />
       <Drawer
-        variant="permanent"
         classes={{
           paper: classes.drawerPaper,
         }}
+        variant="permanent"
       >
         <Toolbar>
-          <Grid container justify={'space-between'} alignItems={'center'}>
+          <Grid alignItems={'center'} container justify={'space-between'}>
             <Grid item xs={6}>
-              <Typography component="h1" variant="h6" color="inherit" noWrap>
-                <Link underline={'none'} href="/">
+              <Typography color="inherit" component="h1" noWrap variant="h6">
+                <Link href="/" underline={'none'}>
                   Devkits
                 </Link>
               </Typography>
             </Grid>
-            <Grid item xs={1} alignItems={'flex-end'}>
+            <Grid alignItems={'flex-end'} item xs={1}>
               <IconButton
-                target={'_blank'}
-                href={'https://github.com/clh161/devkits'}
                 aria-label="Github Repository"
+                href={'https://github.com/clh161/devkits'}
+                target={'_blank'}
               >
                 <GitHubIcon />
               </IconButton>
@@ -86,7 +86,7 @@ export default function Dashboard(props: Props): Node {
           </Grid>
         </Toolbar>
         <Divider />
-        <List component="nav" aria-label="main mailbox folders">
+        <List aria-label="main mailbox folders" component="nav">
           <ListItem component="a" href={'/html-encoding'}>
             <ListItemIcon>
               <CodeIcon />
@@ -102,7 +102,7 @@ export default function Dashboard(props: Props): Node {
         </List>
       </Drawer>
       <main className={classes.content}>
-        <Container maxWidth="lg" className={classes.container}>
+        <Container className={classes.container} maxWidth="lg">
           {props.children}
         </Container>
       </main>

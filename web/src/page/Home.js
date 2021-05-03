@@ -11,7 +11,7 @@ export default function Home(): Node {
       </Helmet>
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Typography variant="h4" component="h1" block>
+          <Typography block component="h1" variant="h4">
             Devkits
           </Typography>
         </Grid>
