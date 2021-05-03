@@ -9,3 +9,5 @@
 [options]
 
 [strict]
+unclear-type
+unsafe-getters-setters
