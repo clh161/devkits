@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import type { Node } from 'react';
-import { Grid, Typography } from '@material-ui/core';
+import { Grid, Link, Typography } from '@material-ui/core';
 import { Helmet } from 'react-helmet';
 export default function Home(): Node {
   return (
@@ -10,9 +10,23 @@ export default function Home(): Node {
         <title>Devkits</title>
       </Helmet>
       <Grid container spacing={3}>
-        <Typography variant="h4" component="h1">
-          Devkits
-        </Typography>
+        <Grid item xs={12}>
+          <Typography variant="h4" component="h1" block>
+            Devkits
+          </Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <Typography variant="body1">
+            An opensource collection of development tools
+          </Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <Typography variant="link">
+            <Link href="https://github.com/clh161/devkits" target="_blank">
+              Github Repository
+            </Link>
+          </Typography>
+        </Grid>
       </Grid>
     </div>
   );
