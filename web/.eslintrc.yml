@@ -5,6 +5,8 @@ extends:
   - 'plugin:react/recommended'
   - 'plugin:prettier/recommended'
   - 'plugin:flowtype/recommended'
+ignorePatterns:
+  - 'flow-typed/**'
 parserOptions:
   ecmaFeatures:
     jsx: true
