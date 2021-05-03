@@ -9,10 +9,18 @@ import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import Container from '@material-ui/core/Container';
 import type { Node } from 'react';
-import { List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
+import {
+  Grid,
+  IconButton,
+  Link,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+} from '@material-ui/core';
 import CodeIcon from '@material-ui/icons/Code';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
-
+import GitHubIcon from '@material-ui/icons/GitHub';
 const drawerWidth = 320;
 
 const useStyles = makeStyles((theme) => ({
@@ -58,9 +66,24 @@ export default function Dashboard(props: Props): Node {
         }}
       >
         <Toolbar>
-          <Typography component="h1" variant="h6" color="inherit" noWrap>
-            Devkits
-          </Typography>
+          <Grid container justify={'space-between'} alignItems={'center'}>
+            <Grid item xs={6}>
+              <Typography component="h1" variant="h6" color="inherit" noWrap>
+                <Link underline={'none'} href="/">
+                  Devkits
+                </Link>
+              </Typography>
+            </Grid>
+            <Grid item xs={1} alignItems={'flex-end'}>
+              <IconButton
+                target={'_blank'}
+                href={'https://github.com/clh161/devkits'}
+                aria-label="Github Repository"
+              >
+                <GitHubIcon />
+              </IconButton>
+            </Grid>
+          </Grid>
         </Toolbar>
         <Divider />
         <List component="nav" aria-label="main mailbox folders">
