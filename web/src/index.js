@@ -15,7 +15,7 @@ ReactDOM.render(
         <Switch>
           <Route path="/">
             <App>
-              <Route path="/html-encode-decode">
+              <Route path="/html-encoding">
                 <HTMLEncoder />
               </Route>
             </App>

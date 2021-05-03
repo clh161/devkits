@@ -174,7 +174,7 @@ export default function Dashboard(props: Props): Node {
         </Toolbar>
         <Divider />
         <List component="nav" aria-label="main mailbox folders">
-          <ListItem component="a" href={'/html-encode-decode'}>
+          <ListItem component="a" href={'/html-encoding'}>
             <ListItemIcon>
               <InboxIcon />
             </ListItemIcon>
