@@ -52,10 +52,11 @@ export default function TimestampConverter(): Node {
       <Helmet>
         <title>Unix Timestamp Convertor (UTC)</title>
       </Helmet>
-      <Typography variant="h4" component="h1">
-        Unix Timestamp Convertor (UTC)
-      </Typography>
+
       <Grid container spacing={3}>
+        <Typography variant="h4" component="h1">
+          Unix Timestamp Convertor (UTC)
+        </Typography>
         <Grid item xs={12}>
           <TextField
             type="number"
