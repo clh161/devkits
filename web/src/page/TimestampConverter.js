@@ -5,8 +5,12 @@ import { Grid, TextField, Typography } from '@material-ui/core';
 import { Helmet } from 'react-helmet';
 
 export default function TimestampConverter(): Node {
-  const [unixTimestamp, setUnixTimestamp] = useState(Date.now());
-  const [datetime, setDatetime] = useState(unixToDate(Date.now()));
+  const [unixTimestamp, setUnixTimestamp] = useState(
+    parseInt(Date.now() / 1000)
+  );
+  const [datetime, setDatetime] = useState(
+    unixToDate(parseInt(Date.now() / 1000))
+  );
 
   function onUnixTimestampChange(event) {
     const { value } = event.target;
@@ -43,7 +47,7 @@ export default function TimestampConverter(): Node {
 }
 
 function unixToDate(timestamp) {
-  const date = new Date(timestamp);
+  const date = new Date(timestamp * 1000);
 
   return [
     {
