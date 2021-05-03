@@ -4,28 +4,14 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Drawer from '@material-ui/core/Drawer';
-import Box from '@material-ui/core/Box';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
 import type { Node } from 'react';
 import { List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
 import CodeIcon from '@material-ui/icons/Code';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://devkits.net/">
-        Devkits
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
 const drawerWidth = 320;
 
@@ -95,9 +81,6 @@ export default function Dashboard(props: Props): Node {
       <main className={classes.content}>
         <Container maxWidth="lg" className={classes.container}>
           {props.children}
-          <Box pt={4}>
-            <Copyright />
-          </Box>
         </Container>
       </main>
     </div>
