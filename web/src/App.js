@@ -17,6 +17,8 @@ import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import type { Node } from 'react';
+import { List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
+import InboxIcon from '@material-ui/icons/Inbox';
 
 function Copyright() {
   return (
@@ -174,6 +176,14 @@ export default function Dashboard(props: Props): Node {
           </Typography>
         </Toolbar>
         <Divider />
+        <List component="nav" aria-label="main mailbox folders">
+          <ListItem component="a" href={'/html-encoder'}>
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
+            <ListItemText primary="Inbox" />
+          </ListItem>
+        </List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
