@@ -22,7 +22,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "flow-typed": "flow-typed install",
+    "flow-typed": "flow-typed install -o -s",
     "flow": "flow"
   },
   "eslintConfig": {
