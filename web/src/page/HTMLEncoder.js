@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 import type { Node } from 'react';
 import { Divider, Grid, TextareaAutosize } from '@material-ui/core';
 import { encode, decode } from 'html-entities';
+import { Helmet } from 'react-helmet';
 
-type Props = {};
 const DEFAULT_TEXT = 'Example: < > " \\\\\' &';
 
-export default function HTMLEncoder(props: Props): Node {
+export default function HTMLEncoder(): Node {
   const [decodedHTMLText, setDecodedHTMLText] = useState<string>(DEFAULT_TEXT);
   const [encodedHTMLText, setEncodedHTMLText] = useState<string>(
     encode(DEFAULT_TEXT)
@@ -25,6 +25,9 @@ export default function HTMLEncoder(props: Props): Node {
   }
   return (
     <Grid container spacing={3}>
+      <Helmet>
+        <title>HTML Encode/Decode</title>
+      </Helmet>
       <Grid item xs={12}>
         <TextareaAutosize
           onChange={onDecodedHTMLChanged}
