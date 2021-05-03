@@ -33,7 +33,7 @@ export default function HTMLEncoder(): Node {
           <Typography component="h1" variant="h4">
             HTML Encoder
           </Typography>
-        </Grid>{' '}
+        </Grid>
         <Grid item xs={12}>
           <TextareaAutosize
             onChange={onDecodedHTMLChanged}
