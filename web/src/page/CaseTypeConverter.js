@@ -5,9 +5,11 @@ import { Grid, TextField, Typography } from '@material-ui/core';
 import { Helmet } from 'react-helmet';
 import lodash from 'lodash';
 
+type CaseTypeKey = 'normal_text' | 'camel_case';
+
 type CaseType = {
   label: string,
-  key: string,
+  key: CaseTypeKey,
   getTextFromNormalText: (string) => string,
   getNormalText: (string) => string,
 };
@@ -28,14 +30,14 @@ const CASE_TYPES: Array<CaseType> = [
 ];
 const DEFAULT_NORMAL_TEXT = 'This is an example text';
 
-const DEFAULT_TEXTS: [string, string] = getTexts(
+const DEFAULT_TEXTS: { [CaseTypeKey]: string } = getTexts(
   'normal_text',
   DEFAULT_NORMAL_TEXT
 );
 
-function getTexts(key: string, text: string) {
+function getTexts(key: string, text: string): { [CaseTypeKey]: string } {
   const caseType = CASE_TYPES.find((caseType) => caseType.key === key);
-  const normalText = caseType.getNormalText(text);
+  const normalText = caseType?.getNormalText(text) ?? '';
   return CASE_TYPES.reduce((texts, ct) => {
     texts[ct.key] = ct.getTextFromNormalText(normalText);
     return texts;
@@ -43,7 +45,7 @@ function getTexts(key: string, text: string) {
 }
 
 export default function CaseTypeConverter(): Node {
-  const [texts, setTexts] = useState<[string, string]>(DEFAULT_TEXTS);
+  const [texts, setTexts] = useState<{ [CaseTypeKey]: string }>(DEFAULT_TEXTS);
   return (
     <div>
       <Helmet>
