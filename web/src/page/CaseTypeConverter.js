@@ -27,6 +27,12 @@ const CASE_TYPES: Array<CaseType> = [
     getTextFromNormalText: (text) => lodash.camelCase(text),
     getNormalText: (text) => lodash.lowerCase(text),
   },
+  {
+    label: 'Snake Case',
+    key: 'snake_case',
+    getTextFromNormalText: (text) => lodash.snakeCase(text),
+    getNormalText: (text) => lodash.lowerCase(text),
+  },
 ];
 const DEFAULT_NORMAL_TEXT = 'This is an example text';
 
@@ -39,7 +45,8 @@ function getTexts(key: string, text: string): { [CaseTypeKey]: string } {
   const caseType = CASE_TYPES.find((caseType) => caseType.key === key);
   const normalText = caseType?.getNormalText(text) ?? '';
   return CASE_TYPES.reduce((texts, ct) => {
-    texts[ct.key] = ct.getTextFromNormalText(normalText);
+    texts[ct.key] =
+      ct.key === key ? text : ct.getTextFromNormalText(normalText);
     return texts;
   }, {});
 }
