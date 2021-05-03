@@ -1,4 +1,4 @@
-// @flow
+// @flow strict
 import React from 'react';
 import type { Node } from 'react';
 import { Grid, Link, Typography } from '@material-ui/core';

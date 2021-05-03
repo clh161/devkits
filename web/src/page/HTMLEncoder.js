@@ -1,4 +1,4 @@
-// @flow
+// @flow strict
 import React, { useState } from 'react';
 import type { Node } from 'react';
 import { Divider, Grid, TextareaAutosize, Typography } from '@material-ui/core';

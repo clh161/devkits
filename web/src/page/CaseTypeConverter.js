@@ -1,4 +1,4 @@
-// @flow
+// @flow strict
 import React, { useState } from 'react';
 import type { Node } from 'react';
 import { Grid, TextField, Typography } from '@material-ui/core';
