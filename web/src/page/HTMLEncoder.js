@@ -29,9 +29,11 @@ export default function HTMLEncoder(): Node {
         <title>HTML Encoder</title>
       </Helmet>
       <Grid container spacing={3}>
-        <Typography variant="h4" component="h1">
-          HTML Encoder
-        </Typography>
+        <Grid item xs={12}>
+          <Typography variant="h4" component="h1">
+            HTML Encoder
+          </Typography>
+        </Grid>{' '}
         <Grid item xs={12}>
           <TextareaAutosize
             onChange={onDecodedHTMLChanged}
