@@ -16,8 +16,8 @@ import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import type { Node } from 'react';
 import { List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
-import InboxIcon from '@material-ui/icons/Inbox';
-
+import CodeIcon from '@material-ui/icons/Code';
+import AccessTimeIcon from '@material-ui/icons/AccessTime';
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -176,13 +176,13 @@ export default function Dashboard(props: Props): Node {
         <List component="nav" aria-label="main mailbox folders">
           <ListItem component="a" href={'/html-encoding'}>
             <ListItemIcon>
-              <InboxIcon />
+              <CodeIcon />
             </ListItemIcon>
             <ListItemText primary="HTML Encoder" />
           </ListItem>
           <ListItem component="a" href={'/unix-timestamp-converter'}>
             <ListItemIcon>
-              <InboxIcon />
+              <AccessTimeIcon />
             </ListItemIcon>
             <ListItemText primary="Unix Timestamp Converter" />
           </ListItem>
