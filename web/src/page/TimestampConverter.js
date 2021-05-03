@@ -4,6 +4,11 @@ import type { Node } from 'react';
 import { Grid, TextField, Typography } from '@material-ui/core';
 import { Helmet } from 'react-helmet';
 
+type DatetimeConfig = {
+  name: string,
+  value: number,
+};
+
 export default function TimestampConverter(): Node {
   const [unixTimestamp, setUnixTimestamp] = useState(
     parseInt(Date.now() / 1000)
@@ -59,7 +64,7 @@ export default function TimestampConverter(): Node {
             label="Timestamp"
           />
         </Grid>
-        {datetime.map((dt: string) => {
+        {datetime.map((dt: DatetimeConfig) => {
           return (
             <Grid key={dt.name} item xs={2}>
               <TextField
@@ -78,7 +83,7 @@ export default function TimestampConverter(): Node {
   );
 }
 
-function unixToDate(timestamp) {
+function unixToDate(timestamp): Array<DatetimeConfig> {
   const date = new Date(timestamp * 1000);
 
   return [
