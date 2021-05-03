@@ -53,6 +53,7 @@ export default function TimestampConverter(): Node {
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <TextField
+            type="number"
             value={unixTimestamp}
             onChange={onUnixTimestampChange}
             label="Timestamp"
@@ -62,6 +63,7 @@ export default function TimestampConverter(): Node {
           return (
             <Grid key={dt.name} item xs={2}>
               <TextField
+                type="number"
                 label={dt.name}
                 value={dt.value}
                 onChange={(event) => {
