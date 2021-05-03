@@ -5,7 +5,7 @@ import { Grid, TextField, Typography } from '@material-ui/core';
 import { Helmet } from 'react-helmet';
 import lodash from 'lodash';
 
-type CaseTypeKey = 'normal_text' | 'camel_case';
+type CaseTypeKey = 'normal_text' | 'camel_case' | 'snake_case';
 
 type CaseType = {
   label: string,
