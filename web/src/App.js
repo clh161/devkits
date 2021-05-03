@@ -22,7 +22,7 @@ import CodeIcon from '@material-ui/icons/Code';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import GitHubIcon from '@material-ui/icons/GitHub';
 const drawerWidth = 320;
-
+import TextFieldsIcon from '@material-ui/icons/TextFields';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -98,6 +98,12 @@ export default function Dashboard(props: Props): Node {
               <AccessTimeIcon />
             </ListItemIcon>
             <ListItemText primary="Unix Timestamp Converter" />
+          </ListItem>
+          <ListItem component="a" href={'/case-type-converter'}>
+            <ListItemIcon>
+              <TextFieldsIcon />
+            </ListItemIcon>
+            <ListItemText primary="Case Type Converter" />
           </ListItem>
         </List>
       </Drawer>
