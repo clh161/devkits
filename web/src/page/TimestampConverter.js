@@ -18,6 +18,30 @@ export default function TimestampConverter(): Node {
     setDatetime(unixToDate(Number(value)));
   }
 
+  function onDatetimeChange(name, event) {
+    const { value } = event.target;
+    setDatetime(
+      datetime.map((dt) => {
+        if (name === dt.name) {
+          dt.value = value;
+        }
+        return dt;
+      })
+    );
+    const datestamp =
+      new Date(
+        Date.UTC(
+          ...datetime.map((dt) => {
+            if (dt.name === 'Month') {
+              return dt.value - 1;
+            }
+            return dt.value;
+          })
+        )
+      ).getTime() / 1000;
+    setUnixTimestamp(datestamp);
+  }
+
   return (
     <div>
       <Helmet>
@@ -37,7 +61,13 @@ export default function TimestampConverter(): Node {
         {datetime.map((dt: string) => {
           return (
             <Grid key={dt.name} item xs={2}>
-              <TextField label={dt.name} value={dt.value} />
+              <TextField
+                label={dt.name}
+                value={dt.value}
+                onChange={(event) => {
+                  onDatetimeChange(dt.name, event);
+                }}
+              />
             </Grid>
           );
         })}
