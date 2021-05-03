@@ -12,8 +12,6 @@ import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import type { Node } from 'react';
@@ -33,7 +31,7 @@ function Copyright() {
   );
 }
 
-const drawerWidth = 240;
+const drawerWidth = 320;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -124,8 +122,7 @@ export default function Dashboard(props: Props): Node {
   const handleDrawerOpen = () => {
     setOpen(true);
   };
-  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
-
+  clsx(classes.paper, classes.fixedHeight);
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -177,11 +174,11 @@ export default function Dashboard(props: Props): Node {
         </Toolbar>
         <Divider />
         <List component="nav" aria-label="main mailbox folders">
-          <ListItem component="a" href={'/html-encoder'}>
+          <ListItem component="a" href={'/html-encode-decode'}>
             <ListItemIcon>
               <InboxIcon />
             </ListItemIcon>
-            <ListItemText primary="Inbox" />
+            <ListItemText primary="HTML Encode/Decode" />
           </ListItem>
         </List>
       </Drawer>
@@ -189,20 +186,6 @@ export default function Dashboard(props: Props): Node {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           {props.children}
-          <Grid container spacing={3}>
-            {/* Chart */}
-            <Grid item xs={12} md={8} lg={9}>
-              <Paper className={fixedHeightPaper}>{/*<Chart />*/}</Paper>
-            </Grid>
-            {/* Recent Deposits */}
-            <Grid item xs={12} md={4} lg={3}>
-              <Paper className={fixedHeightPaper}>{/*<Deposits />*/}</Paper>
-            </Grid>
-            {/* Recent Orders */}
-            <Grid item xs={12}>
-              <Paper className={classes.paper}>{/*<Orders />*/}</Paper>
-            </Grid>
-          </Grid>
           <Box pt={4}>
             <Copyright />
           </Box>
