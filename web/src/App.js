@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
@@ -14,6 +16,7 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
+import type { Node } from 'react';
 
 function Copyright() {
   return (
@@ -110,10 +113,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 type Props = {
-  children: React.Node,
+  children: Node,
 };
 
-export default function Dashboard(props: Props) {
+export default function Dashboard(props: Props): Node {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {

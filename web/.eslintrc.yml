@@ -4,6 +4,7 @@ env:
 extends:
   - 'plugin:react/recommended'
   - 'plugin:prettier/recommended'
+  - 'plugin:flowtype/recommended'
 parserOptions:
   ecmaFeatures:
     jsx: true
@@ -11,5 +12,6 @@ parserOptions:
   sourceType: module
 plugins:
   - react
+  - flowtype
 rules:
   { 'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx'] }] }
