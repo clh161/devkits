@@ -33,7 +33,8 @@ jobs:
             ${{ runner.os }}-
       - uses: actions/setup-node@v1
       - run: yarn install
-      - run: yarn run flow
+      - run: yarn flow-typed
+      - run: yarn flow
   eslint:
     runs-on: ubuntu-latest
     defaults:
