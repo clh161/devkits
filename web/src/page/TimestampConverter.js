@@ -43,7 +43,6 @@ export default function TimestampConverter(): Node {
 }
 
 function unixToDate(timestamp) {
-  console.log(timestamp);
   const date = new Date(timestamp);
 
   return [
