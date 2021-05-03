@@ -8,6 +8,7 @@ import reportWebVitals from './reportWebVitals';
 import HTMLEncoder from './page/HTMLEncoder';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import TimestampConverter from './page/TimestampConverter';
 ReactDOM.render(
   <React.StrictMode>
     <Router>
@@ -17,6 +18,9 @@ ReactDOM.render(
             <App>
               <Route path="/html-encoding">
                 <HTMLEncoder />
+              </Route>
+              <Route path="/unix-timestamp-converter">
+                <TimestampConverter />
               </Route>
             </App>
           </Route>

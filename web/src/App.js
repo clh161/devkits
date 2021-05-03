@@ -180,6 +180,12 @@ export default function Dashboard(props: Props): Node {
             </ListItemIcon>
             <ListItemText primary="HTML Encoder" />
           </ListItem>
+          <ListItem component="a" href={'/unix-timestamp-converter'}>
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
+            <ListItemText primary="Unix Timestamp Converter" />
+          </ListItem>
         </List>
       </Drawer>
       <main className={classes.content}>
