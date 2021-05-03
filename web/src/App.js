@@ -178,7 +178,7 @@ export default function Dashboard(props: Props): Node {
             <ListItemIcon>
               <InboxIcon />
             </ListItemIcon>
-            <ListItemText primary="HTML Encode/Decode" />
+            <ListItemText primary="HTML Encoder" />
           </ListItem>
         </List>
       </Drawer>

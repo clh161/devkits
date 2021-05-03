@@ -26,7 +26,7 @@ export default function HTMLEncoder(): Node {
   return (
     <Grid container spacing={3}>
       <Helmet>
-        <title>HTML Encode/Decode</title>
+        <title>HTML Encoder</title>
       </Helmet>
       <Grid item xs={12}>
         <TextareaAutosize
