@@ -58,7 +58,7 @@ const DEFAULT_TEXTS: { [CaseTypeKey]: string } = getTexts(
   DEFAULT_NORMAL_TEXT
 );
 
-function getTexts(key: string, text: string): { [CaseTypeKey]: string } {
+export function getTexts(key: string, text: string): { [CaseTypeKey]: string } {
   const caseType = CASE_TYPES.find((caseType) => caseType.key === key);
   const normalText = caseType?.getNormalText(text) ?? '';
   return CASE_TYPES.reduce((texts, ct) => {
