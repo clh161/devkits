@@ -23,7 +23,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint . --fix && flow",
-    "flow-typed": "flow-typed install -o -s"
+    "flow-typed": "flow-typed install -o -s && flow-typed install jest@26"
   },
   "eslintConfig": {
     "extends": [
