@@ -35,6 +35,27 @@ jobs:
       - run: yarn install
       - run: yarn flow-typed
       - run: yarn flow
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./web
+    steps:
+      - uses: actions/checkout@v2
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ./web/node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('./web/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - uses: actions/setup-node@v1
+      - run: yarn install
+      - run: yarn test
   eslint:
     runs-on: ubuntu-latest
     defaults:
@@ -92,7 +113,7 @@ jobs:
           docker push registry.digitalocean.com/jbb/devkits-web
   deploy:
     if: github.ref == 'refs/heads/master'
-    needs: [ eslint, flow, docker-build ]
+    needs: [ eslint, flow, test, docker-build ]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
