@@ -1,6 +1,6 @@
 // @flow strict
-import React, { useState } from 'react';
 import type { Node } from 'react';
+import React, { useState } from 'react';
 import { Grid, TextField, Typography } from '@material-ui/core';
 import { Helmet } from 'react-helmet';
 
@@ -51,6 +51,11 @@ export default function TimestampConverter(): Node {
     <div>
       <Helmet>
         <title>Unix Timestamp Convertor (UTC)</title>
+        <meta
+          content="unix timestamp and date time converter"
+          name="description"
+        />
+        <meta content="timestamp, epoch, converter" name="keywords" />
       </Helmet>
 
       <Grid container spacing={3}>
@@ -58,7 +63,7 @@ export default function TimestampConverter(): Node {
           <Typography component="h1" variant="h4">
             Unix Timestamp Convertor (UTC)
           </Typography>
-        </Grid>{' '}
+        </Grid>
         <Grid item xs={12}>
           <TextField
             label="Timestamp"
