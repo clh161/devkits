@@ -27,6 +27,11 @@ export default function HTMLEncoder(): Node {
     <div>
       <Helmet>
         <title>HTML Encoder</title>
+        <meta content="Encode or decode HTML into text." name="description" />
+        <meta
+          content="HTML Encoder, HTML Decoder, encoding HTML, decoding HTML"
+          name="keywords"
+        />
       </Helmet>
       <Grid container spacing={3}>
         <Grid item xs={12}>
