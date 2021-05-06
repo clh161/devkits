@@ -74,6 +74,14 @@ export default function CaseTypeConverter(): Node {
     <div>
       <Helmet>
         <title>Case Type Converter</title>
+        <meta
+          content="Convert text into different case types"
+          name="description"
+        />
+        <meta
+          content={CASE_TYPES.map((type) => type.label).join(', ')}
+          name="keywords"
+        />{' '}
       </Helmet>
       <Grid container spacing={3}>
         <Grid item xs={12}>
