@@ -1,16 +1,24 @@
 // @flow strict
 import React, { useState } from 'react';
 import type { Node } from 'react';
-import { Divider, Grid, TextareaAutosize, Typography } from '@material-ui/core';
+import { Divider, Grid, Typography } from '@material-ui/core';
 import { encode, decode } from 'html-entities';
 import { Helmet } from 'react-helmet';
 
-const DEFAULT_TEXT = 'Example: < > " \\\\\' &';
+type Props = {
+  initDecodedText?: string,
+  initEncodedText?: string,
+};
 
-export default function HTMLEncoder(): Node {
-  const [decodedHTMLText, setDecodedHTMLText] = useState<string>(DEFAULT_TEXT);
+export default function HTMLEncoder({
+  initDecodedText,
+  initEncodedText,
+}: Props): Node {
+  const [decodedHTMLText, setDecodedHTMLText] = useState<string>(
+    initDecodedText ?? decode(initEncodedText)
+  );
   const [encodedHTMLText, setEncodedHTMLText] = useState<string>(
-    encode(DEFAULT_TEXT)
+    initEncodedText ?? encode(initDecodedText)
   );
 
   function onEncodedHTMLChanged(event) {
@@ -40,7 +48,7 @@ export default function HTMLEncoder(): Node {
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <TextareaAutosize
+          <textarea
             onChange={onDecodedHTMLChanged}
             placeholder="Decoded HTML"
             style={{ width: '100%', minHeight: 160 }}
@@ -49,7 +57,7 @@ export default function HTMLEncoder(): Node {
         </Grid>
         <Divider />
         <Grid item xs={12}>
-          <TextareaAutosize
+          <textarea
             onChange={onEncodedHTMLChanged}
             placeholder="Encoded HTML"
             style={{ width: '100%', minHeight: 160 }}

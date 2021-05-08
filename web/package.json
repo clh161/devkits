@@ -20,7 +20,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test  --watchAll=false --coverage",
     "eject": "react-scripts eject",
     "lint": "eslint . --fix && flow",
     "flow-typed": "flow-typed install -o -s && flow-typed install jest@26"
@@ -41,6 +41,13 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/reportWebVitals.js",
+      "!src/index.js"
     ]
   },
   "devDependencies": {
