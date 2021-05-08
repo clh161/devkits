@@ -3,13 +3,14 @@
 import React from 'react';
 import Dashboard from './Dashboard';
 import HTMLEncoder from './page/HTMLEncoder';
+import type { Node } from 'react';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import TimestampConverter from './page/TimestampConverter';
 import Home from './page/Home';
 import CaseTypeConverter from './page/CaseTypeConverter';
 
-export default function App() {
+export default function App(): Node {
   return (
     <Router>
       <div>
