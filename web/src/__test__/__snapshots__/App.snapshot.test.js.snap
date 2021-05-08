@@ -34,7 +34,7 @@ exports[`renders correctly 1`] = `
               </h1>
             </div>
             <div
-              className="MuiGrid-root MuiGrid-item MuiGrid-align-items-xs-flex-end MuiGrid-grid-xs-1"
+              className="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-flex-end MuiGrid-grid-xs-1"
             >
               <a
                 aria-disabled={false}
@@ -199,14 +199,14 @@ exports[`renders correctly 1`] = `
               <p
                 className="MuiTypography-root MuiTypography-body1"
               >
-                An opensource collection of development tools
+                An opensource collectaion of development tools
               </p>
             </div>
             <div
               className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
             >
               <span
-                className="MuiTypography-root"
+                className="MuiTypography-root MuiTypography-overline"
               >
                 <a
                   className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary"
@@ -221,7 +221,6 @@ exports[`renders correctly 1`] = `
             </div>
           </div>
         </div>
-         
       </div>
     </main>
   </div>

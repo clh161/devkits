@@ -74,7 +74,7 @@ export default function Dashboard(props: Props): Node {
                 </Link>
               </Typography>
             </Grid>
-            <Grid alignItems={'flex-end'} item xs={1}>
+            <Grid alignItems={'flex-end'} container item xs={1}>
               <IconButton
                 aria-label="Github Repository"
                 href={'https://github.com/clh161/devkits'}

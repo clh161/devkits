@@ -1,7 +1,7 @@
 // @flow strict
 
 import React from 'react';
-import Dashboard from './Dashboard';
+import Dashboard from './component/Dashboard';
 import HTMLEncoder from './page/HTMLEncoder';
 import type { Node } from 'react';
 
@@ -24,7 +24,7 @@ export default function App(): Node {
             </Route>
             <Route path="/unix-timestamp-converter">
               <TimestampConverter />
-            </Route>{' '}
+            </Route>
             <Route path="/case-type-converter">
               <CaseTypeConverter />
             </Route>

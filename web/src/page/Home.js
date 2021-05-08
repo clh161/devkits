@@ -17,11 +17,11 @@ export default function Home(): Node {
         </Grid>
         <Grid item xs={12}>
           <Typography variant="body1">
-            An opensource collection of development tools
+            An opensource collectaion of development tools
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <Typography variant="link">
+          <Typography variant="overline">
             <Link href="https://github.com/clh161/devkits" target="_blank">
               Github Repository
             </Link>
