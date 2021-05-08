@@ -48,15 +48,7 @@
       "src/**/*.{js,jsx,ts,tsx}",
       "!src/reportWebVitals.js",
       "!src/index.js"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 90,
-        "functions": 90,
-        "lines": 90,
-        "statements": 90
-      }
-    }
+    ]
   },
   "devDependencies": {
     "@babel/cli": "^7.13.16",
