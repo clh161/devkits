@@ -50,6 +50,8 @@ jobs:
             ${{ runner.os }}-
       - run: yarn test
       - uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
   eslint:
     runs-on: ubuntu-latest
     defaults:
