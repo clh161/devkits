@@ -1,6 +1,57 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`Init with decoded text 1`] = `
+<div>
+  <div
+    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+    >
+      <h1
+        className="MuiTypography-root MuiTypography-h4"
+      >
+        HTML Encoder
+      </h1>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+    >
+      <textarea
+        onChange={[Function]}
+        placeholder="Decoded HTML"
+        style={
+          Object {
+            "minHeight": 160,
+            "width": "100%",
+          }
+        }
+        value="Example: < > \\" \\\\' &"
+      />
+    </div>
+    <hr
+      className="MuiDivider-root"
+    />
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+    >
+      <textarea
+        onChange={[Function]}
+        placeholder="Encoded HTML"
+        style={
+          Object {
+            "minHeight": 160,
+            "width": "100%",
+          }
+        }
+        value="Example: &lt; &gt; &quot; \\\\&apos; &amp;"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Init with encoded text 1`] = `
 <div>
   <div
     className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
