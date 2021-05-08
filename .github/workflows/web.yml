@@ -6,11 +6,6 @@ on:
     - 'web/**'
     - 'kubernetes/web.yaml'
     - '.github/workflows/web.yml'
-  pull_request:
-    paths:
-    - 'web/**'
-    - 'kubernetes/web.yaml'
-    - '.github/workflows/web.yml'
 
 jobs:
   flow:
