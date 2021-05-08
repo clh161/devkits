@@ -4,3 +4,4 @@
 /flow-typed
 /build
 yarn-error.log
+/coverage/

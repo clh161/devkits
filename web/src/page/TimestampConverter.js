@@ -93,7 +93,7 @@ export default function TimestampConverter({ initTimestamp }: Props): Node {
   );
 }
 
-function unixToDate(timestamp): Array<DatetimeConfig> {
+export function unixToDate(timestamp: number): Array<DatetimeConfig> {
   const date = new Date(timestamp * 1000);
 
   return [
