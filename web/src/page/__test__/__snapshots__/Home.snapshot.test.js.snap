@@ -21,14 +21,14 @@ exports[`renders correctly 1`] = `
       <p
         className="MuiTypography-root MuiTypography-body1"
       >
-        An opensource collection of development tools
+        An opensource collectaion of development tools
       </p>
     </div>
     <div
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
     >
       <span
-        className="MuiTypography-root"
+        className="MuiTypography-root MuiTypography-overline"
       >
         <a
           className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary"
