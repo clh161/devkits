@@ -1,13 +1,14 @@
 // @flow strict
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Home from './page/Home';
-import HTMLEncoder from './page/HTMLEncoder';
-import TimestampConverter from './page/TimestampConverter';
-import CaseTypeConverter from './page/CaseTypeConverter';
+import Home from '../page/Home';
+import HTMLEncoder from '../page/HTMLEncoder';
+import TimestampConverter from '../page/TimestampConverter';
+import CaseTypeConverter from '../page/CaseTypeConverter';
 import React from 'react';
+import type { Node } from 'react';
 
-export function Router() {
+export function Router(): Node {
   return (
     <BrowserRouter>
       <Switch>
