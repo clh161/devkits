@@ -49,6 +49,8 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
       - uses: codecov/codecov-action@v1
+        with:
+          files: ./coverage/clover.xml
   eslint:
     runs-on: ubuntu-latest
     defaults:
