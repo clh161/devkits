@@ -1,34 +1,14 @@
 // @flow strict
 
+import type { Node } from 'react';
 import React from 'react';
 import Dashboard from './component/Dashboard';
-import HTMLEncoder from './page/HTMLEncoder';
-import type { Node } from 'react';
-
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import TimestampConverter from './page/TimestampConverter';
-import Home from './page/Home';
-import CaseTypeConverter from './page/CaseTypeConverter';
+import { Router } from './Router';
 
 export default function App(): Node {
   return (
     <Dashboard>
-      <Router>
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/html-encoding">
-            <HTMLEncoder initDecodedText={'Example: < > " \\\\\' &'} />
-          </Route>
-          <Route path="/unix-timestamp-converter">
-            <TimestampConverter />
-          </Route>
-          <Route path="/case-type-converter">
-            <CaseTypeConverter />
-          </Route>
-        </Switch>
-      </Router>
+      <Router />
     </Dashboard>
   );
 }
