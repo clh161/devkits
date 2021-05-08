@@ -50,8 +50,6 @@ jobs:
             ${{ runner.os }}-
       - run: yarn test
       - uses: codecov/codecov-action@v1
-        with:
-          files: ./web/coverage/clover.xml
   eslint:
     runs-on: ubuntu-latest
     defaults:
