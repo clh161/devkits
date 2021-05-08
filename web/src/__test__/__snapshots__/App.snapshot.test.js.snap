@@ -199,7 +199,7 @@ exports[`renders correctly 1`] = `
               <p
                 className="MuiTypography-root MuiTypography-body1"
               >
-                An opensource collectaion of development tools
+                An opensource project of collection of development tools
               </p>
             </div>
             <div

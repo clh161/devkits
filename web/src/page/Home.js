@@ -17,7 +17,7 @@ export default function Home(): Node {
         </Grid>
         <Grid item xs={12}>
           <Typography variant="body1">
-            An opensource collectaion of development tools
+            An opensource project of collection of development tools
           </Typography>
         </Grid>
         <Grid item xs={12}>
