@@ -3,7 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Dashboard from './Dashboard';
 import reportWebVitals from './reportWebVitals';
 import HTMLEncoder from './page/HTMLEncoder';
 
@@ -19,7 +19,7 @@ root != null &&
       <Router>
         <div>
           <Switch>
-            <App>
+            <Dashboard>
               <Route exact path="/">
                 <Home />
               </Route>
@@ -32,7 +32,7 @@ root != null &&
               <Route path="/case-type-converter">
                 <CaseTypeConverter />
               </Route>
-            </App>
+            </Dashboard>
           </Switch>
         </div>
       </Router>
