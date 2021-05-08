@@ -34,7 +34,7 @@ exports[`renders correctly 1`] = `
               </h1>
             </div>
             <div
-              className="MuiGrid-root MuiGrid-item MuiGrid-align-items-xs-flex-end MuiGrid-grid-xs-1"
+              className="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-flex-end MuiGrid-grid-xs-1"
             >
               <a
                 aria-disabled={false}
