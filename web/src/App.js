@@ -1,7 +1,7 @@
 // @flow strict
 
 import React from 'react';
-import Dashboard from './Dashboard';
+import Dashboard from './component/Dashboard';
 import HTMLEncoder from './page/HTMLEncoder';
 import type { Node } from 'react';
 
