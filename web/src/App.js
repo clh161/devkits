@@ -24,7 +24,7 @@ export default function App(): Node {
             </Route>
             <Route path="/unix-timestamp-converter">
               <TimestampConverter />
-            </Route>{' '}
+            </Route>
             <Route path="/case-type-converter">
               <CaseTypeConverter />
             </Route>
