@@ -51,6 +51,11 @@ jobs:
       - uses: actions/setup-node@v1
       - run: yarn install
       - run: yarn test
+      - name: Run codacy-coverage-reporter
+        uses: codacy/codacy-coverage-reporter-action@v1
+        with:
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          coverage-reports: clover.xml
   eslint:
     runs-on: ubuntu-latest
     defaults:
