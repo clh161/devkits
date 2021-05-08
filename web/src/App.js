@@ -12,25 +12,23 @@ import CaseTypeConverter from './page/CaseTypeConverter';
 
 export default function App(): Node {
   return (
-    <Router>
-      <div>
+    <Dashboard>
+      <Router>
         <Switch>
-          <Dashboard>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/html-encoding">
-              <HTMLEncoder initDecodedText={'Example: < > " \\\\\' &'} />
-            </Route>
-            <Route path="/unix-timestamp-converter">
-              <TimestampConverter />
-            </Route>
-            <Route path="/case-type-converter">
-              <CaseTypeConverter />
-            </Route>
-          </Dashboard>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/html-encoding">
+            <HTMLEncoder initDecodedText={'Example: < > " \\\\\' &'} />
+          </Route>
+          <Route path="/unix-timestamp-converter">
+            <TimestampConverter />
+          </Route>
+          <Route path="/case-type-converter">
+            <CaseTypeConverter />
+          </Route>
         </Switch>
-      </div>
-    </Router>
+      </Router>
+    </Dashboard>
   );
 }
