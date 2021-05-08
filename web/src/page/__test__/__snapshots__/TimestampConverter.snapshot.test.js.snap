@@ -41,7 +41,7 @@ exports[`renders correctly 1`] = `
             onFocus={[Function]}
             required={false}
             type="number"
-            value={1620432246}
+            value={1620432665}
           />
         </div>
       </div>
@@ -201,7 +201,7 @@ exports[`renders correctly 1`] = `
             onFocus={[Function]}
             required={false}
             type="number"
-            value={4}
+            value={11}
           />
         </div>
       </div>
@@ -233,7 +233,7 @@ exports[`renders correctly 1`] = `
             onFocus={[Function]}
             required={false}
             type="number"
-            value={6}
+            value={43}
           />
         </div>
       </div>

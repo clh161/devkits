@@ -9,9 +9,13 @@ type DatetimeConfig = {
   value: number,
 };
 
-export default function TimestampConverter(): Node {
+type Props = {
+  initTimestamp?: number,
+};
+
+export default function TimestampConverter({ initTimestamp }: Props): Node {
   const [unixTimestamp, setUnixTimestamp] = useState(
-    parseInt(Date.now() / 1000)
+    parseInt(initTimestamp ?? Date.now() / 1000)
   );
   const [datetime, setDatetime] = useState(
     unixToDate(parseInt(Date.now() / 1000))
