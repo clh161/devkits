@@ -48,6 +48,7 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
+      - run: yarn test
       - uses: codecov/codecov-action@v1
         with:
           files: ./web/coverage/clover.xml
