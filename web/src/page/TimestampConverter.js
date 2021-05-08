@@ -17,9 +17,7 @@ export default function TimestampConverter({ initTimestamp }: Props): Node {
   const [unixTimestamp, setUnixTimestamp] = useState(
     parseInt(initTimestamp ?? Date.now() / 1000)
   );
-  const [datetime, setDatetime] = useState(
-    unixToDate(parseInt(Date.now() / 1000))
-  );
+  const [datetime, setDatetime] = useState(unixToDate(parseInt(unixTimestamp)));
 
   function onUnixTimestampChange(event) {
     const { value } = event.target;

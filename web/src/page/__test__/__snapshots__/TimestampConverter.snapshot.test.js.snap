@@ -233,7 +233,7 @@ exports[`renders correctly 1`] = `
             onFocus={[Function]}
             required={false}
             type="number"
-            value={43}
+            value={5}
           />
         </div>
       </div>
