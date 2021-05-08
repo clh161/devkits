@@ -6,13 +6,19 @@ import { encode, decode } from 'html-entities';
 import { Helmet } from 'react-helmet';
 
 type Props = {
-  initText: string,
+  initDecodedText?: string,
+  initEncodedText?: string,
 };
 
-export default function HTMLEncoder({ initText }: Props): Node {
-  const [decodedHTMLText, setDecodedHTMLText] = useState<string>(initText);
+export default function HTMLEncoder({
+  initDecodedText,
+  initEncodedText,
+}: Props): Node {
+  const [decodedHTMLText, setDecodedHTMLText] = useState<string>(
+    initDecodedText ?? decode(initEncodedText)
+  );
   const [encodedHTMLText, setEncodedHTMLText] = useState<string>(
-    encode(initText)
+    initEncodedText ?? encode(initDecodedText)
   );
 
   function onEncodedHTMLChanged(event) {

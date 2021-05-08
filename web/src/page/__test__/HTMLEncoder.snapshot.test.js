@@ -6,7 +6,7 @@ import HTMLEncoder from '../HTMLEncoder';
 
 it('renders correctly', () => {
   const tree = renderer
-    .create(<HTMLEncoder initText={'Example: < > " \\\' &'} />)
+    .create(<HTMLEncoder initDecodedText={'Example: < > " \\\' &'} />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

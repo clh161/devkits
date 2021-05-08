@@ -20,7 +20,7 @@ export default function App(): Node {
               <Home />
             </Route>
             <Route path="/html-encoding">
-              <HTMLEncoder initText={'Example: < > " \\\\\' &'} />
+              <HTMLEncoder initDecodedText={'Example: < > " \\\\\' &'} />
             </Route>
             <Route path="/unix-timestamp-converter">
               <TimestampConverter />
