@@ -1,9 +1,9 @@
 # devkits
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d1955e1ac4d8405bbad8f0768eaa1601)](https://app.codacy.com/gh/clh161/devkits?utm_source=github.com&utm_medium=referral&utm_content=clh161/devkits&utm_campaign=Badge_Grade_Settings)
 
 ![Master](https://github.com/clh161/devkits/actions/workflows/web.yml/badge.svg?branch=master)
-
+[![codecov](https://codecov.io/gh/clh161/devkits/branch/main/graph/badge.svg?token=ZpiHw60cM1)](https://codecov.io/gh/clh161/devkits)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d1955e1ac4d8405bbad8f0768eaa1601)](https://app.codacy.com/gh/clh161/devkits?utm_source=github.com&utm_medium=referral&utm_content=clh161/devkits&utm_campaign=Badge_Grade_Settings)
 An opensource collection of development tools
 
 https://devkits.net/
