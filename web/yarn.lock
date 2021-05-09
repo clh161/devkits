@@ -10606,10 +10606,10 @@ react-router-dom@^5.2.0:
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
 
-react-router-sitemap-generator@^0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/react-router-sitemap-generator/-/react-router-sitemap-generator-0.0.7.tgz#e183387ee39a6a7f80b1ee8821473aa3b9bcb80f"
-  integrity sha512-V1DQizXlxEbua97zG+vPZNqbbg1J6J/Zs+Zn8H+hwyre5Yg32sQLmaeV2TTv8WGQEDm2Lm6sMti/Dtexr69Www==
+react-router-sitemap-generator@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/react-router-sitemap-generator/-/react-router-sitemap-generator-0.0.8.tgz#df6c2de57693d00b930e7c156fcd754e2239259f"
+  integrity sha512-JC842G0d6CC03IziyvaWvEZ/u52AhGaIoYmezv5dTw1ty1yNmJuEOeYTtyJg21pb3NgImI0Qn9qAasfmbJ7Mdw==
   dependencies:
     fs "^0.0.1-security"
     xml-js "^1.6.11"
