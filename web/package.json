@@ -71,7 +71,7 @@
     "flow-bin": "^0.150.1",
     "flow-typed": "^3.3.1",
     "prettier": "2.2.1",
-    "react-router-sitemap-generator": "^0.0.7",
+    "react-router-sitemap-generator": "^0.0.8",
     "react-test-renderer": "^17.0.2"
   }
 }
