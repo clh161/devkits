@@ -8,7 +8,7 @@ import CaseTypeConverter from '../page/CaseTypeConverter';
 import React from 'react';
 import type { Node } from 'react';
 
-export function Router(): Node {
+export default function Router(): Node {
   return (
     <BrowserRouter>
       <Switch>
