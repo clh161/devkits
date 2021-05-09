@@ -23,7 +23,8 @@
     "test": "react-scripts test  --watchAll=false --coverage",
     "eject": "react-scripts eject",
     "lint": "eslint . --fix && flow && prettier . --write",
-    "flow-typed": "flow-typed install -o -s && flow-typed install jest@26"
+    "flow-typed": "flow-typed install -o -s && flow-typed install jest@26",
+    "sitemap": "babel-node src/sitemap.js"
   },
   "eslintConfig": {
     "extends": [
@@ -70,7 +71,7 @@
     "flow-bin": "^0.150.1",
     "flow-typed": "^3.3.1",
     "prettier": "2.2.1",
-    "react-router-sitemap": "^1.2.0",
+    "react-router-sitemap-generator": "^0.0.5",
     "react-test-renderer": "^17.0.2"
   }
 }

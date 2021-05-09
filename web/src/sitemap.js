@@ -1,6 +1,5 @@
-// require('babel-register');
+import Generator from 'react-router-sitemap-generator';
+const { Router } = require('./component/Router');
 
-const Router = require('./component/Router');
-const Sitemap = require('react-router-sitemap').default;
-
-new Sitemap(Router).build('https://devkits.net').save('./sitemap.xml');
+const generator = new Generator('https://devkits.net', Router);
+generator.save('public/sitemap.xml');
