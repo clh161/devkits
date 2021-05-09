@@ -8,6 +8,7 @@ extends:
   - 'plugin:flowtype/recommended'
 ignorePatterns:
   - 'flow-typed/**'
+  - 'build/**'
 parserOptions:
   ecmaFeatures:
     jsx: true
