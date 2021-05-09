@@ -4,6 +4,7 @@ WORKDIR /usr/src/app
 COPY package.json yarn.lock ./
 RUN yarn
 COPY ./ ./
+RUN yarn sitemap
 RUN yarn build
 
 # Stage 2 - the production environment
