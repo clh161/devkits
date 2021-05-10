@@ -34,17 +34,17 @@ export default function CSVEditor({
   return (
     <div>
       <Helmet>
-        <title>HTML Encoder</title>
-        <meta content="Encode or decode HTML into text." name="description" />
+        <title>CSV Editor</title>
+        <meta content="Live preview and edit csv file" name="description" />
         <meta
-          content="HTML Encoder, HTML Decoder, encoding HTML, decoding HTML"
+          content="csv, editor, edit, preview, live editor"
           name="keywords"
         />
       </Helmet>
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <Typography component="h1" variant="h4">
-            HTML Encoder
+            CSV Editor
           </Typography>
         </Grid>
         <Grid item xs={12}>
