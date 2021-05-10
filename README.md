@@ -30,5 +30,6 @@ yarn lint
 
 # Roadmap
 ## Tools
+- CSV live preview and edit
 - Regular Expression Tester
 
