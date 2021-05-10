@@ -1,36 +1,44 @@
 // @flow strict
-import React, { useState } from 'react';
 import type { Node } from 'react';
+import React, { useState } from 'react';
 import { Divider, Grid, Typography } from '@material-ui/core';
-import { encode, decode } from 'html-entities';
 import { Helmet } from 'react-helmet';
+import { Spreadsheet } from 'react-spreadsheet';
 
-type Props = {
-  initDecodedText?: string,
-  initEncodedText?: string,
+type Cell = {
+  value: string,
 };
 
-export default function CSVEditor({
-  initDecodedText,
-  initEncodedText,
-}: Props): Node {
-  const [decodedHTMLText, setDecodedHTMLText] = useState<string>(
-    initDecodedText ?? decode(initEncodedText)
-  );
-  const [encodedHTMLText, setEncodedHTMLText] = useState<string>(
-    initEncodedText ?? encode(initDecodedText)
-  );
+const DEFAULT_CSV = [
+  new Array(10)
+    .fill()
+    .map((_, i) => 'Column ' + (i + 1))
+    .join(','),
 
-  function onEncodedHTMLChanged(event) {
-    const { value } = event.target;
-    setEncodedHTMLText(value);
-    setDecodedHTMLText(decode(value));
-  }
+  ...new Array(10).fill().map((_, i) =>
+    new Array(10)
+      .fill()
+      .map((_, j) => 'Value ' + (i * 10 + j + 1))
+      .join(',')
+  ),
+].join('\n');
+
+export default function CSVEditor(): Node {
+  const [decodedHTMLText, setDecodedHTMLText] = useState<string>(DEFAULT_CSV);
+
+  const data = csvToCells(decodedHTMLText);
+
+  // function onEncodedHTMLChanged(event) {
+  //   const { value } = event.target;
+  //   setEncodedHTMLText(value);
+  //   setDecodedHTMLText(decode(value));
+  // }
   function onDecodedHTMLChanged(event) {
     const { value } = event.target;
     setDecodedHTMLText(value);
-    setEncodedHTMLText(encode(value));
+    // setEncodedHTMLText(encode(value));
   }
+
   return (
     <div>
       <Helmet>
@@ -57,14 +65,17 @@ export default function CSVEditor({
         </Grid>
         <Divider />
         <Grid item xs={12}>
-          <textarea
-            onChange={onEncodedHTMLChanged}
-            placeholder="Encoded HTML"
-            style={{ width: '100%', minHeight: 160 }}
-            value={encodedHTMLText}
-          />
+          <Spreadsheet data={data} />
         </Grid>
       </Grid>
     </div>
+  );
+}
+
+function csvToCells(csv: string): Array<Array<Cell>> {
+  return csv.split('\n').map((line) =>
+    line.split(',').map((value) => {
+      return { value: value };
+    })
   );
 }
