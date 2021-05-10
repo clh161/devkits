@@ -24,19 +24,18 @@ const DEFAULT_CSV = [
 ].join('\n');
 
 export default function CSVEditor(): Node {
-  const [decodedHTMLText, setDecodedHTMLText] = useState<string>(DEFAULT_CSV);
+  const [csv, setCsv] = useState<string>(DEFAULT_CSV);
+  const [cells, setCells] = useState<Array<Array<Cell>>>(csvToCells(csv));
 
-  const data = csvToCells(decodedHTMLText);
-
-  // function onEncodedHTMLChanged(event) {
-  //   const { value } = event.target;
-  //   setEncodedHTMLText(value);
-  //   setDecodedHTMLText(decode(value));
-  // }
-  function onDecodedHTMLChanged(event) {
+  function onCsvChange(event) {
     const { value } = event.target;
-    setDecodedHTMLText(value);
-    // setEncodedHTMLText(encode(value));
+    setCsv(value);
+    setCells(csvToCells(value));
+  }
+
+  function onCellsChange(cells: Array<Array<Cell>>) {
+    setCells(cells);
+    setCsv(cellsToCsv(cells));
   }
 
   return (
@@ -57,15 +56,20 @@ export default function CSVEditor(): Node {
         </Grid>
         <Grid item xs={12}>
           <textarea
-            onChange={onDecodedHTMLChanged}
-            placeholder="Decoded HTML"
+            onChange={onCsvChange}
+            placeholder="CSV"
             style={{ width: '100%', minHeight: 160 }}
-            value={decodedHTMLText}
+            value={csv}
           />
         </Grid>
         <Divider />
         <Grid item xs={12}>
-          <Spreadsheet data={data} />
+          <Spreadsheet
+            data={cells}
+            onChange={(cells) => {
+              onCellsChange(cells);
+            }}
+          />
         </Grid>
       </Grid>
     </div>
@@ -78,4 +82,10 @@ function csvToCells(csv: string): Array<Array<Cell>> {
       return { value: value };
     })
   );
+}
+
+function cellsToCsv(cells: Array<Array<Cell>>): string {
+  return cells
+    .map((line) => line.map((cell) => cell.value).join(','))
+    .join('\n');
 }
