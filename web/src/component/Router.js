@@ -7,6 +7,7 @@ import TimestampConverter from '../page/TimestampConverter';
 import CaseTypeConverter from '../page/CaseTypeConverter';
 import React from 'react';
 import type { Node } from 'react';
+import CSVEditor from '../page/CSVEditor';
 
 export default function Router(): Node {
   return (
@@ -20,6 +21,9 @@ export default function Router(): Node {
         </Route>
         <Route path="/case-type-converter">
           <CaseTypeConverter />
+        </Route>
+        <Route path="/csv-editor">
+          <CSVEditor />
         </Route>
         <Route path="/">
           <Home />
