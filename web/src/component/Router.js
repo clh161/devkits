@@ -12,9 +12,6 @@ export default function Router(): Node {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
         <Route path="/html-encoding">
           <HTMLEncoder initDecodedText={'Example: < > " \\\\\' &'} />
         </Route>
@@ -23,6 +20,9 @@ export default function Router(): Node {
         </Route>
         <Route path="/case-type-converter">
           <CaseTypeConverter />
+        </Route>
+        <Route path="/">
+          <Home />
         </Route>
       </Switch>
     </BrowserRouter>
