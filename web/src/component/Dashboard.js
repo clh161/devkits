@@ -21,6 +21,7 @@ import {
 import CodeIcon from '@material-ui/icons/Code';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import GitHubIcon from '@material-ui/icons/GitHub';
+import ViewComfyIcon from '@material-ui/icons/ViewComfy';
 const drawerWidth = 320;
 import TextFieldsIcon from '@material-ui/icons/TextFields';
 const useStyles = makeStyles((theme) => ({
@@ -104,6 +105,12 @@ export default function Dashboard(props: Props): Node {
               <TextFieldsIcon />
             </ListItemIcon>
             <ListItemText primary="Case Type Converter" />
+          </ListItem>
+          <ListItem component="a" href={'/csv-editor'}>
+            <ListItemIcon>
+              <ViewComfyIcon />
+            </ListItemIcon>
+            <ListItemText primary="CSV Editor" />
           </ListItem>
         </List>
       </Drawer>
