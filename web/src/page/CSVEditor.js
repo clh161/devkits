@@ -2,8 +2,9 @@
 import { Divider, Grid, Typography } from '@material-ui/core';
 import type { Node } from 'react';
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
 import { Spreadsheet } from 'react-spreadsheet';
+
+import HTMLMeta from '../component/HTMLMeta';
 
 type Cell = {
   value: string,
@@ -40,14 +41,7 @@ export default function CSVEditor(): Node {
 
   return (
     <div>
-      <Helmet>
-        <title>CSV Editor</title>
-        <meta content="Live preview and edit csv file" name="description" />
-        <meta
-          content="csv, editor, edit, preview, live editor"
-          name="keywords"
-        />
-      </Helmet>
+      <HTMLMeta />
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <Typography component="h1" variant="h4">

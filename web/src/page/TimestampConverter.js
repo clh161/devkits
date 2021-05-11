@@ -2,7 +2,8 @@
 import { Grid, TextField, Typography } from '@material-ui/core';
 import type { Node } from 'react';
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
+
+import HTMLMeta from '../component/HTMLMeta';
 
 type DatetimeConfig = {
   name: string,
@@ -51,15 +52,7 @@ export default function TimestampConverter({ initTimestamp }: Props): Node {
 
   return (
     <div>
-      <Helmet>
-        <title>Unix Timestamp Convertor (UTC)</title>
-        <meta
-          content="unix timestamp and date time converter"
-          name="description"
-        />
-        <meta content="timestamp, epoch, converter" name="keywords" />
-      </Helmet>
-
+      <HTMLMeta />
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <Typography component="h1" variant="h4">

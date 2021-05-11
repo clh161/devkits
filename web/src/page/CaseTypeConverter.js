@@ -3,7 +3,8 @@ import { Grid, TextField, Typography } from '@material-ui/core';
 import lodash from 'lodash';
 import type { Node } from 'react';
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
+
+import HTMLMeta from '../component/HTMLMeta';
 
 type CaseTypeKey =
   | 'normal_text'
@@ -19,7 +20,7 @@ type CaseType = {
   getNormalText: (string) => string,
 };
 
-const CASE_TYPES: Array<CaseType> = [
+export const CASE_TYPES: Array<CaseType> = [
   {
     label: 'Normal Text',
     key: 'normal_text',
@@ -72,17 +73,7 @@ export default function CaseTypeConverter(): Node {
   const [texts, setTexts] = useState<{ [CaseTypeKey]: string }>(DEFAULT_TEXTS);
   return (
     <div>
-      <Helmet>
-        <title>Case Type Converter</title>
-        <meta
-          content="Convert text into different case types"
-          name="description"
-        />
-        <meta
-          content={CASE_TYPES.map((type) => type.label).join(', ')}
-          name="keywords"
-        />{' '}
-      </Helmet>
+      <HTMLMeta />
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <Typography component="h1" variant="h4">

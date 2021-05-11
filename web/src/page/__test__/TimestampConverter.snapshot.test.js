@@ -5,7 +5,15 @@ import { Helmet } from 'react-helmet';
 import renderer from 'react-test-renderer';
 
 import TimestampConverter from '../TimestampConverter';
+import { mockLocation } from './TestUtils';
 
+mockLocation('/unix-timestamp-converter');
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useLocation: () => ({
+    pathname: '/unix-timestamp-converter',
+  }),
+}));
 it('renders correctly', () => {
   const tree = renderer
     .create(<TimestampConverter initTimestamp={1620432665} />)
