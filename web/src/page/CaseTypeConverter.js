@@ -1,56 +1,12 @@
 // @flow strict
 import { Grid, TextField, Typography } from '@material-ui/core';
-import lodash from 'lodash';
 import type { Node } from 'react';
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
 
-type CaseTypeKey =
-  | 'normal_text'
-  | 'camel_case'
-  | 'snake_case'
-  | 'snake_upper_case'
-  | 'kebab_case';
+import HTMLMeta from '../component/HTMLMeta';
+import type { CaseType, CaseTypeKey } from './CASE_TYPES';
+import { CASE_TYPES } from './CASE_TYPES';
 
-type CaseType = {
-  label: string,
-  key: CaseTypeKey,
-  getTextFromNormalText: (string) => string,
-  getNormalText: (string) => string,
-};
-
-const CASE_TYPES: Array<CaseType> = [
-  {
-    label: 'Normal Text',
-    key: 'normal_text',
-    getTextFromNormalText: (text) => text,
-    getNormalText: (text) => text,
-  },
-  {
-    label: 'Camel Case',
-    key: 'camel_case',
-    getTextFromNormalText: (text) => lodash.camelCase(text),
-    getNormalText: (text) => lodash.lowerCase(text),
-  },
-  {
-    label: 'Snake Case',
-    key: 'snake_case',
-    getTextFromNormalText: (text) => lodash.snakeCase(text),
-    getNormalText: (text) => lodash.lowerCase(text),
-  },
-  {
-    label: 'Snake Upper Case',
-    key: 'snake_upper_case',
-    getTextFromNormalText: (text) => lodash.snakeCase(text).toUpperCase(),
-    getNormalText: (text) => lodash.lowerCase(text),
-  },
-  {
-    label: 'Kebab Case',
-    key: 'kebab_case',
-    getTextFromNormalText: (text) => lodash.kebabCase(text),
-    getNormalText: (text) => lodash.lowerCase(text),
-  },
-];
 const DEFAULT_NORMAL_TEXT = 'This is an example text';
 
 const DEFAULT_TEXTS: { [CaseTypeKey]: string } = getTexts(
@@ -72,17 +28,7 @@ export default function CaseTypeConverter(): Node {
   const [texts, setTexts] = useState<{ [CaseTypeKey]: string }>(DEFAULT_TEXTS);
   return (
     <div>
-      <Helmet>
-        <title>Case Type Converter</title>
-        <meta
-          content="Convert text into different case types"
-          name="description"
-        />
-        <meta
-          content={CASE_TYPES.map((type) => type.label).join(', ')}
-          name="keywords"
-        />{' '}
-      </Helmet>
+      <HTMLMeta />
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <Typography component="h1" variant="h4">

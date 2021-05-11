@@ -252,7 +252,7 @@ Object {
   "linkTags": Array [],
   "metaTags": Array [
     Object {
-      "content": "unix timestamp and date time converter",
+      "content": "Unix timestamp and date time converter",
       "name": "description",
     },
     Object {
@@ -264,7 +264,7 @@ Object {
   "onChangeClientState": [Function],
   "scriptTags": Array [],
   "styleTags": Array [],
-  "title": "Unix Timestamp Convertor (UTC)",
+  "title": "Unix Timestamp Converter",
   "titleAttributes": Object {},
 }
 `;

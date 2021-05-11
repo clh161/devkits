@@ -9,6 +9,7 @@ import type { Node } from 'react';
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+import { CASE_TYPES } from '../page/CASE_TYPES';
 import CaseTypeConverter from '../page/CaseTypeConverter';
 import CSVEditor from '../page/CSVEditor';
 import Home from '../page/Home';
@@ -19,6 +20,9 @@ import URLEncoder from '../page/URLEncoder';
 type BaseConfig = {|
   path: string,
   component: Node,
+  name: string,
+  description: string,
+  keywords: string,
 |};
 
 type Config =
@@ -30,7 +34,6 @@ type Config =
       isHidden: false,
       ...BaseConfig,
       icon: Node,
-      name: string,
     };
 
 export const CONFIGS: Array<Config> = [
@@ -40,6 +43,8 @@ export const CONFIGS: Array<Config> = [
     name: 'HTML Encoder',
     icon: <CodeIcon />,
     component: <HTMLEncoder initDecodedText={'Example: < > " \\\\\' &'} />,
+    description: 'Encode or decode HTML into text.',
+    keywords: 'HTML Encoder, HTML Decoder, encoding HTML, decoding HTML',
   },
   {
     isHidden: false,
@@ -47,6 +52,8 @@ export const CONFIGS: Array<Config> = [
     component: <URLEncoder />,
     icon: <HttpIcon />,
     name: 'URL Encoder',
+    description: 'Encode or decode HTML into text.',
+    keywords: 'URL Encoder, URL Decoder, encoding URL, decoding URL',
   },
   {
     isHidden: false,
@@ -54,6 +61,8 @@ export const CONFIGS: Array<Config> = [
     name: 'Unix Timestamp Converter',
     component: <TimestampConverter />,
     icon: <AccessTimeIcon />,
+    description: 'Unix timestamp and date time converter',
+    keywords: 'timestamp, epoch, converter',
   },
   {
     isHidden: false,
@@ -61,6 +70,8 @@ export const CONFIGS: Array<Config> = [
     component: <CaseTypeConverter />,
     name: 'Case Type Converter',
     icon: <TextFieldsIcon />,
+    description: 'Convert text into different case types',
+    keywords: CASE_TYPES.map((type) => type.label).join(', '),
   },
   {
     isHidden: false,
@@ -68,8 +79,17 @@ export const CONFIGS: Array<Config> = [
     component: <CSVEditor />,
     icon: <ViewComfyIcon />,
     name: 'CSV Editor',
+    description: 'Live preview and edit csv file',
+    keywords: 'csv, editor, edit, preview, live editor',
   },
-  { isHidden: true, path: '/', component: <Home /> },
+  {
+    isHidden: true,
+    path: '/',
+    component: <Home />,
+    name: 'Devkits',
+    description: '',
+    keywords: '',
+  },
 ];
 
 export default function Router(): Node {
