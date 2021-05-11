@@ -188,11 +188,11 @@ Object {
   "linkTags": Array [],
   "metaTags": Array [
     Object {
-      "content": "",
+      "content": "Convert text into different case types",
       "name": "description",
     },
     Object {
-      "content": "",
+      "content": "Normal Text,Camel Case,Snake Case,Snake Upper Case,Kebab Case",
       "name": "keywords",
     },
   ],
@@ -200,7 +200,7 @@ Object {
   "onChangeClientState": [Function],
   "scriptTags": Array [],
   "styleTags": Array [],
-  "title": "Devkits",
+  "title": "Case Type Converter",
   "titleAttributes": Object {},
 }
 `;

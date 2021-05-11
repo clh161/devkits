@@ -3,7 +3,7 @@
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
   useLocation: () => ({
-    pathname: '/case-type-convertor',
+    pathname: '/case-type-converter',
   }),
 }));
 import React from 'react';
