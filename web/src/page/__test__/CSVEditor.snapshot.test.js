@@ -5,8 +5,6 @@ import { Helmet } from 'react-helmet';
 import renderer from 'react-test-renderer';
 
 import CSVEditor from '../CSVEditor';
-import { mockLocation } from './TestUtils';
-mockLocation('/csv-editor');
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
   useLocation: () => ({
