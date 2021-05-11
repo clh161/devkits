@@ -90,25 +90,25 @@ export default function Dashboard(props: Props): Node {
         </Toolbar>
         <Divider />
         <List aria-label="main mailbox folders" component="nav">
-          <ListItem component="a" href"/html-encoding"g'}>
+          <ListItem component="a" href="/html-encoding">
             <ListItemIcon>
               <CodeIcon />
             </ListItemIcon>
             <ListItemText primary="HTML Encoder" />
           </ListItem>
-          <ListItem component="a" href"/url-encoding"g'}>
+          <ListItem component="a" href="/url-encoding">
             <ListItemIcon>
               <HttpIcon />
             </ListItemIcon>
             <ListItemText primary="URL Encoder" />
           </ListItem>
-          <ListItem component="a" href"/unix-timestamp-converter"r'}>
+          <ListItem component="a" href="/unix-timestamp-converter">
             <ListItemIcon>
               <AccessTimeIcon />
             </ListItemIcon>
             <ListItemText primary="Unix Timestamp Converter" />
           </ListItem>
-          <ListItem component="a" href"/case-type-converter"r'}>
+          <ListItem component="a" href="/case-type-converter">
             <ListItemIcon>
               <TextFieldsIcon />
             </ListItemIcon>
