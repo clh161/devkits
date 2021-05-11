@@ -13,7 +13,7 @@ type Props = {
 export default function HTMLEncoder({
                                       initDecodedText,
                                       initEncodedText
-}: Props): Node {
+                                    }: Props): Node {
   const [decodedHTMLText, setDecodedHTMLText] = useState<string>(
     initDecodedText ?? decode(initEncodedText)
   );

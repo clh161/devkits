@@ -16,7 +16,7 @@ export default function Router(): Node {
     <BrowserRouter>
       <Switch>
         <Route path="/html-encoding">
-          <HTMLEncoder initDecodedText={'Example: < > " \\\\\' &'} />
+          <HTMLEncoder initDecodedText={"Example: < > \" \\\\' &"} />
         </Route>
         <Route path="/url-encoding">
           <URLEncoder />

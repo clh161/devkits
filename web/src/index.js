@@ -11,10 +11,10 @@ import reportWebVitals from "./reportWebVitals";
 const root = document.getElementById("root");
 root != null &&
 ReactDOM.render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>,
-    root
-  );
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  root
+);
 
 reportWebVitals();
