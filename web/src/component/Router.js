@@ -16,16 +16,19 @@ import HTMLEncoder from '../page/HTMLEncoder';
 import TimestampConverter from '../page/TimestampConverter';
 import URLEncoder from '../page/URLEncoder';
 
+type BaseConfig = {|
+  path: string,
+  component: Node,
+|};
+
 type Config =
   | {
       isHidden: true,
-      path: string,
-      component: Node,
+      ...BaseConfig,
     }
   | {
       isHidden: false,
-      path: string,
-      component: Node,
+      ...BaseConfig,
       icon: Node,
       name: string,
     };
