@@ -1,16 +1,16 @@
 // @flow strict
-import { Grid, TextField, Typography } from "@material-ui/core";
-import lodash from "lodash";
-import type { Node } from "react";
-import React, { useState } from "react";
-import { Helmet } from "react-helmet";
+import { Grid, TextField, Typography } from '@material-ui/core';
+import lodash from 'lodash';
+import type { Node } from 'react';
+import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 
 type CaseTypeKey =
-  | "normal_text"
-  | "camel_case"
-  | "snake_case"
-  | "snake_upper_case"
-  | "kebab_case";
+  | 'normal_text'
+  | 'camel_case'
+  | 'snake_case'
+  | 'snake_upper_case'
+  | 'kebab_case';
 
 type CaseType = {
   label: string,

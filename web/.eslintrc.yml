@@ -20,12 +20,12 @@ plugins:
   - simple-import-sort
 rules:
   {
-    'react/jsx-filename-extension': [ 'warn', { 'extensions': [ '.js', '.jsx' ] } ],
-    'react/jsx-sort-props': [ 'error' ],
+    'react/jsx-filename-extension': ['warn', { 'extensions': ['.js', '.jsx'] }],
+    'react/jsx-sort-props': ['error'],
     'no-unused-vars':
       [
-          'error',
-          { 'vars': 'all', 'args': 'after-used', 'ignoreRestSiblings': false },
+        'error',
+        { 'vars': 'all', 'args': 'after-used', 'ignoreRestSiblings': false },
       ],
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',

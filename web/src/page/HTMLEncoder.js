@@ -1,9 +1,9 @@
 // @flow strict
-import { Divider, Grid, Typography } from "@material-ui/core";
-import { decode, encode } from "html-entities";
-import type { Node } from "react";
-import React, { useState } from "react";
-import { Helmet } from "react-helmet";
+import { Divider, Grid, Typography } from '@material-ui/core';
+import { decode, encode } from 'html-entities';
+import type { Node } from 'react';
+import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 
 type Props = {
   initDecodedText?: string,
@@ -11,9 +11,9 @@ type Props = {
 };
 
 export default function HTMLEncoder({
-                                      initDecodedText,
-                                      initEncodedText
-                                    }: Props): Node {
+  initDecodedText,
+  initEncodedText,
+}: Props): Node {
   const [decodedHTMLText, setDecodedHTMLText] = useState<string>(
     initDecodedText ?? decode(initEncodedText)
   );
