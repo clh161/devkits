@@ -192,7 +192,7 @@ Object {
       "name": "description",
     },
     Object {
-      "content": "Normal Text,Camel Case,Snake Case,Snake Upper Case,Kebab Case",
+      "content": "Normal Text, Camel Case, Snake Case, Snake Upper Case, Kebab Case",
       "name": "keywords",
     },
   ],
