@@ -1,7 +1,5 @@
 // @flow
 
-import { mockLocation } from './TestUtils';
-mockLocation('/case-type-convertor');
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
   useLocation: () => ({

@@ -5,8 +5,6 @@ import { Helmet } from 'react-helmet';
 import renderer from 'react-test-renderer';
 
 import Home from '../Home';
-import { mockLocation } from './TestUtils';
-mockLocation('/');
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
   useLocation: () => ({

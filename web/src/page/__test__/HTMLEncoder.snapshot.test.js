@@ -5,8 +5,6 @@ import { Helmet } from 'react-helmet';
 import renderer from 'react-test-renderer';
 
 import HTMLEncoder from '../HTMLEncoder';
-import { mockLocation } from './TestUtils';
-mockLocation('/html-encoding');
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
   useLocation: () => ({
