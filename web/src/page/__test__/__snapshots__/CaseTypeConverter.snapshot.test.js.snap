@@ -177,3 +177,30 @@ exports[`renders correctly 1`] = `
   </div>
 </div>
 `;
+
+exports[`renders correctly 2`] = `
+Object {
+  "baseTag": Array [],
+  "bodyAttributes": Object {},
+  "defer": true,
+  "encode": true,
+  "htmlAttributes": Object {},
+  "linkTags": Array [],
+  "metaTags": Array [
+    Object {
+      "content": "Convert text into different case types",
+      "name": "description",
+    },
+    Object {
+      "content": "Normal Text, Camel Case, Snake Case, Snake Upper Case, Kebab Case",
+      "name": "keywords",
+    },
+  ],
+  "noscriptTags": Array [],
+  "onChangeClientState": [Function],
+  "scriptTags": Array [],
+  "styleTags": Array [],
+  "title": "Case Type Converter",
+  "titleAttributes": Object {},
+}
+`;

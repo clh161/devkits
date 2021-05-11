@@ -56,3 +56,30 @@ exports[`Init with default 1`] = `
   </div>
 </div>
 `;
+
+exports[`Init with default 2`] = `
+Object {
+  "baseTag": Array [],
+  "bodyAttributes": Object {},
+  "defer": true,
+  "encode": true,
+  "htmlAttributes": Object {},
+  "linkTags": Array [],
+  "metaTags": Array [
+    Object {
+      "content": "Encode or decode URL.",
+      "name": "description",
+    },
+    Object {
+      "content": "URL Encoder, URL Decoder, encoding URL, decoding URL",
+      "name": "keywords",
+    },
+  ],
+  "noscriptTags": Array [],
+  "onChangeClientState": [Function],
+  "scriptTags": Array [],
+  "styleTags": Array [],
+  "title": "URL Encoder",
+  "titleAttributes": Object {},
+}
+`;

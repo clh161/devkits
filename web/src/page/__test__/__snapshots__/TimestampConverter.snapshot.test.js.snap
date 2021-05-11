@@ -241,3 +241,30 @@ exports[`renders correctly 1`] = `
   </div>
 </div>
 `;
+
+exports[`renders correctly 2`] = `
+Object {
+  "baseTag": Array [],
+  "bodyAttributes": Object {},
+  "defer": true,
+  "encode": true,
+  "htmlAttributes": Object {},
+  "linkTags": Array [],
+  "metaTags": Array [
+    Object {
+      "content": "unix timestamp and date time converter",
+      "name": "description",
+    },
+    Object {
+      "content": "timestamp, epoch, converter",
+      "name": "keywords",
+    },
+  ],
+  "noscriptTags": Array [],
+  "onChangeClientState": [Function],
+  "scriptTags": Array [],
+  "styleTags": Array [],
+  "title": "Unix Timestamp Convertor (UTC)",
+  "titleAttributes": Object {},
+}
+`;

@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import renderer from 'react-test-renderer';
 
 import HTMLEncoder from '../HTMLEncoder';
@@ -21,4 +22,5 @@ it('Init with encoded text', () => {
     )
     .toJSON();
   expect(tree).toMatchSnapshot();
+  expect(Helmet.peek()).toMatchSnapshot();
 });
