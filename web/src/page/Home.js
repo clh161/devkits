@@ -1,8 +1,9 @@
 // @flow strict
-import React from 'react';
-import type { Node } from 'react';
 import { Grid, Link, Typography } from '@material-ui/core';
+import type { Node } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
+
 export default function Home(): Node {
   return (
     <div>

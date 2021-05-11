@@ -1,14 +1,5 @@
 // @flow strict
 
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Drawer from '@material-ui/core/Drawer';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-import Container from '@material-ui/core/Container';
-import type { Node } from 'react';
 import {
   Grid,
   IconButton,
@@ -18,12 +9,23 @@ import {
   ListItemIcon,
   ListItemText,
 } from '@material-ui/core';
-import CodeIcon from '@material-ui/icons/Code';
+import Container from '@material-ui/core/Container';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Divider from '@material-ui/core/Divider';
+import Drawer from '@material-ui/core/Drawer';
+import { makeStyles } from '@material-ui/core/styles';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
+import CodeIcon from '@material-ui/icons/Code';
 import GitHubIcon from '@material-ui/icons/GitHub';
-import ViewComfyIcon from '@material-ui/icons/ViewComfy';
-const drawerWidth = 320;
+import HttpIcon from '@material-ui/icons/Http';
 import TextFieldsIcon from '@material-ui/icons/TextFields';
+import ViewComfyIcon from '@material-ui/icons/ViewComfy';
+import type { Node } from 'react';
+import React from 'react';
+
+const drawerWidth = 320;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -88,19 +90,25 @@ export default function Dashboard(props: Props): Node {
         </Toolbar>
         <Divider />
         <List aria-label="main mailbox folders" component="nav">
-          <ListItem component="a" href={'/html-encoding'}>
+          <ListItem component="a" href="/html-encoding">
             <ListItemIcon>
               <CodeIcon />
             </ListItemIcon>
             <ListItemText primary="HTML Encoder" />
           </ListItem>
-          <ListItem component="a" href={'/unix-timestamp-converter'}>
+          <ListItem component="a" href="/url-encoding">
+            <ListItemIcon>
+              <HttpIcon />
+            </ListItemIcon>
+            <ListItemText primary="URL Encoder" />
+          </ListItem>
+          <ListItem component="a" href="/unix-timestamp-converter">
             <ListItemIcon>
               <AccessTimeIcon />
             </ListItemIcon>
             <ListItemText primary="Unix Timestamp Converter" />
           </ListItem>
-          <ListItem component="a" href={'/case-type-converter'}>
+          <ListItem component="a" href="/case-type-converter">
             <ListItemIcon>
               <TextFieldsIcon />
             </ListItemIcon>

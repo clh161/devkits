@@ -1,8 +1,8 @@
 // @flow strict
-import React, { useState } from 'react';
-import type { Node } from 'react';
 import { Divider, Grid, Typography } from '@material-ui/core';
-import { encode, decode } from 'html-entities';
+import { decode, encode } from 'html-entities';
+import type { Node } from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 
 type Props = {

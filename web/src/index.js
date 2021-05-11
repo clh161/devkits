@@ -1,10 +1,12 @@
 // @flow strict
 
+import './index.css';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import reportWebVitals from './reportWebVitals';
+
 import App from './App';
+import reportWebVitals from './reportWebVitals';
 
 const root = document.getElementById('root');
 root != null &&

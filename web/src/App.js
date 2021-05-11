@@ -2,6 +2,7 @@
 
 import type { Node } from 'react';
 import React from 'react';
+
 import Dashboard from './component/Dashboard';
 import Router from './component/Router';
 

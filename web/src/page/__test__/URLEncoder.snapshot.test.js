@@ -3,9 +3,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import CSVEditor from '../CSVEditor';
+import URLEncoder from '../URLEncoder';
 
 it('Init with default', () => {
-  const tree = renderer.create(<CSVEditor />).toJSON();
+  const tree = renderer.create(<URLEncoder />).toJSON();
   expect(tree).toMatchSnapshot();
 });

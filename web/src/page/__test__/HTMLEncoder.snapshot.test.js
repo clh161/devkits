@@ -2,6 +2,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+
 import HTMLEncoder from '../HTMLEncoder';
 
 it('Init with decoded text', () => {
