@@ -61,7 +61,7 @@ export const CONFIGS: Array<Config> = [
     name: 'Unix Timestamp Converter',
     component: <TimestampConverter />,
     icon: <AccessTimeIcon />,
-    description: 'Convert text into different case types',
+    description: 'Unix timestamp and date time converter',
     keywords: 'timestamp, epoch, converter',
   },
   {

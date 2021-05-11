@@ -252,7 +252,7 @@ Object {
   "linkTags": Array [],
   "metaTags": Array [
     Object {
-      "content": "Convert text into different case types",
+      "content": "Unix timestamp and date time converter",
       "name": "description",
     },
     Object {
