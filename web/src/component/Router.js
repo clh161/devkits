@@ -9,7 +9,8 @@ import type { Node } from 'react';
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import CaseTypeConverter, { CASE_TYPES } from '../page/CaseTypeConverter';
+import { CASE_TYPES } from '../page/CASE_TYPES';
+import CaseTypeConverter from '../page/CaseTypeConverter';
 import CSVEditor from '../page/CSVEditor';
 import Home from '../page/Home';
 import HTMLEncoder from '../page/HTMLEncoder';
