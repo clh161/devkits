@@ -2,6 +2,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+
 import TimestampConverter from '../TimestampConverter';
 
 it('renders correctly', () => {

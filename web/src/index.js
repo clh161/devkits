@@ -1,14 +1,16 @@
 // @flow strict
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import reportWebVitals from './reportWebVitals';
-import App from './App';
+import "./index.css";
 
-const root = document.getElementById('root');
+import React from "react";
+import ReactDOM from "react-dom";
+
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+
+const root = document.getElementById("root");
 root != null &&
-  ReactDOM.render(
+ReactDOM.render(
     <React.StrictMode>
       <App />
     </React.StrictMode>,

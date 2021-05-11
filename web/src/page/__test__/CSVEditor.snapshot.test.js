@@ -2,6 +2,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+
 import CSVEditor from '../CSVEditor';
 
 it('Init with default', () => {
