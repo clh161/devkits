@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Init with default 1`] = `
+<div>
+  <div
+    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+    >
+      <h1
+        className="MuiTypography-root MuiTypography-h4"
+      >
+        URL Encoder
+      </h1>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+    >
+      <textarea
+        onChange={[Function]}
+        placeholder="Encoded URL"
+        style={
+          Object {
+            "minHeight": 160,
+            "width": "100%",
+          }
+        }
+        value="https://devkits.net/json=%7B%0A%20%20%22user%22:%20%7B%0A%20%20%20%20%22id%22:%201,%0A%20%20%20%20%22name%22:%20%22devkits%22%0A%20%20%7D%0A%7D%0A"
+      />
+    </div>
+    <hr
+      className="MuiDivider-root"
+    />
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+    >
+      <textarea
+        onChange={[Function]}
+        placeholder="Decoded URL"
+        style={
+          Object {
+            "minHeight": 160,
+            "width": "100%",
+          }
+        }
+        value="https://devkits.net/json={
+  \\"user\\": {
+    \\"id\\": 1,
+    \\"name\\": \\"devkits\\"
+  }
+}
+"
+      />
+    </div>
+  </div>
+</div>
+`;
