@@ -71,7 +71,7 @@ export const CONFIGS: Array<Config> = [
     name: 'Case Type Converter',
     icon: <TextFieldsIcon />,
     description: 'Convert text into different case types',
-    keywords: CASE_TYPES.map((type) => type.label).join(','),
+    keywords: CASE_TYPES.map((type) => type.label).join(', '),
   },
   {
     isHidden: false,
