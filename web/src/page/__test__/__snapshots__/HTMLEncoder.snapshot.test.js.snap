@@ -101,3 +101,30 @@ exports[`Init with encoded text 1`] = `
   </div>
 </div>
 `;
+
+exports[`Init with encoded text 2`] = `
+Object {
+  "baseTag": Array [],
+  "bodyAttributes": Object {},
+  "defer": true,
+  "encode": true,
+  "htmlAttributes": Object {},
+  "linkTags": Array [],
+  "metaTags": Array [
+    Object {
+      "content": "Encode or decode HTML into text.",
+      "name": "description",
+    },
+    Object {
+      "content": "HTML Encoder, HTML Decoder, encoding HTML, decoding HTML",
+      "name": "keywords",
+    },
+  ],
+  "noscriptTags": Array [],
+  "onChangeClientState": [Function],
+  "scriptTags": Array [],
+  "styleTags": Array [],
+  "title": "HTML Encoder",
+  "titleAttributes": Object {},
+}
+`;

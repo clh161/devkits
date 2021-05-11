@@ -1549,3 +1549,30 @@ Value 91,Value 92,Value 93,Value 94,Value 95,Value 96,Value 97,Value 98,Value 99
   </div>
 </div>
 `;
+
+exports[`Init with default 2`] = `
+Object {
+  "baseTag": Array [],
+  "bodyAttributes": Object {},
+  "defer": true,
+  "encode": true,
+  "htmlAttributes": Object {},
+  "linkTags": Array [],
+  "metaTags": Array [
+    Object {
+      "content": "Live preview and edit csv file",
+      "name": "description",
+    },
+    Object {
+      "content": "csv, editor, edit, preview, live editor",
+      "name": "keywords",
+    },
+  ],
+  "noscriptTags": Array [],
+  "onChangeClientState": [Function],
+  "scriptTags": Array [],
+  "styleTags": Array [],
+  "title": "CSV Editor",
+  "titleAttributes": Object {},
+}
+`;
