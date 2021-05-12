@@ -244,12 +244,15 @@ exports[`renders correctly 1`] = `
             className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
           >
             <h1
-              block={true}
               className="MuiTypography-root MuiTypography-h4"
             >
               Devkits
             </h1>
           </div>
+        </div>
+        <div
+          className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
+        >
           <div
             className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
           >

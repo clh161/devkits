@@ -6,6 +6,7 @@ import { MemoryRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 
 import { CONFIGS } from '../../component/Router';
+import Page from '../Page';
 
 it('All Pages', () => {
   jest.spyOn(Date, 'now').mockImplementation(() => 946684800 * 1000);
@@ -14,7 +15,7 @@ it('All Pages', () => {
     const tree = renderer
       .create(
         <MemoryRouter initialEntries={[config.path]}>
-          {config.component}
+          <Page pageConfig={config}>{config.component}</Page>
         </MemoryRouter>
       )
       .toJSON();

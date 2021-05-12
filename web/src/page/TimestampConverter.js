@@ -1,9 +1,7 @@
 // @flow strict
-import { Grid, TextField, Typography } from '@material-ui/core';
+import { Grid, TextField } from '@material-ui/core';
 import type { Node } from 'react';
 import React, { useState } from 'react';
-
-import HTMLMeta from '../component/HTMLMeta';
 
 type DatetimeConfig = {
   name: string,
@@ -51,38 +49,30 @@ export default function TimestampConverter({ initTimestamp }: Props): Node {
   }
 
   return (
-    <div>
-      <HTMLMeta />
-      <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <Typography component="h1" variant="h4">
-            Unix Timestamp Convertor (UTC)
-          </Typography>
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            label="Timestamp"
-            onChange={onUnixTimestampChange}
-            type="number"
-            value={unixTimestamp}
-          />
-        </Grid>
-        {datetime.map((dt: DatetimeConfig) => {
-          return (
-            <Grid item key={dt.name} xs={2}>
-              <TextField
-                label={dt.name}
-                onChange={(event) => {
-                  onDatetimeChange(dt.name, event);
-                }}
-                type="number"
-                value={dt.value}
-              />
-            </Grid>
-          );
-        })}
+    <Grid container spacing={3}>
+      <Grid item xs={12}>
+        <TextField
+          label="Timestamp"
+          onChange={onUnixTimestampChange}
+          type="number"
+          value={unixTimestamp}
+        />
       </Grid>
-    </div>
+      {datetime.map((dt: DatetimeConfig) => {
+        return (
+          <Grid item key={dt.name} xs={2}>
+            <TextField
+              label={dt.name}
+              onChange={(event) => {
+                onDatetimeChange(dt.name, event);
+              }}
+              type="number"
+              value={dt.value}
+            />
+          </Grid>
+        );
+      })}
+    </Grid>
   );
 }
 

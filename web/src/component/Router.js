@@ -14,6 +14,7 @@ import CaseTypeConverter from '../page/CaseTypeConverter';
 import CSVEditor from '../page/CSVEditor';
 import Home from '../page/Home';
 import HTMLEncoder from '../page/HTMLEncoder';
+import Page from '../page/Page';
 import TimestampConverter from '../page/TimestampConverter';
 import URLEncoder from '../page/URLEncoder';
 
@@ -25,7 +26,7 @@ type BaseConfig = {|
   keywords: Array<string>,
 |};
 
-type Config =
+export type Config =
   | {
       isHidden: true,
       ...BaseConfig,
@@ -110,7 +111,7 @@ export default function Router(): Node {
         {CONFIGS.map((config) => {
           return (
             <Route key={config.path} path={config.path}>
-              {config.component}
+              <Page pageConfig={config}>{config.component}</Page>
             </Route>
           );
         })}

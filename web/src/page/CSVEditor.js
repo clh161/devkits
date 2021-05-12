@@ -1,10 +1,8 @@
 // @flow strict
-import { Divider, Grid, Typography } from '@material-ui/core';
+import { Divider, Grid } from '@material-ui/core';
 import type { Node } from 'react';
 import React, { useState } from 'react';
 import { Spreadsheet } from 'react-spreadsheet';
-
-import HTMLMeta from '../component/HTMLMeta';
 
 type Cell = {
   value: string,
@@ -40,33 +38,25 @@ export default function CSVEditor(): Node {
   }
 
   return (
-    <div>
-      <HTMLMeta />
-      <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <Typography component="h1" variant="h4">
-            CSV Editor
-          </Typography>
-        </Grid>
-        <Grid item xs={12}>
-          <textarea
-            onChange={onCsvChange}
-            placeholder="CSV"
-            style={{ width: '100%', minHeight: 160 }}
-            value={csv}
-          />
-        </Grid>
-        <Divider />
-        <Grid item xs={12}>
-          <Spreadsheet
-            data={cells}
-            onChange={(cells) => {
-              onCellsChange(cells);
-            }}
-          />
-        </Grid>
+    <Grid container spacing={3}>
+      <Grid item xs={12}>
+        <textarea
+          onChange={onCsvChange}
+          placeholder="CSV"
+          style={{ width: '100%', minHeight: 160 }}
+          value={csv}
+        />
       </Grid>
-    </div>
+      <Divider />
+      <Grid item xs={12}>
+        <Spreadsheet
+          data={cells}
+          onChange={(cells) => {
+            onCellsChange(cells);
+          }}
+        />
+      </Grid>
+    </Grid>
   );
 }
 

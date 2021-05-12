@@ -1,10 +1,8 @@
 // @flow strict
-import { Divider, Grid, Typography } from '@material-ui/core';
+import { Divider, Grid } from '@material-ui/core';
 import { decode, encode } from 'html-entities';
 import type { Node } from 'react';
 import React, { useState } from 'react';
-
-import HTMLMeta from '../component/HTMLMeta';
 
 type Props = {
   initDecodedText?: string,
@@ -27,38 +25,32 @@ export default function HTMLEncoder({
     setEncodedHTMLText(value);
     setDecodedHTMLText(decode(value));
   }
+
   function onDecodedHTMLChanged(event) {
     const { value } = event.target;
     setDecodedHTMLText(value);
     setEncodedHTMLText(encode(value));
   }
+
   return (
-    <div>
-      <HTMLMeta />
-      <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <Typography component="h1" variant="h4">
-            HTML Encoder
-          </Typography>
-        </Grid>
-        <Grid item xs={12}>
-          <textarea
-            onChange={onDecodedHTMLChanged}
-            placeholder="Decoded HTML"
-            style={{ width: '100%', minHeight: 160 }}
-            value={decodedHTMLText}
-          />
-        </Grid>
-        <Divider />
-        <Grid item xs={12}>
-          <textarea
-            onChange={onEncodedHTMLChanged}
-            placeholder="Encoded HTML"
-            style={{ width: '100%', minHeight: 160 }}
-            value={encodedHTMLText}
-          />
-        </Grid>
+    <Grid container spacing={3}>
+      <Grid item xs={12}>
+        <textarea
+          onChange={onDecodedHTMLChanged}
+          placeholder="Decoded HTML"
+          style={{ width: '100%', minHeight: 160 }}
+          value={decodedHTMLText}
+        />
       </Grid>
-    </div>
+      <Divider />
+      <Grid item xs={12}>
+        <textarea
+          onChange={onEncodedHTMLChanged}
+          placeholder="Encoded HTML"
+          style={{ width: '100%', minHeight: 160 }}
+          value={encodedHTMLText}
+        />
+      </Grid>
+    </Grid>
   );
 }
