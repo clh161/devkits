@@ -22,7 +22,7 @@ type BaseConfig = {|
   component: Node,
   name: string,
   description: string,
-  keywords: string,
+  keywords: Array<string>,
 |};
 
 type Config =
@@ -44,7 +44,12 @@ export const CONFIGS: Array<Config> = [
     icon: <CodeIcon />,
     component: <HTMLEncoder initDecodedText={'Example: < > " \\\\\' &'} />,
     description: 'Encode or decode HTML into text.',
-    keywords: 'HTML Encoder, HTML Decoder, encoding HTML, decoding HTML',
+    keywords: [
+      'HTML Encoder',
+      'HTML Decoder',
+      'encoding HTML',
+      'decoding HTML',
+    ],
   },
   {
     isHidden: false,
@@ -53,7 +58,7 @@ export const CONFIGS: Array<Config> = [
     icon: <HttpIcon />,
     name: 'URL Encoder',
     description: 'Encode or decode HTML into text.',
-    keywords: 'URL Encoder, URL Decoder, encoding URL, decoding URL',
+    keywords: ['URL Encoder', 'URL Decoder', 'encoding URL', 'decoding URL'],
   },
   {
     isHidden: false,
@@ -62,7 +67,7 @@ export const CONFIGS: Array<Config> = [
     component: <TimestampConverter />,
     icon: <AccessTimeIcon />,
     description: 'Unix timestamp and date time converter',
-    keywords: 'timestamp, epoch, converter',
+    keywords: ['timestamp', 'epoch', 'converter'],
   },
   {
     isHidden: false,
@@ -71,7 +76,7 @@ export const CONFIGS: Array<Config> = [
     name: 'Case Type Converter',
     icon: <TextFieldsIcon />,
     description: 'Convert text into different case types',
-    keywords: CASE_TYPES.map((type) => type.label).join(', '),
+    keywords: CASE_TYPES.map((type) => type.label),
   },
   {
     isHidden: false,
@@ -80,7 +85,7 @@ export const CONFIGS: Array<Config> = [
     icon: <ViewComfyIcon />,
     name: 'CSV Editor',
     description: 'Live preview and edit csv file',
-    keywords: 'csv, editor, edit, preview, live editor',
+    keywords: ['csv', 'editor', 'edit', 'preview', 'live editor'],
   },
   {
     isHidden: true,
@@ -88,7 +93,13 @@ export const CONFIGS: Array<Config> = [
     component: <Home />,
     name: 'Devkits',
     description: 'Collection of development tools',
-    keywords: 'web, web development, development, development tools, devkits',
+    keywords: [
+      'web',
+      'web development',
+      'development',
+      'development tools',
+      'devkits',
+    ],
   },
 ];
 
