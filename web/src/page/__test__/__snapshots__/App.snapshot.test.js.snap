@@ -291,7 +291,16 @@ Object {
   "encode": true,
   "htmlAttributes": Object {},
   "linkTags": Array [],
-  "metaTags": Array [],
+  "metaTags": Array [
+    Object {
+      "content": "",
+      "name": "description",
+    },
+    Object {
+      "content": "",
+      "name": "keywords",
+    },
+  ],
   "noscriptTags": Array [],
   "onChangeClientState": [Function],
   "scriptTags": Array [],
