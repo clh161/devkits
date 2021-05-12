@@ -291,7 +291,16 @@ Object {
   "encode": true,
   "htmlAttributes": Object {},
   "linkTags": Array [],
-  "metaTags": Array [],
+  "metaTags": Array [
+    Object {
+      "content": "Collection of development tools",
+      "name": "description",
+    },
+    Object {
+      "content": "web, web development, development, development tools, devkits",
+      "name": "keywords",
+    },
+  ],
   "noscriptTags": Array [],
   "onChangeClientState": [Function],
   "scriptTags": Array [],

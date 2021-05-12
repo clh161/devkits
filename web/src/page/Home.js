@@ -2,14 +2,13 @@
 import { Grid, Link, Typography } from '@material-ui/core';
 import type { Node } from 'react';
 import React from 'react';
-import { Helmet } from 'react-helmet';
+
+import HTMLMeta from '../component/HTMLMeta';
 
 export default function Home(): Node {
   return (
     <div>
-      <Helmet>
-        <title>Devkits</title>
-      </Helmet>
+      <HTMLMeta />
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <Typography block component="h1" variant="h4">

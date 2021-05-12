@@ -9,16 +9,17 @@ import { CONFIGS } from './Router';
 
 export default function HTMLMeta(): Node {
   const location = useLocation();
-  let config = CONFIGS.find((config) => config.path === location.pathname);
-  const title = config?.name ?? 'Devkits';
-  const description = config?.description ?? '';
-  const keywords = config?.keywords ?? '';
+  const config = CONFIGS.find((config) => config.path === location.pathname);
+  if (config == null) {
+    throw 'Config not found';
+  }
+  const { title, description, keywords } = config;
 
   return (
     <Helmet>
       <title>{title}</title>
       <meta content={description} name="description" />
-      <meta content={keywords} name="keywords" />
+      <meta content={keywords.join(', ')} name="keywords" />
     </Helmet>
   );
 }
