@@ -13,11 +13,11 @@ export default function HTMLMeta(): Node {
   if (config == null) {
     throw 'Config not found';
   }
-  const { name, description, keywords } = config;
+  const { title, description, keywords } = config;
 
   return (
     <Helmet>
-      <title>{name}</title>
+      <title>{title}</title>
       <meta content={description} name="description" />
       <meta content={keywords.join(', ')} name="keywords" />
     </Helmet>

@@ -91,7 +91,7 @@ export default function Dashboard(props: Props): Node {
             return config.isHidden ? null : (
               <ListItem component="a" href={config.path} key={config.path}>
                 <ListItemIcon>{config.icon}</ListItemIcon>
-                <ListItemText primary={config.name} />
+                <ListItemText primary={config.title} />
               </ListItem>
             );
           })}
