@@ -293,11 +293,11 @@ Object {
   "linkTags": Array [],
   "metaTags": Array [
     Object {
-      "content": "",
+      "content": "Collection of development tools",
       "name": "description",
     },
     Object {
-      "content": "",
+      "content": "web, web development, development, development tools, devkits",
       "name": "keywords",
     },
   ],

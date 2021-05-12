@@ -87,8 +87,8 @@ export const CONFIGS: Array<Config> = [
     path: '/',
     component: <Home />,
     name: 'Devkits',
-    description: '',
-    keywords: '',
+    description: 'Collection of development tools',
+    keywords: 'web, web development, development, development tools, devkits',
   },
 ];
 
