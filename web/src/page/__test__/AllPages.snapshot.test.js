@@ -8,6 +8,8 @@ import renderer from 'react-test-renderer';
 import { CONFIGS } from '../../component/Router';
 
 it('All Pages', () => {
+  jest.spyOn(Date, 'now').mockImplementation(() => 946684800 * 1000);
+
   CONFIGS.forEach((config) => {
     const tree = renderer
       .create(
