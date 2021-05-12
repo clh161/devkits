@@ -14,7 +14,7 @@ type Props = {
 export default function Page({ children, pageConfig }: Props): Node {
   return (
     <div>
-      <HTMLMeta />
+      <HTMLMeta pageConfig={pageConfig} />
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <Typography component="h1" variant="h4">

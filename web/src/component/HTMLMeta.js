@@ -3,17 +3,15 @@
 import type { Node } from 'react';
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { useLocation } from 'react-router-dom';
 
-import { CONFIGS } from './Router';
+import type { Config } from './Router';
 
-export default function HTMLMeta(): Node {
-  const location = useLocation();
-  const config = CONFIGS.find((config) => config.path === location.pathname);
-  if (config == null) {
-    throw 'Config not found';
-  }
-  const { title, description, keywords } = config;
+type Props = {
+  pageConfig: Config,
+};
+
+export default function HTMLMeta({ pageConfig }: Props): Node {
+  const { title, description, keywords } = pageConfig;
 
   return (
     <Helmet>
