@@ -1,8 +1,7 @@
 // @flow strict
-import { Divider, Grid, Typography } from '@material-ui/core';
+import { Divider, Grid } from '@material-ui/core';
 import type { Node } from 'react';
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
 
 const DEFAULT_URL =
   'https://devkits.net/json=%7B%0A%20%20%22user%22:%20%7B%0A%20%20%20%20%22id%22:%201,%0A%20%20%20%20%22name%22:%20%22devkits%22%0A%20%20%7D%0A%7D%0A';
@@ -28,39 +27,24 @@ export default function URLEncoder(): Node {
   }
 
   return (
-    <div>
-      <Helmet>
-        <title>URL Encoder</title>
-        <meta content="Encode or decode URL." name="description" />
-        <meta
-          content="URL Encoder, URL Decoder, encoding URL, decoding URL"
-          name="keywords"
+    <Grid container spacing={3}>
+      <Grid item xs={12}>
+        <textarea
+          onChange={onEncodedURLChange}
+          placeholder="Encoded URL"
+          style={{ width: '100%', minHeight: 160 }}
+          value={encodedURL}
         />
-      </Helmet>
-      <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <Typography component="h1" variant="h4">
-            URL Encoder
-          </Typography>
-        </Grid>
-        <Grid item xs={12}>
-          <textarea
-            onChange={onEncodedURLChange}
-            placeholder="Encoded URL"
-            style={{ width: '100%', minHeight: 160 }}
-            value={encodedURL}
-          />
-        </Grid>
-        <Divider />
-        <Grid item xs={12}>
-          <textarea
-            onChange={onDecodedURLChange}
-            placeholder="Decoded URL"
-            style={{ width: '100%', minHeight: 160 }}
-            value={decodedURL}
-          />
-        </Grid>
       </Grid>
-    </div>
+      <Divider />
+      <Grid item xs={12}>
+        <textarea
+          onChange={onDecodedURLChange}
+          placeholder="Decoded URL"
+          style={{ width: '100%', minHeight: 160 }}
+          value={decodedURL}
+        />
+      </Grid>
+    </Grid>
   );
 }

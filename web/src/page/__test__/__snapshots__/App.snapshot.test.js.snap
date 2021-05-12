@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`Init with default 1`] = `
 <div
   className="makeStyles-root-1"
 >
@@ -284,4 +284,31 @@ exports[`renders correctly 1`] = `
     </div>
   </main>
 </div>
+`;
+
+exports[`Init with default 2`] = `
+Object {
+  "baseTag": Array [],
+  "bodyAttributes": Object {},
+  "defer": true,
+  "encode": true,
+  "htmlAttributes": Object {},
+  "linkTags": Array [],
+  "metaTags": Array [
+    Object {
+      "content": "Collection of development tools",
+      "name": "description",
+    },
+    Object {
+      "content": "web, web development, development, development tools, devkits",
+      "name": "keywords",
+    },
+  ],
+  "noscriptTags": Array [],
+  "onChangeClientState": [Function],
+  "scriptTags": Array [],
+  "styleTags": Array [],
+  "title": "Devkits",
+  "titleAttributes": Object {},
+}
 `;

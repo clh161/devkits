@@ -1,8 +1,7 @@
 // @flow strict
-import { Grid, TextField, Typography } from '@material-ui/core';
+import { Grid, TextField } from '@material-ui/core';
 import type { Node } from 'react';
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
 
 type DatetimeConfig = {
   name: string,
@@ -50,46 +49,30 @@ export default function TimestampConverter({ initTimestamp }: Props): Node {
   }
 
   return (
-    <div>
-      <Helmet>
-        <title>Unix Timestamp Convertor (UTC)</title>
-        <meta
-          content="unix timestamp and date time converter"
-          name="description"
+    <Grid container spacing={3}>
+      <Grid item xs={12}>
+        <TextField
+          label="Timestamp"
+          onChange={onUnixTimestampChange}
+          type="number"
+          value={unixTimestamp}
         />
-        <meta content="timestamp, epoch, converter" name="keywords" />
-      </Helmet>
-
-      <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <Typography component="h1" variant="h4">
-            Unix Timestamp Convertor (UTC)
-          </Typography>
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            label="Timestamp"
-            onChange={onUnixTimestampChange}
-            type="number"
-            value={unixTimestamp}
-          />
-        </Grid>
-        {datetime.map((dt: DatetimeConfig) => {
-          return (
-            <Grid item key={dt.name} xs={2}>
-              <TextField
-                label={dt.name}
-                onChange={(event) => {
-                  onDatetimeChange(dt.name, event);
-                }}
-                type="number"
-                value={dt.value}
-              />
-            </Grid>
-          );
-        })}
       </Grid>
-    </div>
+      {datetime.map((dt: DatetimeConfig) => {
+        return (
+          <Grid item key={dt.name} xs={2}>
+            <TextField
+              label={dt.name}
+              onChange={(event) => {
+                onDatetimeChange(dt.name, event);
+              }}
+              type="number"
+              value={dt.value}
+            />
+          </Grid>
+        );
+      })}
+    </Grid>
   );
 }
 

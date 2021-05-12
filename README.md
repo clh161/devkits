@@ -25,11 +25,12 @@ yarn lint
 
 # Tools
 - HTML Encoder
+- URL Encoder
 - Unix Timestamp Convertor
 - Case Type Convertor
+- CSV Editor
 
 # Roadmap
 ## Tools
-- CSV live preview and edit
 - Regular Expression Tester
 

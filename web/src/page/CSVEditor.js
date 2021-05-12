@@ -1,8 +1,7 @@
 // @flow strict
-import { Divider, Grid, Typography } from '@material-ui/core';
+import { Divider, Grid } from '@material-ui/core';
 import type { Node } from 'react';
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
 import { Spreadsheet } from 'react-spreadsheet';
 
 type Cell = {
@@ -39,40 +38,25 @@ export default function CSVEditor(): Node {
   }
 
   return (
-    <div>
-      <Helmet>
-        <title>CSV Editor</title>
-        <meta content="Live preview and edit csv file" name="description" />
-        <meta
-          content="csv, editor, edit, preview, live editor"
-          name="keywords"
+    <Grid container spacing={3}>
+      <Grid item xs={12}>
+        <textarea
+          onChange={onCsvChange}
+          placeholder="CSV"
+          style={{ width: '100%', minHeight: 160 }}
+          value={csv}
         />
-      </Helmet>
-      <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <Typography component="h1" variant="h4">
-            CSV Editor
-          </Typography>
-        </Grid>
-        <Grid item xs={12}>
-          <textarea
-            onChange={onCsvChange}
-            placeholder="CSV"
-            style={{ width: '100%', minHeight: 160 }}
-            value={csv}
-          />
-        </Grid>
-        <Divider />
-        <Grid item xs={12}>
-          <Spreadsheet
-            data={cells}
-            onChange={(cells) => {
-              onCellsChange(cells);
-            }}
-          />
-        </Grid>
       </Grid>
-    </div>
+      <Divider />
+      <Grid item xs={12}>
+        <Spreadsheet
+          data={cells}
+          onChange={(cells) => {
+            onCellsChange(cells);
+          }}
+        />
+      </Grid>
+    </Grid>
   );
 }
 

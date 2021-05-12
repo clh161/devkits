@@ -16,14 +16,11 @@ import Drawer from '@material-ui/core/Drawer';
 import { makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import AccessTimeIcon from '@material-ui/icons/AccessTime';
-import CodeIcon from '@material-ui/icons/Code';
 import GitHubIcon from '@material-ui/icons/GitHub';
-import HttpIcon from '@material-ui/icons/Http';
-import TextFieldsIcon from '@material-ui/icons/TextFields';
-import ViewComfyIcon from '@material-ui/icons/ViewComfy';
 import type { Node } from 'react';
 import React from 'react';
+
+import { CONFIGS } from './Router';
 
 const drawerWidth = 320;
 const useStyles = makeStyles((theme) => ({
@@ -90,36 +87,14 @@ export default function Dashboard(props: Props): Node {
         </Toolbar>
         <Divider />
         <List aria-label="main mailbox folders" component="nav">
-          <ListItem component="a" href="/html-encoding">
-            <ListItemIcon>
-              <CodeIcon />
-            </ListItemIcon>
-            <ListItemText primary="HTML Encoder" />
-          </ListItem>
-          <ListItem component="a" href="/url-encoding">
-            <ListItemIcon>
-              <HttpIcon />
-            </ListItemIcon>
-            <ListItemText primary="URL Encoder" />
-          </ListItem>
-          <ListItem component="a" href="/unix-timestamp-converter">
-            <ListItemIcon>
-              <AccessTimeIcon />
-            </ListItemIcon>
-            <ListItemText primary="Unix Timestamp Converter" />
-          </ListItem>
-          <ListItem component="a" href="/case-type-converter">
-            <ListItemIcon>
-              <TextFieldsIcon />
-            </ListItemIcon>
-            <ListItemText primary="Case Type Converter" />
-          </ListItem>
-          <ListItem component="a" href={'/csv-editor'}>
-            <ListItemIcon>
-              <ViewComfyIcon />
-            </ListItemIcon>
-            <ListItemText primary="CSV Editor" />
-          </ListItem>
+          {CONFIGS.filter((config) => !config.isHidden).map((config) => {
+            return config.isHidden ? null : (
+              <ListItem component="a" href={config.path} key={config.path}>
+                <ListItemIcon>{config.icon}</ListItemIcon>
+                <ListItemText primary={config.title} />
+              </ListItem>
+            );
+          })}
         </List>
       </Drawer>
       <main className={classes.content}>
