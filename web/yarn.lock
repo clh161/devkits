@@ -346,12 +346,12 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@babel/node@^7.13.13":
-  version "7.13.13"
-  resolved "https://registry.npmjs.org/@babel/node/-/node-7.13.13.tgz"
-  integrity sha512-gElSPunpriXoBGQxDkd5h9L13SVTyzFLTPv9jN1aXJNLR10iNs+MsfhYL/WGJGCJQFddHAdThY7CkmGVz2KPag==
+"@babel/node@^7.14.2":
+  version "7.14.2"
+  resolved "https://registry.yarnpkg.com/@babel/node/-/node-7.14.2.tgz#d860c10306020d18e3fd0327c63bfaf2dbfc7470"
+  integrity sha512-QB/C+Kl6gIYpTjZ/hcZj+chkiAVGcgSHuR849cdNvNJBz4VztO2775/o2ge8imB94EAsLcgkrdWH/3+UIVv1TA==
   dependencies:
-    "@babel/register" "^7.13.8"
+    "@babel/register" "^7.13.16"
     commander "^4.0.1"
     core-js "^3.2.1"
     node-environment-flags "^1.0.5"
@@ -1251,9 +1251,9 @@
     "@babel/helper-plugin-utils" "^7.10.4"
     "@babel/plugin-transform-typescript" "^7.12.1"
 
-"@babel/register@^7.13.8":
+"@babel/register@^7.13.16":
   version "7.13.16"
-  resolved "https://registry.npmjs.org/@babel/register/-/register-7.13.16.tgz"
+  resolved "https://registry.yarnpkg.com/@babel/register/-/register-7.13.16.tgz#ae3ab0b55c8ec28763877383c454f01521d9a53d"
   integrity sha512-dh2t11ysujTwByQjXNgJ48QZ2zcXKQVdV8s0TbeMI0flmtGWCdTwK9tJiACHXPLmncm5+ktNn/diojA45JE4jg==
   dependencies:
     clone-deep "^4.0.1"
@@ -4139,15 +4139,10 @@ core-js@^2.4.0:
   resolved "https://registry.npmjs.org/core-js/-/core-js-2.6.12.tgz"
   integrity sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==
 
-core-js@^3.2.1:
+core-js@^3.2.1, core-js@^3.6.5:
   version "3.12.0"
   resolved "https://registry.npmjs.org/core-js/-/core-js-3.12.0.tgz"
   integrity sha512-SaMnchL//WwU2Ot1hhkPflE8gzo7uq1FGvUJ8GKmi3TOU7rGTHIU+eir1WGf6qOtTyxdfdcp10yPdGZ59sQ3hw==
-
-core-js@^3.6.5:
-  version "3.9.0"
-  resolved "https://registry.npmjs.org/core-js/-/core-js-3.9.0.tgz"
-  integrity sha512-PyFBJaLq93FlyYdsndE5VaueA9K5cNB7CGzeCj191YYLhkQM0gdZR2SKihM70oF0wdqKSKClv/tEBOpoRmdOVQ==
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
