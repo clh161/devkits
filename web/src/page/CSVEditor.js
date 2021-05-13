@@ -5,7 +5,6 @@ import type { Node } from 'react';
 import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { Spreadsheet } from 'react-spreadsheet';
-
 const useStyles = makeStyles((theme) => {
   return {
     dropzone: {
@@ -49,9 +48,9 @@ export default function CSVEditor(): Node {
       const reader = new FileReader();
       reader.onerror = () => console.log('file reading has failed');
       reader.onload = () => {
-        const binaryStr = reader.result?.toString() ?? '';
-        setCsv(binaryStr);
-        setCells(csvToCells(csv));
+        const newCsv = reader.result?.toString() ?? '';
+        setCsv(newCsv);
+        setCells(csvToCells(newCsv));
       };
       reader.readAsText(file);
     }
