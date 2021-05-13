@@ -87,7 +87,13 @@ export default function CSVEditor(): Node {
       <Grid item xs={12}>
         <RootRef rootRef={ref}>
           <Paper variant="outlined" {...rootProps} className={classes.dropzone}>
-            <Grid alignContent={'center'} container justify={'center'} xs={12}>
+            <Grid
+              alignContent={'center'}
+              container
+              item
+              justify={'center'}
+              xs={12}
+            >
               <input {...getInputProps()} />
               <p>Drag and drop a CSV file</p>
             </Grid>
