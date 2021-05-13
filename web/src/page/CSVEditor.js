@@ -7,7 +7,6 @@ import { useDropzone } from 'react-dropzone';
 import { Spreadsheet } from 'react-spreadsheet';
 
 const useStyles = makeStyles((theme) => {
-  console.log(theme.palette.primary);
   return {
     dropzone: {
       '&:hover': {
