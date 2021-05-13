@@ -1666,17 +1666,10 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.1.2", "@babel/runtime@^7.12.1", "@babel/runtime@^7.12.5", "@babel/runtime@^7.3.1", "@babel/runtime@^7.4.4", "@babel/runtime@^7.8.3", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.1", "@babel/runtime@^7.12.5", "@babel/runtime@^7.3.1", "@babel/runtime@^7.4.4", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.3", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
   version "7.14.0"
   resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.14.0.tgz"
   integrity sha512-JELkvo/DlpNdJ7dlyw/eY7E0suy5i5GQH+Vlxaq1nsNJ+H7f4Vtv3jMeCEgRhZZQFXTjldYfQgv2qmM6M1v5wA==
-  dependencies:
-    regenerator-runtime "^0.13.4"
-
-"@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4":
-  version "7.12.18"
-  resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.12.18.tgz"
-  integrity sha512-BogPQ7ciE6SYAUPtlm9tWbgI9+2AgqSam6QivMgXgAT+fKbgppaj4ZX15MHeLC1PVF5sNk70huBu20XxWOs8Cg==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -2465,10 +2458,10 @@
     "@babel/runtime" "^7.12.5"
     "@testing-library/dom" "^7.28.1"
 
-"@testing-library/user-event@^13.1.8":
-  version "13.1.8"
-  resolved "https://registry.npmjs.org/@testing-library/user-event/-/user-event-13.1.8.tgz"
-  integrity sha512-M04HgOlJvxILf5xyrkJaEQfFOtcvhy3usLldQIEg9zgFIYQofSmFGVfFlS7BWowqlBGLrItwGMlPXCoBgoHSiw==
+"@testing-library/user-event@^13.1.9":
+  version "13.1.9"
+  resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-13.1.9.tgz#29e49a42659ac3c1023565ff56819e0153a82e99"
+  integrity sha512-NZr0zL2TMOs2qk+dNlqrAdbaRW5dAmYwd1yuQ4r7HpkVEOj0MWuUjDWwKhcLd/atdBy8ZSMHSKp+kXSQe47ezg==
   dependencies:
     "@babel/runtime" "^7.12.5"
 
