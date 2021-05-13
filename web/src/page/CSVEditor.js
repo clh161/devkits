@@ -1,8 +1,26 @@
 // @flow strict
-import { Divider, Grid } from '@material-ui/core';
+import { Button, Divider, Grid, Paper, RootRef } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import type { Node } from 'react';
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
+import { useDropzone } from 'react-dropzone';
 import { Spreadsheet } from 'react-spreadsheet';
+
+const useStyles = makeStyles((theme) => {
+  return {
+    dropzone: {
+      '&:hover': {
+        background: theme.palette.primary.light,
+      },
+      display: 'flex',
+      '& > *': {
+        margin: theme.spacing(1),
+        height: theme.spacing(16),
+      },
+      border: '4px dotted ' + theme.palette.primary.main,
+    },
+  };
+});
 
 type Cell = {
   value: string,
@@ -25,6 +43,33 @@ const DEFAULT_CSV = [
 export default function CSVEditor(): Node {
   const [csv, setCsv] = useState<string>(DEFAULT_CSV);
   const [cells, setCells] = useState<Array<Array<Cell>>>(csvToCells(csv));
+  const onDrop = useCallback((acceptedFiles) => {
+    const file = acceptedFiles[0];
+    if (file != null) {
+      const reader = new FileReader();
+      reader.onerror = () => console.log('file reading has failed');
+      reader.onload = () => {
+        const newCsv = reader.result?.toString() ?? '';
+        setCsv(newCsv);
+        setCells(csvToCells(newCsv));
+      };
+      reader.readAsText(file);
+    }
+  }, []);
+  const { getRootProps, getInputProps } = useDropzone({ onDrop });
+  const { ref, ...rootProps } = getRootProps();
+  const classes = useStyles();
+
+  function onDownload() {
+    const element = document.createElement('a');
+    const file = new Blob([csv], {
+      type: 'application/csv',
+    });
+    element.href = URL.createObjectURL(file);
+    element.download = 'devkits-csv-editor.csv';
+    document.body?.appendChild(element); // Required for this to work in FireFox
+    element.click();
+  }
 
   function onCsvChange(event) {
     const { value } = event.target;
@@ -39,6 +84,22 @@ export default function CSVEditor(): Node {
 
   return (
     <Grid container spacing={3}>
+      <Grid item xs={12}>
+        <RootRef rootRef={ref}>
+          <Paper variant="outlined" {...rootProps} className={classes.dropzone}>
+            <Grid
+              alignContent={'center'}
+              container
+              item
+              justify={'center'}
+              xs={12}
+            >
+              <input {...getInputProps()} />
+              <p>Drag and drop a CSV file</p>
+            </Grid>
+          </Paper>
+        </RootRef>
+      </Grid>
       <Grid item xs={12}>
         <textarea
           onChange={onCsvChange}
@@ -55,6 +116,11 @@ export default function CSVEditor(): Node {
             onCellsChange(cells);
           }}
         />
+      </Grid>
+      <Grid item xs={12}>
+        <Button color="primary" onClick={onDownload} variant="contained">
+          Download
+        </Button>
       </Grid>
     </Grid>
   );
