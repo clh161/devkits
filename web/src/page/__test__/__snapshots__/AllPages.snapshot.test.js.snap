@@ -673,6 +673,43 @@ exports[`All Pages 9`] = `
     <div
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
     >
+      <div
+        className="MuiPaper-root makeStyles-dropzone-1 MuiPaper-outlined MuiPaper-rounded"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onDragEnter={[Function]}
+        onDragLeave={[Function]}
+        onDragOver={[Function]}
+        onDrop={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+      >
+        <div
+          className="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-content-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
+        >
+          <input
+            autoComplete="off"
+            multiple={true}
+            onChange={[Function]}
+            onClick={[Function]}
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+            tabIndex={-1}
+            type="file"
+          />
+          <p>
+            Drag and drop a CSV file
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+    >
       <textarea
         onChange={[Function]}
         placeholder="CSV"
@@ -2201,6 +2238,34 @@ Value 91,Value 92,Value 93,Value 94,Value 95,Value 96,Value 97,Value 98,Value 99
           }
         />
       </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+    >
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="MuiButton-label"
+        >
+          Download
+        </span>
+      </button>
     </div>
   </div>
 </div>
