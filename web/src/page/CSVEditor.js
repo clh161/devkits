@@ -2,6 +2,7 @@
 import { Divider, Grid } from '@material-ui/core';
 import type { Node } from 'react';
 import React, { useState } from 'react';
+import Dropzone from 'react-dropzone';
 import { Spreadsheet } from 'react-spreadsheet';
 
 type Cell = {
@@ -39,6 +40,32 @@ export default function CSVEditor(): Node {
 
   return (
     <Grid container spacing={3}>
+      <Grid item xs={12}>
+        <Dropzone
+          onDrop={(acceptedFiles) => {
+            const file = acceptedFiles[0];
+            if (file != null) {
+              const reader = new FileReader();
+              reader.onerror = () => console.log('file reading has failed');
+              reader.onload = () => {
+                const binaryStr = reader.result?.toString() ?? '';
+                setCsv(binaryStr);
+                setCells(csvToCells(csv));
+              };
+              reader.readAsText(file);
+            }
+          }}
+        >
+          {({ getRootProps, getInputProps }) => (
+            <section>
+              <div {...getRootProps()}>
+                <input {...getInputProps()} />
+                <p>Drag and drop some files here, or click to select files</p>
+              </div>
+            </section>
+          )}
+        </Dropzone>
+      </Grid>
       <Grid item xs={12}>
         <textarea
           onChange={onCsvChange}

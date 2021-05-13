@@ -673,6 +673,40 @@ exports[`All Pages 9`] = `
     <div
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
     >
+      <section>
+        <div
+          onBlur={[Function]}
+          onClick={[Function]}
+          onDragEnter={[Function]}
+          onDragLeave={[Function]}
+          onDragOver={[Function]}
+          onDrop={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+        >
+          <input
+            autoComplete="off"
+            multiple={true}
+            onChange={[Function]}
+            onClick={[Function]}
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+            tabIndex={-1}
+            type="file"
+          />
+          <p>
+            Drag and drop some files here, or click to select files
+          </p>
+        </div>
+      </section>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+    >
       <textarea
         onChange={[Function]}
         placeholder="CSV"
