@@ -1,10 +1,11 @@
 // @flow strict
-import { Divider, Grid, Paper, RootRef } from '@material-ui/core';
+import { Button, Divider, Grid, Paper, RootRef } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import type { Node } from 'react';
 import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { Spreadsheet } from 'react-spreadsheet';
+
 const useStyles = makeStyles((theme) => {
   return {
     dropzone: {
@@ -59,6 +60,17 @@ export default function CSVEditor(): Node {
   const { ref, ...rootProps } = getRootProps();
   const classes = useStyles();
 
+  function onDownload() {
+    const element = document.createElement('a');
+    const file = new Blob([csv], {
+      type: 'application/csv',
+    });
+    element.href = URL.createObjectURL(file);
+    element.download = 'devkits-csv-editor.csv';
+    document.body?.appendChild(element); // Required for this to work in FireFox
+    element.click();
+  }
+
   function onCsvChange(event) {
     const { value } = event.target;
     setCsv(value);
@@ -98,6 +110,11 @@ export default function CSVEditor(): Node {
             onCellsChange(cells);
           }}
         />
+      </Grid>
+      <Grid item xs={12}>
+        <Button color="primary" onClick={onDownload} variant="contained">
+          Download
+        </Button>
       </Grid>
     </Grid>
   );
