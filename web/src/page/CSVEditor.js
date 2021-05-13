@@ -1,9 +1,27 @@
 // @flow strict
-import { Divider, Grid } from '@material-ui/core';
+import { Divider, Grid, Paper, RootRef } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import type { Node } from 'react';
-import React, { useState } from 'react';
-import Dropzone from 'react-dropzone';
+import React, { useCallback, useState } from 'react';
+import { useDropzone } from 'react-dropzone';
 import { Spreadsheet } from 'react-spreadsheet';
+
+const useStyles = makeStyles((theme) => {
+  console.log(theme.palette.primary);
+  return {
+    dropzone: {
+      '&:hover': {
+        background: theme.palette.primary.light,
+      },
+      display: 'flex',
+      '& > *': {
+        margin: theme.spacing(1),
+        height: theme.spacing(16),
+      },
+      border: '4px dotted ' + theme.palette.primary.main,
+    },
+  };
+});
 
 type Cell = {
   value: string,
@@ -26,6 +44,22 @@ const DEFAULT_CSV = [
 export default function CSVEditor(): Node {
   const [csv, setCsv] = useState<string>(DEFAULT_CSV);
   const [cells, setCells] = useState<Array<Array<Cell>>>(csvToCells(csv));
+  const onDrop = useCallback((acceptedFiles) => {
+    const file = acceptedFiles[0];
+    if (file != null) {
+      const reader = new FileReader();
+      reader.onerror = () => console.log('file reading has failed');
+      reader.onload = () => {
+        const binaryStr = reader.result?.toString() ?? '';
+        setCsv(binaryStr);
+        setCells(csvToCells(csv));
+      };
+      reader.readAsText(file);
+    }
+  }, []);
+  const { getRootProps, getInputProps } = useDropzone({ onDrop });
+  const { ref, ...rootProps } = getRootProps();
+  const classes = useStyles();
 
   function onCsvChange(event) {
     const { value } = event.target;
@@ -41,30 +75,14 @@ export default function CSVEditor(): Node {
   return (
     <Grid container spacing={3}>
       <Grid item xs={12}>
-        <Dropzone
-          onDrop={(acceptedFiles) => {
-            const file = acceptedFiles[0];
-            if (file != null) {
-              const reader = new FileReader();
-              reader.onerror = () => console.log('file reading has failed');
-              reader.onload = () => {
-                const binaryStr = reader.result?.toString() ?? '';
-                setCsv(binaryStr);
-                setCells(csvToCells(csv));
-              };
-              reader.readAsText(file);
-            }
-          }}
-        >
-          {({ getRootProps, getInputProps }) => (
-            <section>
-              <div {...getRootProps()}>
-                <input {...getInputProps()} />
-                <p>Drag and drop some files here, or click to select files</p>
-              </div>
-            </section>
-          )}
-        </Dropzone>
+        <RootRef rootRef={ref}>
+          <Paper variant="outlined" {...rootProps} className={classes.dropzone}>
+            <Grid alignContent={'center'} container justify={'center'} xs={12}>
+              <input {...getInputProps()} />
+              <p>Drag and drop a CSV file</p>
+            </Grid>
+          </Paper>
+        </RootRef>
       </Grid>
       <Grid item xs={12}>
         <textarea
