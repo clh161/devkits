@@ -71,7 +71,7 @@
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "flow-bin": "^0.152.0",
+    "flow-bin": "^0.155.0",
     "flow-typed": "^3.3.1",
     "prettier": "2.3.1",
     "react-router-sitemap-generator": "^0.0.8",
