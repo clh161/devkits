@@ -10544,10 +10544,10 @@ react-side-effect@^2.1.0:
   resolved "https://registry.npmjs.org/react-side-effect/-/react-side-effect-2.1.1.tgz"
   integrity sha512-2FoTQzRNTncBVtnzxFOk2mCpcfxQpenBMbk5kSVBg5UcPqV9fRbgY2zhb7GTWWOlpFmAxhClBDlIq8Rsubz1yQ==
 
-react-spreadsheet@^0.5.12:
-  version "0.5.12"
-  resolved "https://registry.yarnpkg.com/react-spreadsheet/-/react-spreadsheet-0.5.12.tgz#c0c1b924c224df785006d5919dd0705cb193e4c2"
-  integrity sha512-9Wut2zkoBYKHpn65BpngInsdtZprf454k8XSxJ0bcyqGZX3T2deauktuKxYvKPn5yyde1ub6rXRD83Dr9UOE/g==
+react-spreadsheet@^0.5.13:
+  version "0.5.13"
+  resolved "https://registry.yarnpkg.com/react-spreadsheet/-/react-spreadsheet-0.5.13.tgz#e551aad30cbe365500dba7a2b3dc0eb46e6725e3"
+  integrity sha512-w2+NRHiq/SM32jeBdWHdzgCueQX66WBJxSwiown1laksGdWTdTSx5SXXXVVLd31hpDv95l1dFv7VeQMISYQ/Ww==
   dependencies:
     "@types/array.prototype.flatmap" "^1.2.2"
     array.prototype.flatmap "^1.2.4"
