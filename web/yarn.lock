@@ -3053,17 +3053,7 @@ array.prototype.flat@^1.2.4:
     define-properties "^1.1.3"
     es-abstract "^1.18.0-next.1"
 
-array.prototype.flatmap@^1.2.4:
-  version "1.2.4"
-  resolved "https://registry.npmjs.org/array.prototype.flatmap/-/array.prototype.flatmap-1.2.4.tgz"
-  integrity sha512-r9Z0zYoxqHz60vvQbWEdXIEtCwHF0yxaWfno9qzXeNHvfyl3BZqygmGzb84dsubyaXLH4husF+NFgMSdpZhk2Q==
-  dependencies:
-    call-bind "^1.0.0"
-    define-properties "^1.1.3"
-    es-abstract "^1.18.0-next.1"
-    function-bind "^1.1.1"
-
-array.prototype.flatmap@^1.2.5:
+array.prototype.flatmap@^1.2.4, array.prototype.flatmap@^1.2.5:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/array.prototype.flatmap/-/array.prototype.flatmap-1.3.0.tgz#a7e8ed4225f4788a70cd910abcf0791e76a5534f"
   integrity sha512-PZC9/8TKAIxcWKdyeb77EzULHPrIX/tIZebLJUQOMR1OwYosT8yggdfWScfTBCDj5utONvOuPQQumYsU2ULbkg==
@@ -10785,10 +10775,10 @@ react-side-effect@^2.1.0:
   resolved "https://registry.npmjs.org/react-side-effect/-/react-side-effect-2.1.1.tgz"
   integrity sha512-2FoTQzRNTncBVtnzxFOk2mCpcfxQpenBMbk5kSVBg5UcPqV9fRbgY2zhb7GTWWOlpFmAxhClBDlIq8Rsubz1yQ==
 
-react-spreadsheet@^0.5.12:
-  version "0.5.12"
-  resolved "https://registry.yarnpkg.com/react-spreadsheet/-/react-spreadsheet-0.5.12.tgz#c0c1b924c224df785006d5919dd0705cb193e4c2"
-  integrity sha512-9Wut2zkoBYKHpn65BpngInsdtZprf454k8XSxJ0bcyqGZX3T2deauktuKxYvKPn5yyde1ub6rXRD83Dr9UOE/g==
+react-spreadsheet@^0.5.14:
+  version "0.5.14"
+  resolved "https://registry.yarnpkg.com/react-spreadsheet/-/react-spreadsheet-0.5.14.tgz#324039649e8a79febf219f4bc6c5eb4ebddee5c0"
+  integrity sha512-ylTETGDrJtDebakM1aljKPf/J/20qW4YU5O6/m9JTAAQjXIJ1qLYczpEHDM+167PFicKl0MDpH8y+X49Zckx6A==
   dependencies:
     "@types/array.prototype.flatmap" "^1.2.2"
     array.prototype.flatmap "^1.2.4"
