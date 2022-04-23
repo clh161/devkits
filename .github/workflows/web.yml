@@ -28,7 +28,6 @@ jobs:
             ${{ runner.os }}-
       - uses: actions/setup-node@v1
       - run: yarn install
-      - run: yarn flow-typed
       - run: yarn flow
   prettier:
     runs-on: ubuntu-latest
