@@ -1,7 +1,6 @@
 /.idea
 /node_modules
 .DS_Store
-/flow-typed
 /build
 yarn-error.log
 /coverage/
