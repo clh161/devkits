@@ -686,7 +686,7 @@ exports[`All Pages 9`] = `
         tabIndex={0}
       >
         <div
-          className="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-content-xs-center MuiGrid-justify-xs-center MuiGrid-grid-xs-12"
+          className="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-content-xs-center MuiGrid-justify-content-xs-center MuiGrid-grid-xs-12"
         >
           <input
             autoComplete="off"
