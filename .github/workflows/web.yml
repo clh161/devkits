@@ -29,6 +29,27 @@ jobs:
       - uses: actions/setup-node@v1
       - run: yarn install
       - run: yarn flow
+  typescript:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./web
+    steps:
+      - uses: actions/checkout@v2
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ./web/node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('./web/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - uses: actions/setup-node@v1
+      - run: yarn install
+      - run: yarn tsc
   prettier:
     runs-on: ubuntu-latest
     defaults:
@@ -130,7 +151,7 @@ jobs:
           docker push registry.digitalocean.com/jbb/devkits-web
   deploy:
     if: github.ref == 'refs/heads/master'
-    needs: [ prettier, eslint, flow, test, docker-build ]
+    needs: [prettier, eslint, flow, typescript, test, docker-build]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -143,4 +164,3 @@ jobs:
           kubectl apply -f ./kubernetes/web.yaml
           kubectl set image deployment/devkits-web devkits-web=registry.digitalocean.com/jbb/devkits-web:$(git log -1 --format=%ct)
           kubectl rollout restart deployment/devkits-web
-
