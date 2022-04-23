@@ -1,17 +1,12 @@
-// @flow strict
 import { Grid, Typography } from '@material-ui/core';
-import type { Node } from 'react';
-import React from 'react';
-
+import React, { ReactElement } from 'react';
 import HTMLMeta from '../component/HTMLMeta';
-import type { Config } from '../component/Router';
-
+import { RouterConfig } from '../component/RouterConfig';
 type Props = {
-  children: Node,
-  pageConfig: Config,
+  children: ReactElement;
+  pageConfig: RouterConfig;
 };
-
-export default function Page({ children, pageConfig }: Props): Node {
+export default function Page({ children, pageConfig }: Props): ReactElement {
   return (
     <div>
       <HTMLMeta pageConfig={pageConfig} />
