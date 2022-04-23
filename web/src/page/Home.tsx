@@ -1,9 +1,6 @@
-// @flow strict
 import { Grid, Link, Typography } from '@material-ui/core';
-import type { Node } from 'react';
-import React from 'react';
-
-export default function Home(): Node {
+import React, { ReactElement } from 'react';
+export default function Home(): ReactElement {
   return (
     <Grid container spacing={3}>
       <Grid item xs={12}>
