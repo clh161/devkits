@@ -1,18 +1,14 @@
-// @flow strict
 import { Divider, Grid } from '@material-ui/core';
 import { decode, encode } from 'html-entities';
-import type { Node } from 'react';
-import React, { useState } from 'react';
-
+import React, { ReactElement, useState } from 'react';
 type Props = {
-  initDecodedText?: string,
-  initEncodedText?: string,
+  initDecodedText?: string;
+  initEncodedText?: string;
 };
-
 export default function HTMLEncoder({
   initDecodedText,
   initEncodedText,
-}: Props): Node {
+}: Props): ReactElement {
   const [decodedHTMLText, setDecodedHTMLText] = useState<string>(
     initDecodedText ?? decode(initEncodedText)
   );
@@ -38,7 +34,10 @@ export default function HTMLEncoder({
         <textarea
           onChange={onDecodedHTMLChanged}
           placeholder="Decoded HTML"
-          style={{ width: '100%', minHeight: 160 }}
+          style={{
+            width: '100%',
+            minHeight: 160,
+          }}
           value={decodedHTMLText}
         />
       </Grid>
@@ -47,7 +46,10 @@ export default function HTMLEncoder({
         <textarea
           onChange={onEncodedHTMLChanged}
           placeholder="Encoded HTML"
-          style={{ width: '100%', minHeight: 160 }}
+          style={{
+            width: '100%',
+            minHeight: 160,
+          }}
           value={encodedHTMLText}
         />
       </Grid>
