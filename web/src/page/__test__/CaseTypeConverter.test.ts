@@ -1,6 +1,5 @@
-// @flow strict
+import { getTexts } from '../CaseTypeConverter';
 
-const { getTexts } = require('../CaseTypeConverter');
 it('Normal Text', () => {
   expect(getTexts('normal_text', 'some random text for test')).toEqual({
     camel_case: 'someRandomTextForTest',
@@ -10,7 +9,6 @@ it('Normal Text', () => {
     snake_upper_case: 'SOME_RANDOM_TEXT_FOR_TEST',
   });
 });
-
 it('Camel Case', () => {
   expect(getTexts('camel_case', 'DevkitsIsGood')).toEqual({
     camel_case: 'DevkitsIsGood',
@@ -20,7 +18,6 @@ it('Camel Case', () => {
     snake_upper_case: 'DEVKITS_IS_GOOD',
   });
 });
-
 it('Kebab Case', () => {
   expect(getTexts('kebab_case', 'one-plus-one-equals-two')).toEqual({
     camel_case: 'onePlusOneEqualsTwo',
@@ -30,7 +27,6 @@ it('Kebab Case', () => {
     snake_upper_case: 'ONE_PLUS_ONE_EQUALS_TWO',
   });
 });
-
 it('Snake Case', () => {
   expect(getTexts('snake_case', 'i_go_to_school_by_bus')).toEqual({
     camel_case: 'iGoToSchoolByBus',
@@ -40,7 +36,6 @@ it('Snake Case', () => {
     snake_upper_case: 'I_GO_TO_SCHOOL_BY_BUS',
   });
 });
-
 it('Snake Upper Case', () => {
   expect(getTexts('snake_upper_case', 'TODAY_IS_FRIDAY')).toEqual({
     camel_case: 'todayIsFriday',
