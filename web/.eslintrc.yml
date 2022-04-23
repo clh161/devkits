@@ -27,6 +27,7 @@ rules: {
         'error',
         { 'vars': 'all', 'args': 'after-used', 'ignoreRestSiblings': false },
       ],
+    'flowtype/no-types-missing-file-annotation': 1,
     # 'simple-import-sort/imports': 'error',
     # 'simple-import-sort/exports': 'error',
   }
