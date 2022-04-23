@@ -5,7 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
-    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^13.5.0",
     "html-entities": "^2.3.3",
@@ -25,7 +25,7 @@
     "test": "react-scripts test  --watchAll=false --coverage",
     "eject": "react-scripts eject",
     "lint": "eslint . --fix && flow && prettier . --write",
-    "flow-typed": "flow-typed install -o -s && flow-typed install jest@26",
+    "flow-typed": "flow-typed install -o -s && flow-typed install jest@26 -o",
     "sitemap": "babel-node src/sitemap.js"
   },
   "eslintConfig": {
@@ -72,7 +72,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "flow-bin": "^0.158.0",
-    "flow-typed": "^3.3.1",
+    "flow-typed": "^3.7.0",
     "prettier": "2.3.2",
     "react-router-sitemap-generator": "^0.0.8",
     "react-test-renderer": "^17.0.2"
