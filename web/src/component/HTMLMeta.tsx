@@ -1,18 +1,11 @@
-// @flow strict
-
-import type { Node } from 'react';
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { Helmet } from 'react-helmet';
-
-import type { Config } from './Router';
-
+import { RouterConfig } from './RouterConfig';
 type Props = {
-  pageConfig: Config,
+  pageConfig: RouterConfig;
 };
-
-export default function HTMLMeta({ pageConfig }: Props): Node {
+export default function HTMLMeta({ pageConfig }: Props): ReactElement {
   const { title, description, keywords } = pageConfig;
-
   return (
     <Helmet>
       <title>{title}</title>

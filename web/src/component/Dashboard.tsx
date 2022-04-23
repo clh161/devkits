@@ -81,12 +81,17 @@ export default function Dashboard(props: Props): ReactElement {
         <Divider />
         <List aria-label="main mailbox folders" component="nav">
           {CONFIGS.filter((config) => !config.isHidden).map((config) => {
-            return config.isHidden ? null : (
-              <ListItem component="a" href={config.path} key={config.path}>
-                <ListItemIcon>{config.icon}</ListItemIcon>
-                <ListItemText primary={config.title} />
-              </ListItem>
-            );
+            switch (config.isHidden) {
+              case true:
+                return null;
+              case false:
+                return (
+                  <ListItem component="a" href={config.path} key={config.path}>
+                    <ListItemIcon>{config.icon}</ListItemIcon>
+                    <ListItemText primary={config.title} />
+                  </ListItem>
+                );
+            }
           })}
         </List>
       </Drawer>

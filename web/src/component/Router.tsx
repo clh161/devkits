@@ -1,14 +1,10 @@
-// @flow strict
-
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import CodeIcon from '@material-ui/icons/Code';
 import HttpIcon from '@material-ui/icons/Http';
 import TextFieldsIcon from '@material-ui/icons/TextFields';
 import ViewComfyIcon from '@material-ui/icons/ViewComfy';
-import type { Node } from 'react';
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-
 import { CASE_TYPES } from '../page/CASE_TYPES';
 import CaseTypeConverter from '../page/CaseTypeConverter';
 import CSVEditor from '../page/CSVEditor';
@@ -17,27 +13,9 @@ import HTMLEncoder from '../page/HTMLEncoder';
 import Page from '../page/Page';
 import TimestampConverter from '../page/TimestampConverter';
 import URLEncoder from '../page/URLEncoder';
+import { RouterConfig } from './RouterConfig';
 
-type BaseConfig = {|
-  path: string,
-  component: Node,
-  title: string,
-  description: string,
-  keywords: Array<string>,
-|};
-
-export type Config =
-  | {
-      isHidden: true,
-      ...BaseConfig,
-    }
-  | {
-      isHidden: false,
-      ...BaseConfig,
-      icon: Node,
-    };
-
-export const CONFIGS: Array<Config> = [
+export const CONFIGS: Array<RouterConfig> = [
   {
     isHidden: false,
     path: '/html-encoding',
@@ -103,8 +81,7 @@ export const CONFIGS: Array<Config> = [
     ],
   },
 ];
-
-export default function Router(): Node {
+export default function Router(): ReactElement {
   return (
     <BrowserRouter>
       <Switch>
