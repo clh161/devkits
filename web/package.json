@@ -26,7 +26,8 @@
     "eject": "react-scripts eject",
     "lint": "eslint . --fix && flow && prettier . --write",
     "flow-typed": "flow-typed install -o -s && flow-typed install jest@26 -o",
-    "sitemap": "babel-node src/sitemap.js"
+    "sitemap": "babel-node src/sitemap.js",
+    "all-checks": "yarn run test && yarn run lint && yarn run sitemap && yarn run tsc && yarn run build"
   },
   "eslintConfig": {
     "extends": [
