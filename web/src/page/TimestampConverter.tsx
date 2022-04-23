@@ -1,22 +1,21 @@
-// @flow strict
 import { Grid, TextField } from '@material-ui/core';
-import type { Node } from 'react';
-import React, { useState } from 'react';
-
+import React, { ReactElement, useState } from 'react';
 type DatetimeConfig = {
-  name: string,
-  value: number,
+  name: string;
+  value: number;
 };
-
 type Props = {
-  initTimestamp?: number,
+  initTimestamp?: number;
 };
-
-export default function TimestampConverter({ initTimestamp }: Props): Node {
+export default function TimestampConverter({
+  initTimestamp,
+}: Props): ReactElement {
   const [unixTimestamp, setUnixTimestamp] = useState(
-    parseInt(initTimestamp ?? Date.now() / 1000)
+    parseInt(initTimestamp?.toString() ?? (Date.now() / 1000).toString())
   );
-  const [datetime, setDatetime] = useState(unixToDate(parseInt(unixTimestamp)));
+  const [datetime, setDatetime] = useState(
+    unixToDate(parseInt(unixTimestamp.toString()))
+  );
 
   function onUnixTimestampChange(event) {
     const { value } = event.target;
@@ -31,19 +30,21 @@ export default function TimestampConverter({ initTimestamp }: Props): Node {
         if (name === dt.name) {
           dt.value = value;
         }
+
         return dt;
       })
     );
+    const time = datetime.map((dt) => {
+      if (dt.name === 'Month') {
+        return dt.value - 1;
+      }
+
+      return dt.value;
+    });
+
     const datestamp =
       new Date(
-        Date.UTC(
-          ...datetime.map((dt) => {
-            if (dt.name === 'Month') {
-              return dt.value - 1;
-            }
-            return dt.value;
-          })
-        )
+        Date.UTC(time[0], time[1], time[2], time[3], time[4], time[5])
       ).getTime() / 1000;
     setUnixTimestamp(datestamp);
   }
@@ -75,10 +76,8 @@ export default function TimestampConverter({ initTimestamp }: Props): Node {
     </Grid>
   );
 }
-
 export function unixToDate(timestamp: number): Array<DatetimeConfig> {
   const date = new Date(timestamp * 1000);
-
   return [
     {
       name: 'Year',
