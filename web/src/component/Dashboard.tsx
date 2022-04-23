@@ -1,5 +1,3 @@
-// @flow strict
-
 import {
   Grid,
   IconButton,
@@ -17,11 +15,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import GitHubIcon from '@material-ui/icons/GitHub';
-import type { Node } from 'react';
-import React from 'react';
-
+import React, { ReactElement } from 'react';
 import { CONFIGS } from './Router';
-
 const drawerWidth = 320;
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -49,12 +44,10 @@ const useStyles = makeStyles((theme) => ({
     height: 240,
   },
 }));
-
 type Props = {
-  children: Node,
+  children: ReactElement;
 };
-
-export default function Dashboard(props: Props): Node {
+export default function Dashboard(props: Props): ReactElement {
   const classes = useStyles();
   return (
     <div className={classes.root}>
