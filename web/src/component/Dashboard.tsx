@@ -1,4 +1,11 @@
+import GitHubIcon from '@mui/icons-material/GitHub';
 import {
+  Container,
+  CssBaseline,
+  Divider,
+  Drawer,
+  Toolbar,
+  Typography,
   Grid,
   IconButton,
   Link,
@@ -6,23 +13,13 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
-} from '@material-ui/core';
-import Container from '@material-ui/core/Container';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Divider from '@material-ui/core/Divider';
-import Drawer from '@material-ui/core/Drawer';
-import { makeStyles } from '@material-ui/core/styles';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import GitHubIcon from '@material-ui/icons/GitHub';
+  styled,
+} from '@mui/material';
 import React, { ReactElement } from 'react';
 import { CONFIGS } from './Router';
 const drawerWidth = 320;
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-  },
-  drawerPaper: {
+const DrawerPaper = styled(Drawer)(({ theme }) => {
+  return {
     position: 'relative',
     whiteSpace: 'nowrap',
     width: drawerWidth,
@@ -30,34 +27,16 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
     }),
-  },
-  content: {
-    flexGrow: 1,
-    height: '100vh',
-    overflow: 'auto',
-  },
-  container: {
-    paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(4),
-  },
-  fixedHeight: {
-    height: 240,
-  },
-}));
+  };
+});
 type Props = {
   children: ReactElement;
 };
 export default function Dashboard(props: Props): ReactElement {
-  const classes = useStyles();
   return (
-    <div className={classes.root}>
+    <div style={{ display: 'flex' }}>
       <CssBaseline />
-      <Drawer
-        classes={{
-          paper: classes.drawerPaper,
-        }}
-        variant='permanent'
-      >
+      <DrawerPaper variant='permanent'>
         <Toolbar>
           <Grid
             alignItems={'center'}
@@ -98,9 +77,21 @@ export default function Dashboard(props: Props): ReactElement {
             }
           })}
         </List>
-      </Drawer>
-      <main className={classes.content}>
-        <Container className={classes.container} maxWidth='lg'>
+      </DrawerPaper>
+      <main
+        style={{
+          flexGrow: 1,
+          height: '100vh',
+          overflow: 'auto',
+        }}
+      >
+        <Container
+          maxWidth='lg'
+          style={{
+            paddingTop: 4,
+            paddingBottom: 4,
+          }}
+        >
           {props.children}
         </Container>
       </main>
