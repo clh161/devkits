@@ -9,11 +9,12 @@
   dependencies:
     "@jridgewell/trace-mapping" "^0.3.0"
 
-"@babel/cli@^7.14.8":
-  version "7.14.8"
-  resolved "https://registry.yarnpkg.com/@babel/cli/-/cli-7.14.8.tgz#fac73c0e2328a8af9fd3560c06b096bfa3730933"
-  integrity sha512-lcy6Lymft9Rpfqmrqdd4oTDdUx9ZwaAhAfywVrHG4771Pa6PPT0danJ1kDHBXYqh4HHSmIdA+nlmfxfxSDPtBg==
+"@babel/cli@^7.17.6":
+  version "7.17.6"
+  resolved "https://registry.yarnpkg.com/@babel/cli/-/cli-7.17.6.tgz#169e5935f1795f0b62ded5a2accafeedfe5c5363"
+  integrity sha512-l4w608nsDNlxZhiJ5tE3DbNmr61fIKMZ6fTBo171VEFuFMIYuJ3mHRhTLEkKKyvx2Mizkkv/0a8OJOnZqkKYNA==
   dependencies:
+    "@jridgewell/trace-mapping" "^0.3.4"
     commander "^4.0.1"
     convert-source-map "^1.1.0"
     fs-readdir-recursive "^1.1.0"
@@ -22,7 +23,7 @@
     slash "^2.0.0"
     source-map "^0.5.0"
   optionalDependencies:
-    "@nicolo-ribaudo/chokidar-2" "2.1.8-no-fsevents.2"
+    "@nicolo-ribaudo/chokidar-2" "2.1.8-no-fsevents.3"
     chokidar "^3.4.0"
 
 "@babel/code-frame@7.10.4":
@@ -1918,7 +1919,7 @@
   resolved "https://registry.yarnpkg.com/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.4.11.tgz#771a1d8d744eeb71b6adb35808e1a6c7b9b8c8ec"
   integrity sha512-Fg32GrJo61m+VqYSdRSjRXMjQ06j8YIYfcTqndLYVAaHmroZHLJZCydsWBOTDqXS2v+mjxohBWEMfg97GXmYQg==
 
-"@jridgewell/trace-mapping@^0.3.0":
+"@jridgewell/trace-mapping@^0.3.0", "@jridgewell/trace-mapping@^0.3.4":
   version "0.3.9"
   resolved "https://registry.yarnpkg.com/@jridgewell/trace-mapping/-/trace-mapping-0.3.9.tgz#6534fd5933a53ba7cbf3a17615e273a0d1273ff9"
   integrity sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==
@@ -2013,22 +2014,10 @@
     prop-types "^15.7.2"
     react-is "^17.0.2"
 
-"@nicolo-ribaudo/chokidar-2@2.1.8-no-fsevents.2":
-  version "2.1.8-no-fsevents.2"
-  resolved "https://registry.yarnpkg.com/@nicolo-ribaudo/chokidar-2/-/chokidar-2-2.1.8-no-fsevents.2.tgz#e324c0a247a5567192dd7180647709d7e2faf94b"
-  integrity sha512-Fb8WxUFOBQVl+CX4MWet5o7eCc6Pj04rXIwVKZ6h1NnqTo45eOQW6aWyhG25NIODvWFwTDMwBsYxrQ3imxpetg==
-  dependencies:
-    anymatch "^2.0.0"
-    async-each "^1.0.1"
-    braces "^2.3.2"
-    glob-parent "^5.1.2"
-    inherits "^2.0.3"
-    is-binary-path "^1.0.0"
-    is-glob "^4.0.0"
-    normalize-path "^3.0.0"
-    path-is-absolute "^1.0.0"
-    readdirp "^2.2.1"
-    upath "^1.1.1"
+"@nicolo-ribaudo/chokidar-2@2.1.8-no-fsevents.3":
+  version "2.1.8-no-fsevents.3"
+  resolved "https://registry.yarnpkg.com/@nicolo-ribaudo/chokidar-2/-/chokidar-2-2.1.8-no-fsevents.3.tgz#323d72dd25103d0c4fbdce89dadf574a787b1f9b"
+  integrity sha512-s88O1aVtXftvp5bCPB7WnmXc5IwOZZ7YPuwNPt+GtOOXpPvad1LfbmjYv+qII7zP6RU2QGnqve27dnLycEnyEQ==
 
 "@nodelib/fs.scandir@2.1.4":
   version "2.1.4"
