@@ -90,12 +90,13 @@ exports[`renders correctly 1`] = `
           >
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root"
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+              data-testid="CodeIcon"
               focusable="false"
               viewBox="0 0 24 24"
             >
               <path
-                d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"
+                d="M9.4 16.6 4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"
               />
             </svg>
           </div>
@@ -119,7 +120,8 @@ exports[`renders correctly 1`] = `
           >
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root"
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+              data-testid="HttpIcon"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -148,7 +150,8 @@ exports[`renders correctly 1`] = `
           >
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root"
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+              data-testid="AccessTimeIcon"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -180,7 +183,8 @@ exports[`renders correctly 1`] = `
           >
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root"
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+              data-testid="TextFieldsIcon"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -209,7 +213,8 @@ exports[`renders correctly 1`] = `
           >
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root"
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+              data-testid="ViewComfyIcon"
               focusable="false"
               viewBox="0 0 24 24"
             >
