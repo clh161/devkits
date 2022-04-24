@@ -1,21 +1,18 @@
-import { Button, Divider, Grid, Paper } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { Button, Divider, Grid, Paper, styled } from '@mui/material';
 import React, { ReactElement, useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { Spreadsheet } from 'react-spreadsheet';
-const useStyles = makeStyles((theme) => {
+const DropzonePaper = styled(Paper)(({ theme }) => {
   return {
-    dropzone: {
-      '&:hover': {
-        background: theme.palette.primary.light,
-      },
-      display: 'flex',
-      '& > *': {
-        margin: theme.spacing(1),
-        height: theme.spacing(16),
-      },
-      border: '4px dotted ' + theme.palette.primary.main,
+    '&:hover': {
+      background: theme.palette.primary.light,
     },
+    display: 'flex',
+    '& > *': {
+      margin: theme.spacing(1),
+      height: theme.spacing(16),
+    },
+    border: '4px dotted ' + theme.palette.primary.main,
   };
 });
 type Cell = {
@@ -57,7 +54,6 @@ export default function CSVEditor(): ReactElement {
     onDrop,
   });
   const { ...rootProps } = getRootProps();
-  const classes = useStyles();
 
   function onDownload() {
     const element = document.createElement('a');
@@ -85,7 +81,7 @@ export default function CSVEditor(): ReactElement {
   return (
     <Grid container spacing={3}>
       <Grid item xs={12}>
-        <Paper variant='outlined' {...rootProps} className={classes.dropzone}>
+        <DropzonePaper variant='outlined' {...rootProps}>
           <Grid
             alignContent={'center'}
             container
@@ -96,7 +92,7 @@ export default function CSVEditor(): ReactElement {
             <input {...getInputProps()} />
             <p>Drag and drop a CSV file</p>
           </Grid>
-        </Paper>
+        </DropzonePaper>
       </Grid>
       <Grid item xs={12}>
         <textarea
