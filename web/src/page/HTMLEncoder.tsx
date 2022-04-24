@@ -1,4 +1,4 @@
-import { Divider, Grid } from '@material-ui/core';
+import { Divider, Grid } from '@mui/material';
 import { decode, encode } from 'html-entities';
 import React, { ReactElement, useState } from 'react';
 type Props = {
