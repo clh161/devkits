@@ -668,13 +668,13 @@ exports[`All Pages 9`] = `
     </div>
   </div>
   <div
-    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
+    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 css-zow5z4-MuiGrid-root"
   >
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
     >
       <div
-        className="MuiPaper-root makeStyles-dropzone-1 MuiPaper-outlined MuiPaper-rounded"
+        className="MuiPaper-root MuiPaper-outlined MuiPaper-rounded css-1kw2pi7-MuiPaper-root"
         onBlur={[Function]}
         onClick={[Function]}
         onDragEnter={[Function]}
@@ -687,7 +687,7 @@ exports[`All Pages 9`] = `
         tabIndex={0}
       >
         <div
-          className="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-content-xs-center MuiGrid-justify-content-xs-center MuiGrid-grid-xs-12"
+          className="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12 css-ks12vm-MuiGrid-root"
         >
           <input
             autoComplete="off"
@@ -709,7 +709,7 @@ exports[`All Pages 9`] = `
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
     >
       <textarea
         onChange={[Function]}
@@ -734,10 +734,10 @@ Value 91,Value 92,Value 93,Value 94,Value 95,Value 96,Value 97,Value 98,Value 99
       />
     </div>
     <hr
-      className="MuiDivider-root"
+      className="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
     />
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
     >
       <div
         className="Spreadsheet"
@@ -2308,13 +2308,14 @@ Value 91,Value 92,Value 93,Value 94,Value 95,Value 96,Value 97,Value 98,Value 99
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
     >
       <button
-        className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+        className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-sghohy-MuiButtonBase-root-MuiButton-root"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
+        onContextMenu={[Function]}
         onDragLeave={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
@@ -2328,11 +2329,7 @@ Value 91,Value 92,Value 93,Value 94,Value 95,Value 96,Value 97,Value 98,Value 99
         tabIndex={0}
         type="button"
       >
-        <span
-          className="MuiButton-label"
-        >
-          Download
-        </span>
+        Download
       </button>
     </div>
   </div>
