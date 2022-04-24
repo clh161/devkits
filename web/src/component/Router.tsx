@@ -16,6 +16,7 @@ import Page from '../page/Page';
 import TimestampConverter from '../page/TimestampConverter';
 import URLEncoder from '../page/URLEncoder';
 import { RouterConfig } from './RouterConfig';
+import Dashboard from './Dashboard';
 
 export const CONFIGS: Array<RouterConfig> = [
   {
@@ -87,13 +88,15 @@ export default function Router(): ReactElement {
   return (
     <BrowserRouter>
       <Routes>
-        {CONFIGS.map((config) => (
-          <Route
-            element={<Page pageConfig={config}>{config.component}</Page>}
-            key={config.path}
-            path={config.path}
-          />
-        ))}
+        <Route element={<Dashboard />}>
+          {CONFIGS.map((config) => (
+            <Route
+              element={<Page pageConfig={config}>{config.component}</Page>}
+              key={config.path}
+              path={config.path}
+            />
+          ))}
+        </Route>
       </Routes>
     </BrowserRouter>
   );
