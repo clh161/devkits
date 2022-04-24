@@ -2,28 +2,32 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="makeStyles-root-1"
+  style={
+    Object {
+      "display": "flex",
+    }
+  }
 >
   <div
-    className="MuiDrawer-root MuiDrawer-docked"
+    className="MuiDrawer-root MuiDrawer-docked css-e7qzfj-MuiDrawer-docked"
   >
     <div
-      className="MuiPaper-root MuiDrawer-paper makeStyles-drawerPaper-2 MuiDrawer-paperAnchorLeft MuiDrawer-paperAnchorDockedLeft MuiPaper-elevation0"
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiDrawer-paper MuiDrawer-paperAnchorLeft MuiDrawer-paperAnchorDockedLeft css-12i7wg6-MuiPaper-root-MuiDrawer-paper"
     >
       <div
-        className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+        className="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-1t29gy6-MuiToolbar-root"
       >
         <div
-          className="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-content-xs-space-between"
+          className="MuiGrid-root MuiGrid-container css-1oukqxz-MuiGrid-root"
         >
           <div
-            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 css-1osj8n2-MuiGrid-root"
           >
             <h1
-              className="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-noWrap"
+              className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap css-2l1qg7-MuiTypography-root"
             >
               <a
-                className="MuiTypography-root MuiLink-root MuiLink-underlineNone MuiTypography-colorPrimary"
+                className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-1cmksfb-MuiTypography-root-MuiLink-root"
                 href="/"
                 onBlur={[Function]}
                 onFocus={[Function]}
@@ -33,14 +37,14 @@ exports[`renders correctly 1`] = `
             </h1>
           </div>
           <div
-            className="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-flex-end MuiGrid-grid-xs-1"
+            className="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-1 css-6u9cnz-MuiGrid-root"
           >
             <a
-              aria-disabled={false}
               aria-label="Github Repository"
-              className="MuiButtonBase-root MuiIconButton-root"
+              className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
               href="https://github.com/clh161/devkits"
               onBlur={[Function]}
+              onContextMenu={[Function]}
               onDragLeave={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
@@ -54,38 +58,35 @@ exports[`renders correctly 1`] = `
               tabIndex={0}
               target="_blank"
             >
-              <span
-                className="MuiIconButton-label"
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                data-testid="GitHubIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
               >
-                <svg
-                  aria-hidden={true}
-                  className="MuiSvgIcon-root"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"
-                  />
-                </svg>
-              </span>
+                <path
+                  d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"
+                />
+              </svg>
             </a>
           </div>
         </div>
       </div>
       <hr
-        className="MuiDivider-root"
+        className="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
       />
       <nav
         aria-label="main mailbox folders"
-        className="MuiList-root MuiList-padding"
+        className="MuiList-root MuiList-padding css-h4y409-MuiList-root"
       >
         <a
-          className="MuiListItem-root MuiListItem-gutters"
+          className="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
           disabled={false}
           href="/html-encoding"
         >
           <div
-            className="MuiListItemIcon-root"
+            className="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root"
           >
             <svg
               aria-hidden={true}
@@ -99,22 +100,22 @@ exports[`renders correctly 1`] = `
             </svg>
           </div>
           <div
-            className="MuiListItemText-root"
+            className="MuiListItemText-root css-tlelie-MuiListItemText-root"
           >
             <span
-              className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+              className="MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-10hburv-MuiTypography-root"
             >
               HTML Encoder
             </span>
           </div>
         </a>
         <a
-          className="MuiListItem-root MuiListItem-gutters"
+          className="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
           disabled={false}
           href="/url-encoding"
         >
           <div
-            className="MuiListItemIcon-root"
+            className="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root"
           >
             <svg
               aria-hidden={true}
@@ -128,22 +129,22 @@ exports[`renders correctly 1`] = `
             </svg>
           </div>
           <div
-            className="MuiListItemText-root"
+            className="MuiListItemText-root css-tlelie-MuiListItemText-root"
           >
             <span
-              className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+              className="MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-10hburv-MuiTypography-root"
             >
               URL Encoder
             </span>
           </div>
         </a>
         <a
-          className="MuiListItem-root MuiListItem-gutters"
+          className="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
           disabled={false}
           href="/unix-timestamp-converter"
         >
           <div
-            className="MuiListItemIcon-root"
+            className="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root"
           >
             <svg
               aria-hidden={true}
@@ -160,22 +161,22 @@ exports[`renders correctly 1`] = `
             </svg>
           </div>
           <div
-            className="MuiListItemText-root"
+            className="MuiListItemText-root css-tlelie-MuiListItemText-root"
           >
             <span
-              className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+              className="MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-10hburv-MuiTypography-root"
             >
               Unix Timestamp Converter
             </span>
           </div>
         </a>
         <a
-          className="MuiListItem-root MuiListItem-gutters"
+          className="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
           disabled={false}
           href="/case-type-converter"
         >
           <div
-            className="MuiListItemIcon-root"
+            className="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root"
           >
             <svg
               aria-hidden={true}
@@ -189,22 +190,22 @@ exports[`renders correctly 1`] = `
             </svg>
           </div>
           <div
-            className="MuiListItemText-root"
+            className="MuiListItemText-root css-tlelie-MuiListItemText-root"
           >
             <span
-              className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+              className="MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-10hburv-MuiTypography-root"
             >
               Case Type Converter
             </span>
           </div>
         </a>
         <a
-          className="MuiListItem-root MuiListItem-gutters"
+          className="MuiListItem-root MuiListItem-gutters MuiListItem-padding css-1p823my-MuiListItem-root"
           disabled={false}
           href="/csv-editor"
         >
           <div
-            className="MuiListItemIcon-root"
+            className="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root"
           >
             <svg
               aria-hidden={true}
@@ -218,10 +219,10 @@ exports[`renders correctly 1`] = `
             </svg>
           </div>
           <div
-            className="MuiListItemText-root"
+            className="MuiListItemText-root css-tlelie-MuiListItemText-root"
           >
             <span
-              className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+              className="MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-10hburv-MuiTypography-root"
             >
               CSV Editor
             </span>
@@ -231,10 +232,22 @@ exports[`renders correctly 1`] = `
     </div>
   </div>
   <main
-    className="makeStyles-content-3"
+    style={
+      Object {
+        "flexGrow": 1,
+        "height": "100vh",
+        "overflow": "auto",
+      }
+    }
   >
     <div
-      className="MuiContainer-root makeStyles-container-4 MuiContainer-maxWidthLg"
+      className="MuiContainer-root MuiContainer-maxWidthLg css-1oqqzyl-MuiContainer-root"
+      style={
+        Object {
+          "paddingBottom": 4,
+          "paddingTop": 4,
+        }
+      }
     >
       <div>
         <div
