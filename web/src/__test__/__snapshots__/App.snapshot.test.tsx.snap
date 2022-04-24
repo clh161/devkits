@@ -264,25 +264,25 @@ exports[`renders correctly 1`] = `
           </div>
         </div>
         <div
-          className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
+          className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 css-zow5z4-MuiGrid-root"
         >
           <div
-            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
           >
             <p
-              className="MuiTypography-root MuiTypography-body1"
+              className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
             >
               An opensource project of collection of development tools
             </p>
           </div>
           <div
-            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
           >
             <span
-              className="MuiTypography-root MuiTypography-overline"
+              className="MuiTypography-root MuiTypography-overline css-b3fch5-MuiTypography-root"
             >
               <a
-                className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary"
+                className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
                 href="https://github.com/clh161/devkits"
                 onBlur={[Function]}
                 onFocus={[Function]}
