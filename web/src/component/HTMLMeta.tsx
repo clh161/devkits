@@ -9,8 +9,8 @@ export default function HTMLMeta({ pageConfig }: Props): ReactElement {
   return (
     <Helmet>
       <title>{title}</title>
-      <meta content={description} name="description" />
-      <meta content={keywords.join(', ')} name="keywords" />
+      <meta content={description} name='description' />
+      <meta content={keywords.join(', ')} name='keywords' />
     </Helmet>
   );
 }

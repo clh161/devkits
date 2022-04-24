@@ -56,20 +56,20 @@ export default function Dashboard(props: Props): ReactElement {
         classes={{
           paper: classes.drawerPaper,
         }}
-        variant="permanent"
+        variant='permanent'
       >
         <Toolbar>
           <Grid alignItems={'center'} container justify={'space-between'}>
             <Grid item xs={6}>
-              <Typography color="inherit" component="h1" noWrap variant="h6">
-                <Link href="/" underline={'none'}>
+              <Typography color='inherit' component='h1' noWrap variant='h6'>
+                <Link href='/' underline={'none'}>
                   Devkits
                 </Link>
               </Typography>
             </Grid>
             <Grid alignItems={'flex-end'} container item xs={1}>
               <IconButton
-                aria-label="Github Repository"
+                aria-label='Github Repository'
                 href={'https://github.com/clh161/devkits'}
                 target={'_blank'}
               >
@@ -79,14 +79,14 @@ export default function Dashboard(props: Props): ReactElement {
           </Grid>
         </Toolbar>
         <Divider />
-        <List aria-label="main mailbox folders" component="nav">
+        <List aria-label='main mailbox folders' component='nav'>
           {CONFIGS.filter((config) => !config.isHidden).map((config) => {
             switch (config.isHidden) {
               case true:
                 return null;
               case false:
                 return (
-                  <ListItem component="a" href={config.path} key={config.path}>
+                  <ListItem component='a' href={config.path} key={config.path}>
                     <ListItemIcon>{config.icon}</ListItemIcon>
                     <ListItemText primary={config.title} />
                   </ListItem>
@@ -96,7 +96,7 @@ export default function Dashboard(props: Props): ReactElement {
         </List>
       </Drawer>
       <main className={classes.content}>
-        <Container className={classes.container} maxWidth="lg">
+        <Container className={classes.container} maxWidth='lg'>
           {props.children}
         </Container>
       </main>
