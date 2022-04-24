@@ -740,6 +740,7 @@ Value 91,Value 92,Value 93,Value 94,Value 95,Value 96,Value 97,Value 98,Value 99
     >
       <div
         className="Spreadsheet"
+        onBlur={[Function]}
         onKeyDown={[Function]}
         onKeyPress={[Function]}
         onMouseMove={[Function]}
@@ -764,61 +765,87 @@ Value 91,Value 92,Value 93,Value 94,Value 95,Value 96,Value 97,Value 98,Value 99
             <tr>
               <th
                 className="Spreadsheet__header"
+                onClick={[Function]}
+                tabIndex={0}
               />
               <th
                 className="Spreadsheet__header"
+                onClick={[Function]}
+                tabIndex={0}
               >
                 A
               </th>
               <th
                 className="Spreadsheet__header"
+                onClick={[Function]}
+                tabIndex={0}
               >
                 B
               </th>
               <th
                 className="Spreadsheet__header"
+                onClick={[Function]}
+                tabIndex={0}
               >
                 C
               </th>
               <th
                 className="Spreadsheet__header"
+                onClick={[Function]}
+                tabIndex={0}
               >
                 D
               </th>
               <th
                 className="Spreadsheet__header"
+                onClick={[Function]}
+                tabIndex={0}
               >
                 E
               </th>
               <th
                 className="Spreadsheet__header"
+                onClick={[Function]}
+                tabIndex={0}
               >
                 F
               </th>
               <th
                 className="Spreadsheet__header"
+                onClick={[Function]}
+                tabIndex={0}
               >
                 G
               </th>
               <th
                 className="Spreadsheet__header"
+                onClick={[Function]}
+                tabIndex={0}
               >
                 H
               </th>
               <th
                 className="Spreadsheet__header"
+                onClick={[Function]}
+                tabIndex={0}
               >
                 I
               </th>
               <th
                 className="Spreadsheet__header"
+                onClick={[Function]}
+                tabIndex={0}
               >
                 J
               </th>
             </tr>
-            <tr>
+            <tr
+              row={0}
+            >
               <th
                 className="Spreadsheet__header"
+                onClick={[Function]}
+                tabIndex={0}
               >
                 1
               </th>
@@ -943,9 +970,13 @@ Value 91,Value 92,Value 93,Value 94,Value 95,Value 96,Value 97,Value 98,Value 99
                 </span>
               </td>
             </tr>
-            <tr>
+            <tr
+              row={1}
+            >
               <th
                 className="Spreadsheet__header"
+                onClick={[Function]}
+                tabIndex={0}
               >
                 2
               </th>
@@ -1070,9 +1101,13 @@ Value 91,Value 92,Value 93,Value 94,Value 95,Value 96,Value 97,Value 98,Value 99
                 </span>
               </td>
             </tr>
-            <tr>
+            <tr
+              row={2}
+            >
               <th
                 className="Spreadsheet__header"
+                onClick={[Function]}
+                tabIndex={0}
               >
                 3
               </th>
@@ -1197,9 +1232,13 @@ Value 91,Value 92,Value 93,Value 94,Value 95,Value 96,Value 97,Value 98,Value 99
                 </span>
               </td>
             </tr>
-            <tr>
+            <tr
+              row={3}
+            >
               <th
                 className="Spreadsheet__header"
+                onClick={[Function]}
+                tabIndex={0}
               >
                 4
               </th>
@@ -1324,9 +1363,13 @@ Value 91,Value 92,Value 93,Value 94,Value 95,Value 96,Value 97,Value 98,Value 99
                 </span>
               </td>
             </tr>
-            <tr>
+            <tr
+              row={4}
+            >
               <th
                 className="Spreadsheet__header"
+                onClick={[Function]}
+                tabIndex={0}
               >
                 5
               </th>
@@ -1451,9 +1494,13 @@ Value 91,Value 92,Value 93,Value 94,Value 95,Value 96,Value 97,Value 98,Value 99
                 </span>
               </td>
             </tr>
-            <tr>
+            <tr
+              row={5}
+            >
               <th
                 className="Spreadsheet__header"
+                onClick={[Function]}
+                tabIndex={0}
               >
                 6
               </th>
@@ -1578,9 +1625,13 @@ Value 91,Value 92,Value 93,Value 94,Value 95,Value 96,Value 97,Value 98,Value 99
                 </span>
               </td>
             </tr>
-            <tr>
+            <tr
+              row={6}
+            >
               <th
                 className="Spreadsheet__header"
+                onClick={[Function]}
+                tabIndex={0}
               >
                 7
               </th>
@@ -1705,9 +1756,13 @@ Value 91,Value 92,Value 93,Value 94,Value 95,Value 96,Value 97,Value 98,Value 99
                 </span>
               </td>
             </tr>
-            <tr>
+            <tr
+              row={7}
+            >
               <th
                 className="Spreadsheet__header"
+                onClick={[Function]}
+                tabIndex={0}
               >
                 8
               </th>
@@ -1832,9 +1887,13 @@ Value 91,Value 92,Value 93,Value 94,Value 95,Value 96,Value 97,Value 98,Value 99
                 </span>
               </td>
             </tr>
-            <tr>
+            <tr
+              row={8}
+            >
               <th
                 className="Spreadsheet__header"
+                onClick={[Function]}
+                tabIndex={0}
               >
                 9
               </th>
@@ -1959,9 +2018,13 @@ Value 91,Value 92,Value 93,Value 94,Value 95,Value 96,Value 97,Value 98,Value 99
                 </span>
               </td>
             </tr>
-            <tr>
+            <tr
+              row={9}
+            >
               <th
                 className="Spreadsheet__header"
+                onClick={[Function]}
+                tabIndex={0}
               >
                 10
               </th>
@@ -2086,9 +2149,13 @@ Value 91,Value 92,Value 93,Value 94,Value 95,Value 96,Value 97,Value 98,Value 99
                 </span>
               </td>
             </tr>
-            <tr>
+            <tr
+              row={10}
+            >
               <th
                 className="Spreadsheet__header"
+                onClick={[Function]}
+                tabIndex={0}
               >
                 11
               </th>
@@ -2219,10 +2286,10 @@ Value 91,Value 92,Value 93,Value 94,Value 95,Value 96,Value 97,Value 98,Value 99
           className="Spreadsheet__floating-rect Spreadsheet__floating-rect--selected Spreadsheet__floating-rect--hidden"
           style={
             Object {
-              "height": 0,
-              "left": 0,
-              "top": 0,
-              "width": 0,
+              "height": undefined,
+              "left": undefined,
+              "top": undefined,
+              "width": undefined,
             }
           }
         />
@@ -2230,10 +2297,10 @@ Value 91,Value 92,Value 93,Value 94,Value 95,Value 96,Value 97,Value 98,Value 99
           className="Spreadsheet__floating-rect Spreadsheet__floating-rect--copied Spreadsheet__floating-rect--hidden"
           style={
             Object {
-              "height": 0,
-              "left": 0,
-              "top": 0,
-              "width": 0,
+              "height": undefined,
+              "left": undefined,
+              "top": undefined,
+              "width": undefined,
             }
           }
         />
