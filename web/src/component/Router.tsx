@@ -6,7 +6,7 @@ import {
   AccessTime as AccessTimeIcon,
 } from '@mui/icons-material';
 import React, { ReactElement } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { CASE_TYPES } from '../page/CASE_TYPES';
 import CaseTypeConverter from '../page/CaseTypeConverter';
 import CSVEditor from '../page/CSVEditor';
@@ -86,15 +86,15 @@ export const CONFIGS: Array<RouterConfig> = [
 export default function Router(): ReactElement {
   return (
     <BrowserRouter>
-      <Switch>
-        {CONFIGS.map((config) => {
-          return (
-            <Route key={config.path} path={config.path}>
-              <Page pageConfig={config}>{config.component}</Page>
-            </Route>
-          );
-        })}
-      </Switch>
+      <Routes>
+        {CONFIGS.map((config) => (
+          <Route
+            element={<Page pageConfig={config}>{config.component}</Page>}
+            key={config.path}
+            path={config.path}
+          />
+        ))}
+      </Routes>
     </BrowserRouter>
   );
 }
