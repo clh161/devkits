@@ -5,7 +5,6 @@ env:
 extends:
   - 'plugin:react/recommended'
   - 'plugin:prettier/recommended'
-  - 'plugin:flowtype/recommended'
 ignorePatterns:
   - 'build/**'
 parserOptions:
@@ -15,7 +14,6 @@ parserOptions:
   sourceType: module
 plugins:
   - react
-  - flowtype
   - simple-import-sort
 rules: {
     'react/jsx-filename-extension':
@@ -26,7 +24,6 @@ rules: {
         'error',
         { 'vars': 'all', 'args': 'after-used', 'ignoreRestSiblings': false },
       ],
-    'flowtype/no-types-missing-file-annotation': 0,
     # 'simple-import-sort/imports': 'error',
     # 'simple-import-sort/exports': 'error',
   }
