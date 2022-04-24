@@ -16,6 +16,7 @@ import {
   styled,
 } from '@mui/material';
 import React, { ReactElement } from 'react';
+import { Outlet } from 'react-router-dom';
 import { CONFIGS } from './Router';
 const drawerWidth = 320;
 const DrawerPaper = styled(Drawer)(({ theme }) => {
@@ -29,10 +30,8 @@ const DrawerPaper = styled(Drawer)(({ theme }) => {
     }),
   };
 });
-type Props = {
-  children: ReactElement;
-};
-export default function Dashboard(props: Props): ReactElement {
+type Props = {};
+export default function Dashboard({}: Props): ReactElement {
   return (
     <div style={{ display: 'flex' }}>
       <CssBaseline />
@@ -93,7 +92,7 @@ export default function Dashboard(props: Props): ReactElement {
             paddingBottom: 4,
           }}
         >
-          {props.children}
+          <Outlet />
         </Container>
       </main>
     </div>
