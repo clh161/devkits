@@ -7,7 +7,6 @@ extends:
   - 'plugin:prettier/recommended'
   - 'plugin:flowtype/recommended'
 ignorePatterns:
-  - 'flow-typed/**'
   - 'build/**'
 parserOptions:
   ecmaFeatures:

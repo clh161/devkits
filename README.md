@@ -14,7 +14,6 @@ https://devkits.net/
 ```shell
 cd ./web
 yarn install
-yarn flow-typed
 ```
 ## Lint
 Before submitting a pull request, please ensure lint integrity
