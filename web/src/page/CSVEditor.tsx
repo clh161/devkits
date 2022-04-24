@@ -1,4 +1,4 @@
-import { Button, Divider, Grid, Paper, RootRef } from '@material-ui/core';
+import { Button, Divider, Grid, Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import React, { ReactElement, useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
@@ -56,7 +56,7 @@ export default function CSVEditor(): ReactElement {
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
   });
-  const { ref, ...rootProps } = getRootProps();
+  const { ...rootProps } = getRootProps();
   const classes = useStyles();
 
   function onDownload() {
@@ -85,21 +85,18 @@ export default function CSVEditor(): ReactElement {
   return (
     <Grid container spacing={3}>
       <Grid item xs={12}>
-        {/* @ts-expect-error */}
-        <RootRef rootRef={ref}>
-          <Paper variant='outlined' {...rootProps} className={classes.dropzone}>
-            <Grid
-              alignContent={'center'}
-              container
-              item
-              justifyContent={'center'}
-              xs={12}
-            >
-              <input {...getInputProps()} />
-              <p>Drag and drop a CSV file</p>
-            </Grid>
-          </Paper>
-        </RootRef>
+        <Paper variant='outlined' {...rootProps} className={classes.dropzone}>
+          <Grid
+            alignContent={'center'}
+            container
+            item
+            justifyContent={'center'}
+            xs={12}
+          >
+            <input {...getInputProps()} />
+            <p>Drag and drop a CSV file</p>
+          </Grid>
+        </Paper>
       </Grid>
       <Grid item xs={12}>
         <textarea
