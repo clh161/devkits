@@ -1,8 +1,10 @@
-import AccessTimeIcon from '@material-ui/icons/AccessTime';
-import CodeIcon from '@material-ui/icons/Code';
-import HttpIcon from '@material-ui/icons/Http';
-import TextFieldsIcon from '@material-ui/icons/TextFields';
-import ViewComfyIcon from '@material-ui/icons/ViewComfy';
+import {
+  ViewComfy as ViewComfyIcon,
+  TextFields as TextFieldsIcon,
+  Http as HttpIcon,
+  Code as CodeIcon,
+  AccessTime as AccessTimeIcon,
+} from '@mui/icons-material';
 import React, { ReactElement } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { CASE_TYPES } from '../page/CASE_TYPES';
