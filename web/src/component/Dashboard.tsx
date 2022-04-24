@@ -59,7 +59,11 @@ export default function Dashboard(props: Props): ReactElement {
         variant='permanent'
       >
         <Toolbar>
-          <Grid alignItems={'center'} container justify={'space-between'}>
+          <Grid
+            alignItems={'center'}
+            container
+            justifyContent={'space-between'}
+          >
             <Grid item xs={6}>
               <Typography color='inherit' component='h1' noWrap variant='h6'>
                 <Link href='/' underline={'none'}>

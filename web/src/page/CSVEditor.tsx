@@ -92,7 +92,7 @@ export default function CSVEditor(): ReactElement {
               alignContent={'center'}
               container
               item
-              justify={'center'}
+              justifyContent={'center'}
               xs={12}
             >
               <input {...getInputProps()} />
