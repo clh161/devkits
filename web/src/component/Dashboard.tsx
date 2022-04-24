@@ -17,7 +17,7 @@ import {
 } from '@mui/material';
 import React, { ReactElement } from 'react';
 import { Outlet } from 'react-router-dom';
-import { CONFIGS } from './Router';
+import { RouterConfigs } from './RouterConfig';
 const drawerWidth = 320;
 const DrawerPaper = styled(Drawer)(({ theme }) => {
   return {
@@ -63,7 +63,7 @@ export default function Dashboard({}: Props): ReactElement {
         </Toolbar>
         <Divider />
         <List aria-label='main mailbox folders' component='nav'>
-          {CONFIGS.filter((config) => !config.isHidden).map((config) => {
+          {RouterConfigs.filter((config) => !config.isHidden).map((config) => {
             switch (config.isHidden) {
               case true:
                 return null;
