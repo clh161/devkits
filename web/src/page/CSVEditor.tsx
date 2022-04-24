@@ -1,11 +1,8 @@
-// @flow strict
 import { Button, Divider, Grid, Paper, RootRef } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import type { Node } from 'react';
-import React, { useCallback, useState } from 'react';
+import React, { ReactElement, useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { Spreadsheet } from 'react-spreadsheet';
-
 const useStyles = makeStyles((theme) => {
   return {
     dropzone: {
@@ -21,42 +18,44 @@ const useStyles = makeStyles((theme) => {
     },
   };
 });
-
 type Cell = {
-  value: string,
+  value: string;
 };
-
 const DEFAULT_CSV = [
   new Array(10)
-    .fill()
+    .fill(0)
     .map((_, i) => 'Column ' + (i + 1))
     .join(','),
-
-  ...new Array(10).fill().map((_, i) =>
+  ...new Array(10).fill(0).map((_, i) =>
     new Array(10)
-      .fill()
+      .fill(0)
       .map((_, j) => 'Value ' + (i * 10 + j + 1))
       .join(',')
   ),
 ].join('\n');
-
-export default function CSVEditor(): Node {
+export default function CSVEditor(): ReactElement {
   const [csv, setCsv] = useState<string>(DEFAULT_CSV);
   const [cells, setCells] = useState<Array<Array<Cell>>>(csvToCells(csv));
   const onDrop = useCallback((acceptedFiles) => {
     const file = acceptedFiles[0];
+
     if (file != null) {
       const reader = new FileReader();
+
       reader.onerror = () => console.log('file reading has failed');
+
       reader.onload = () => {
         const newCsv = reader.result?.toString() ?? '';
         setCsv(newCsv);
         setCells(csvToCells(newCsv));
       };
+
       reader.readAsText(file);
     }
   }, []);
-  const { getRootProps, getInputProps } = useDropzone({ onDrop });
+  const { getRootProps, getInputProps } = useDropzone({
+    onDrop,
+  });
   const { ref, ...rootProps } = getRootProps();
   const classes = useStyles();
 
@@ -68,6 +67,7 @@ export default function CSVEditor(): Node {
     element.href = URL.createObjectURL(file);
     element.download = 'devkits-csv-editor.csv';
     document.body?.appendChild(element); // Required for this to work in FireFox
+
     element.click();
   }
 
@@ -85,6 +85,7 @@ export default function CSVEditor(): Node {
   return (
     <Grid container spacing={3}>
       <Grid item xs={12}>
+        {/* @ts-expect-error */}
         <RootRef rootRef={ref}>
           <Paper variant="outlined" {...rootProps} className={classes.dropzone}>
             <Grid
@@ -104,7 +105,10 @@ export default function CSVEditor(): Node {
         <textarea
           onChange={onCsvChange}
           placeholder="CSV"
-          style={{ width: '100%', minHeight: 160 }}
+          style={{
+            width: '100%',
+            minHeight: 160,
+          }}
           value={csv}
         />
       </Grid>
@@ -129,7 +133,9 @@ export default function CSVEditor(): Node {
 function csvToCells(csv: string): Array<Array<Cell>> {
   return csv.split('\n').map((line) =>
     line.split(',').map((value) => {
-      return { value: value };
+      return {
+        value: value,
+      };
     })
   );
 }
