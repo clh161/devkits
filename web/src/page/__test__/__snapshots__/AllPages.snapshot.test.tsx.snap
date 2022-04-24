@@ -543,29 +543,32 @@ exports[`All Pages 7`] = `
     </div>
   </div>
   <div
-    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
+    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 css-zow5z4-MuiGrid-root"
   >
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
     >
       <div
-        className="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+        className="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
       >
         <label
-          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+          className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
           data-shrink={false}
+          htmlFor="mui-8"
+          id="mui-8-label"
         >
           Normal Text
         </label>
         <div
-          className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+          className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-md26zr-MuiInputBase-root-MuiOutlinedInput-root"
           onClick={[Function]}
         >
           <input
             aria-invalid={false}
             autoFocus={false}
-            className="MuiInputBase-input MuiInput-input"
+            className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
             disabled={false}
+            id="mui-8"
             onAnimationStart={[Function]}
             onBlur={[Function]}
             onChange={[Function]}
@@ -574,30 +577,45 @@ exports[`All Pages 7`] = `
             type="text"
             value="This is an example text"
           />
+          <fieldset
+            aria-hidden={true}
+            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              className="css-1ftyaf0"
+            >
+              <span>
+                Normal Text
+              </span>
+            </legend>
+          </fieldset>
         </div>
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
     >
       <div
-        className="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+        className="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
       >
         <label
-          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+          className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
           data-shrink={false}
+          htmlFor="mui-9"
+          id="mui-9-label"
         >
           Camel Case
         </label>
         <div
-          className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+          className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-md26zr-MuiInputBase-root-MuiOutlinedInput-root"
           onClick={[Function]}
         >
           <input
             aria-invalid={false}
             autoFocus={false}
-            className="MuiInputBase-input MuiInput-input"
+            className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
             disabled={false}
+            id="mui-9"
             onAnimationStart={[Function]}
             onBlur={[Function]}
             onChange={[Function]}
@@ -606,30 +624,45 @@ exports[`All Pages 7`] = `
             type="text"
             value="thisIsAnExampleText"
           />
+          <fieldset
+            aria-hidden={true}
+            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              className="css-1ftyaf0"
+            >
+              <span>
+                Camel Case
+              </span>
+            </legend>
+          </fieldset>
         </div>
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
     >
       <div
-        className="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+        className="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
       >
         <label
-          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+          className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
           data-shrink={false}
+          htmlFor="mui-10"
+          id="mui-10-label"
         >
           Snake Case
         </label>
         <div
-          className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+          className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-md26zr-MuiInputBase-root-MuiOutlinedInput-root"
           onClick={[Function]}
         >
           <input
             aria-invalid={false}
             autoFocus={false}
-            className="MuiInputBase-input MuiInput-input"
+            className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
             disabled={false}
+            id="mui-10"
             onAnimationStart={[Function]}
             onBlur={[Function]}
             onChange={[Function]}
@@ -638,30 +671,45 @@ exports[`All Pages 7`] = `
             type="text"
             value="this_is_an_example_text"
           />
+          <fieldset
+            aria-hidden={true}
+            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              className="css-1ftyaf0"
+            >
+              <span>
+                Snake Case
+              </span>
+            </legend>
+          </fieldset>
         </div>
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
     >
       <div
-        className="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+        className="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
       >
         <label
-          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+          className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
           data-shrink={false}
+          htmlFor="mui-11"
+          id="mui-11-label"
         >
           Snake Upper Case
         </label>
         <div
-          className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+          className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-md26zr-MuiInputBase-root-MuiOutlinedInput-root"
           onClick={[Function]}
         >
           <input
             aria-invalid={false}
             autoFocus={false}
-            className="MuiInputBase-input MuiInput-input"
+            className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
             disabled={false}
+            id="mui-11"
             onAnimationStart={[Function]}
             onBlur={[Function]}
             onChange={[Function]}
@@ -670,30 +718,45 @@ exports[`All Pages 7`] = `
             type="text"
             value="THIS_IS_AN_EXAMPLE_TEXT"
           />
+          <fieldset
+            aria-hidden={true}
+            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              className="css-1ftyaf0"
+            >
+              <span>
+                Snake Upper Case
+              </span>
+            </legend>
+          </fieldset>
         </div>
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-1idn90j-MuiGrid-root"
     >
       <div
-        className="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+        className="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
       >
         <label
-          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+          className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
           data-shrink={false}
+          htmlFor="mui-12"
+          id="mui-12-label"
         >
           Kebab Case
         </label>
         <div
-          className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+          className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-md26zr-MuiInputBase-root-MuiOutlinedInput-root"
           onClick={[Function]}
         >
           <input
             aria-invalid={false}
             autoFocus={false}
-            className="MuiInputBase-input MuiInput-input"
+            className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
             disabled={false}
+            id="mui-12"
             onAnimationStart={[Function]}
             onBlur={[Function]}
             onChange={[Function]}
@@ -702,6 +765,18 @@ exports[`All Pages 7`] = `
             type="text"
             value="this-is-an-example-text"
           />
+          <fieldset
+            aria-hidden={true}
+            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              className="css-1ftyaf0"
+            >
+              <span>
+                Kebab Case
+              </span>
+            </legend>
+          </fieldset>
         </div>
       </div>
     </div>

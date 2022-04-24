@@ -1,4 +1,4 @@
-import { Grid, TextField } from '@material-ui/core';
+import { Grid, TextField } from '@mui/material';
 import React, { ReactElement, useState } from 'react';
 import type { CaseType, CaseTypeKey } from './CASE_TYPES';
 import { CASE_TYPES } from './CASE_TYPES';
