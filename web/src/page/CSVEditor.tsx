@@ -87,7 +87,7 @@ export default function CSVEditor(): ReactElement {
       <Grid item xs={12}>
         {/* @ts-expect-error */}
         <RootRef rootRef={ref}>
-          <Paper variant="outlined" {...rootProps} className={classes.dropzone}>
+          <Paper variant='outlined' {...rootProps} className={classes.dropzone}>
             <Grid
               alignContent={'center'}
               container
@@ -104,7 +104,7 @@ export default function CSVEditor(): ReactElement {
       <Grid item xs={12}>
         <textarea
           onChange={onCsvChange}
-          placeholder="CSV"
+          placeholder='CSV'
           style={{
             width: '100%',
             minHeight: 160,
@@ -122,7 +122,7 @@ export default function CSVEditor(): ReactElement {
         />
       </Grid>
       <Grid item xs={12}>
-        <Button color="primary" onClick={onDownload} variant="contained">
+        <Button color='primary' onClick={onDownload} variant='contained'>
           Download
         </Button>
       </Grid>

@@ -29,7 +29,7 @@ export default function URLEncoder(): ReactElement {
       <Grid item xs={12}>
         <textarea
           onChange={onEncodedURLChange}
-          placeholder="Encoded URL"
+          placeholder='Encoded URL'
           style={{
             width: '100%',
             minHeight: 160,
@@ -41,7 +41,7 @@ export default function URLEncoder(): ReactElement {
       <Grid item xs={12}>
         <textarea
           onChange={onDecodedURLChange}
-          placeholder="Decoded URL"
+          placeholder='Decoded URL'
           style={{
             width: '100%',
             minHeight: 160,

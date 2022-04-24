@@ -53,9 +53,9 @@ export default function TimestampConverter({
     <Grid container spacing={3}>
       <Grid item xs={12}>
         <TextField
-          label="Timestamp"
+          label='Timestamp'
           onChange={onUnixTimestampChange}
-          type="number"
+          type='number'
           value={unixTimestamp}
         />
       </Grid>
@@ -67,7 +67,7 @@ export default function TimestampConverter({
               onChange={(event) => {
                 onDatetimeChange(dt.name, event);
               }}
-              type="number"
+              type='number'
               value={dt.value}
             />
           </Grid>

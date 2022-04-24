@@ -33,7 +33,7 @@ export default function HTMLEncoder({
       <Grid item xs={12}>
         <textarea
           onChange={onDecodedHTMLChanged}
-          placeholder="Decoded HTML"
+          placeholder='Decoded HTML'
           style={{
             width: '100%',
             minHeight: 160,
@@ -45,7 +45,7 @@ export default function HTMLEncoder({
       <Grid item xs={12}>
         <textarea
           onChange={onEncodedHTMLChanged}
-          placeholder="Encoded HTML"
+          placeholder='Encoded HTML'
           style={{
             width: '100%',
             minHeight: 160,

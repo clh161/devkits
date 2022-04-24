@@ -12,7 +12,7 @@ export default function Page({ children, pageConfig }: Props): ReactElement {
       <HTMLMeta pageConfig={pageConfig} />
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Typography component="h1" variant="h4">
+          <Typography component='h1' variant='h4'>
             {pageConfig.title}
           </Typography>
         </Grid>
