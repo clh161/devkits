@@ -41,7 +41,7 @@ exports[`Init with default 1`] = `
           >
             <a
               aria-label="Github Repository"
-              className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+              className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-yvetkp-MuiButtonBase-root-MuiIconButton-root"
               href="https://github.com/clh161/devkits"
               onBlur={[Function]}
               onContextMenu={[Function]}
