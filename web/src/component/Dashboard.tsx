@@ -53,6 +53,7 @@ export default function Dashboard(props: Props): ReactElement {
             <Grid alignItems={'flex-end'} container item xs={1}>
               <IconButton
                 aria-label='Github Repository'
+                disableRipple={true}
                 href={'https://github.com/clh161/devkits'}
                 target={'_blank'}
               >
