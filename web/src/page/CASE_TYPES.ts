@@ -1,4 +1,3 @@
-// @flow strict
 import lodash from 'lodash';
 export type CaseTypeKey =
   | 'normal_text'
@@ -8,10 +7,10 @@ export type CaseTypeKey =
   | 'kebab_case';
 
 export type CaseType = {
-  label: string,
-  key: CaseTypeKey,
-  getTextFromNormalText: (string) => string,
-  getNormalText: (string) => string,
+  label: string;
+  key: CaseTypeKey;
+  getTextFromNormalText: (string) => string;
+  getNormalText: (string) => string;
 };
 export const CASE_TYPES: Array<CaseType> = [
   {
