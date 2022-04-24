@@ -13,6 +13,7 @@ export function getTexts(
 ): Record<CaseTypeKey, string> {
   const caseType = CASE_TYPES.find((caseType) => caseType.key === key);
   const normalText = caseType?.getNormalText(text) ?? '';
+  // @ts-expect-error
   return CASE_TYPES.reduce((texts, ct) => {
     texts[ct.key] =
       ct.key === key ? text : ct.getTextFromNormalText(normalText);
