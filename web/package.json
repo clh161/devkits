@@ -30,7 +30,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint . --fix && prettier . --write",
     "sitemap": "babel-node src/sitemap.js",
-    "all-checks": "yarn run test && yarn run lint && yarn run sitemap && yarn run tsc && yarn run build"
+    "all-checks": "react-scripts test  --watchAll=false --coverage -u && yarn run lint && yarn run sitemap && yarn run tsc && yarn run build"
   },
   "eslintConfig": {
     "extends": [

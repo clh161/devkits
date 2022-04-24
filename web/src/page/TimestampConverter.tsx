@@ -1,4 +1,4 @@
-import { Grid, TextField } from '@material-ui/core';
+import { Grid, TextField } from '@mui/material';
 import React, { ReactElement, useState } from 'react';
 type DatetimeConfig = {
   name: string;
