@@ -94,7 +94,7 @@ jobs:
       - uses: actions/setup-node@v3
       - run: yarn install
       - run: yarn run eslint .
-  docker-build:
+  build:
     if: github.ref != 'refs/heads/master'
     defaults:
       run:
@@ -116,8 +116,6 @@ jobs:
             ${{ runner.os }}-
       - run: yarn install
       - run: yarn run build
-      - name: Dockerize
-        run: docker build -t devkits-web .
   docker-build-and-push:
     if: github.ref == 'refs/heads/master'
     defaults:
