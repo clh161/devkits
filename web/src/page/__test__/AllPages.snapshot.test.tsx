@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import renderer from 'react-test-renderer';
+
 import { RouterConfigs } from '../../component/RouterConfig';
 import Page from '../Page';
 it('All Pages', () => {

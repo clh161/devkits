@@ -4,8 +4,6 @@ import {
   CssBaseline,
   Divider,
   Drawer,
-  Toolbar,
-  Typography,
   Grid,
   IconButton,
   Link,
@@ -14,9 +12,12 @@ import {
   ListItemIcon,
   ListItemText,
   styled,
+  Toolbar,
+  Typography,
 } from '@mui/material';
 import React, { ReactElement } from 'react';
 import { Outlet } from 'react-router-dom';
+
 import { RouterConfigs } from './RouterConfig';
 const drawerWidth = 320;
 const DrawerPaper = styled(Drawer)(({ theme }) => {
@@ -30,8 +31,7 @@ const DrawerPaper = styled(Drawer)(({ theme }) => {
     }),
   };
 });
-type Props = {};
-export default function Dashboard({}: Props): ReactElement {
+export default function Dashboard(): ReactElement {
   return (
     <div style={{ display: 'flex' }}>
       <CssBaseline />

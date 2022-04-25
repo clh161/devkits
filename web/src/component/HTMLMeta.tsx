@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react';
 import { Helmet } from 'react-helmet';
+
 import { RouterConfig } from './RouterConfig';
 type Props = {
   pageConfig: RouterConfig;

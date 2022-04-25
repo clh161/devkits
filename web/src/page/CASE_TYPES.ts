@@ -9,7 +9,9 @@ export type CaseTypeKey =
 export type CaseType = {
   label: string;
   key: CaseTypeKey;
-  getTextFromNormalText: (string) => string;
+  // eslint-disable-next-line no-unused-vars
+  getTextFromNormalText(text: string): string;
+  // eslint-disable-next-line no-unused-vars
   getNormalText: (string) => string;
 };
 export const CASE_TYPES: Array<CaseType> = [
