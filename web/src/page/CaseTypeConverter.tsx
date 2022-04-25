@@ -1,5 +1,6 @@
 import { Grid, TextField } from '@mui/material';
 import React, { ReactElement, useState } from 'react';
+
 import type { CaseType, CaseTypeKey } from './CASE_TYPES';
 import { CASE_TYPES } from './CASE_TYPES';
 const DEFAULT_NORMAL_TEXT = 'This is an example text';
@@ -13,7 +14,7 @@ export function getTexts(
 ): Record<CaseTypeKey, string> {
   const caseType = CASE_TYPES.find((caseType) => caseType.key === key);
   const normalText = caseType?.getNormalText(text) ?? '';
-  // @ts-expect-error
+  // @ts-expect-error Hard to fix
   return CASE_TYPES.reduce((texts, ct) => {
     texts[ct.key] =
       ct.key === key ? text : ct.getTextFromNormalText(normalText);

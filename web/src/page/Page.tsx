@@ -1,5 +1,6 @@
 import { Grid, Typography } from '@mui/material';
 import React, { ReactElement } from 'react';
+
 import HTMLMeta from '../component/HTMLMeta';
 import { RouterConfig } from '../component/RouterConfig';
 type Props = {

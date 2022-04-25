@@ -5,6 +5,7 @@ env:
 extends:
   - 'plugin:react/recommended'
   - 'plugin:prettier/recommended'
+  - 'plugin:@typescript-eslint/recommended'
 ignorePatterns:
   - 'build/**'
 parserOptions:
@@ -15,6 +16,7 @@ parserOptions:
 plugins:
   - react
   - simple-import-sort
+  - '@typescript-eslint'
 rules:
   {
     'react/jsx-filename-extension':

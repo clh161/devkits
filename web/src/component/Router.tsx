@@ -1,8 +1,9 @@
 import React, { ReactElement } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 import Page from '../page/Page';
-import { RouterConfigs } from './RouterConfig';
 import Dashboard from './Dashboard';
+import { RouterConfigs } from './RouterConfig';
 
 export default function Router(): ReactElement {
   return (
