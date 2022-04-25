@@ -15,7 +15,8 @@ parserOptions:
 plugins:
   - react
   - simple-import-sort
-rules: {
+rules:
+  {
     'react/jsx-filename-extension':
       ['warn', { 'extensions': ['.js', '.jsx', 'tsx'] }],
     'react/jsx-sort-props': ['error'],
@@ -24,6 +25,9 @@ rules: {
         'error',
         { 'vars': 'all', 'args': 'after-used', 'ignoreRestSiblings': false },
       ],
-    # 'simple-import-sort/imports': 'error',
-    # 'simple-import-sort/exports': 'error',
   }
+# 'simple-import-sort/imports': 'error',
+# 'simple-import-sort/exports': 'error',
+settings:
+  react:
+    version: detect
