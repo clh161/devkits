@@ -3,9 +3,9 @@ name: Web
 on:
   push:
     paths:
-    - 'web/**'
-    - 'kubernetes/web.yaml'
-    - '.github/workflows/web.yml'
+      - "web/**"
+      - "kubernetes/web.yaml"
+      - ".github/workflows/web.yml"
 
 jobs:
   typescript:
@@ -95,6 +95,30 @@ jobs:
       - run: yarn install
       - run: yarn run eslint .
   docker-build:
+    if: github.ref != 'refs/heads/master'
+    defaults:
+      run:
+        working-directory: ./web
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - name: Cache node modules
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ./ebay-helper-frontend/node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('./web/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - run: yarn install
+      - run: yarn run build
+      - name: Dockerize
+        run: docker build -t devkits-web .
+  docker-build-and-push:
     if: github.ref == 'refs/heads/master'
     defaults:
       run:
@@ -130,7 +154,7 @@ jobs:
           docker push registry.digitalocean.com/jbb/devkits-web
   deploy:
     if: github.ref == 'refs/heads/master'
-    needs: [prettier, eslint, typescript, test, docker-build]
+    needs: [prettier, eslint, typescript, test, docker-build-and-push]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
