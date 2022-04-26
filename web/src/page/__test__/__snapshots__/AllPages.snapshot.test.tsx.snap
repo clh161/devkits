@@ -870,7 +870,6 @@ exports[`All Pages 9`] = `
           className="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12 css-ks12vm-MuiGrid-root"
         >
           <input
-            autoComplete="off"
             multiple={true}
             onChange={[Function]}
             onClick={[Function]}
