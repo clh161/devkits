@@ -8206,10 +8206,10 @@ react-side-effect@^2.1.0:
   resolved "https://registry.npmjs.org/react-side-effect/-/react-side-effect-2.1.1.tgz"
   integrity sha512-2FoTQzRNTncBVtnzxFOk2mCpcfxQpenBMbk5kSVBg5UcPqV9fRbgY2zhb7GTWWOlpFmAxhClBDlIq8Rsubz1yQ==
 
-react-spreadsheet@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/react-spreadsheet/-/react-spreadsheet-0.7.0.tgz#df5b5b29251e9092a1c402b9ac22e6c6ec6d8b4f"
-  integrity sha512-wHdkJWwiBA55at9PSROVmL0MX9bCdMjzlnYwymRcjVZNGh9t3eGEOu/Ld6ne/UdsJAUWlhXbeJvCtMV9pjDzgw==
+react-spreadsheet@^0.7.2:
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/react-spreadsheet/-/react-spreadsheet-0.7.2.tgz#857c3405895de27948189dfac3fdc544c8d71e1c"
+  integrity sha512-zZt97BtmT9fsWX6B5c5YsGu+JmTmDitcCgBXpvZCXwhYGUbpAS5XxmMRwOcBXX9HaL4MfaRa/QNZOR99Xlu8nA==
   dependencies:
     "@reduxjs/toolkit" "^1.7.1"
     "@types/array.prototype.flatmap" "^1.2.2"
