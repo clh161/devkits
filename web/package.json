@@ -53,12 +53,12 @@
     ]
   },
   "devDependencies": {
-    "@babel/cli": "7.17.10",
-    "@babel/core": "7.18.5",
-    "@babel/node": "7.18.5",
-    "@babel/preset-env": "7.18.2",
-    "@babel/preset-react": "7.17.12",
-    "@babel/preset-typescript": "7.17.12",
+    "@babel/cli": "7.18.6",
+    "@babel/core": "7.18.6",
+    "@babel/node": "7.18.6",
+    "@babel/preset-env": "7.18.6",
+    "@babel/preset-react": "7.18.6",
+    "@babel/preset-typescript": "7.18.6",
     "@testing-library/jest-dom": "5.16.4",
     "@types/jest": "28.1.3",
     "@types/json-buffer": "3.0.0",
