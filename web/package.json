@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@emotion/react": "11.9.3",
+    "@emotion/react": "11.10.0",
     "@emotion/styled": "11.9.3",
     "@mui/icons-material": "5.8.4",
     "@mui/material": "5.9.1",
@@ -15,7 +15,7 @@
     "react-helmet": "6.1.0",
     "react-router-dom": "6.3.0",
     "react-scripts": "5.0.1",
-    "react-spreadsheet": "0.7.5",
+    "react-spreadsheet": "0.7.7",
     "web-vitals": "2.1.4"
   },
   "scripts": {
@@ -63,7 +63,7 @@
     "@types/jest": "28.1.6",
     "@types/json-buffer": "3.0.0",
     "@types/node": "18.0.6",
-    "@types/react": "18.0.15",
+    "@types/react": "18.0.16",
     "@types/react-dom": "18.0.6",
     "@typescript-eslint/eslint-plugin": "5.30.7",
     "@typescript-eslint/parser": "5.30.7",
