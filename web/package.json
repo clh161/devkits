@@ -62,7 +62,7 @@
     "@testing-library/jest-dom": "5.16.5",
     "@types/jest": "29.0.1",
     "@types/json-buffer": "3.0.0",
-    "@types/node": "18.7.17",
+    "@types/node": "18.7.18",
     "@types/react": "18.0.19",
     "@types/react-dom": "18.0.6",
     "@typescript-eslint/eslint-plugin": "5.37.0",
