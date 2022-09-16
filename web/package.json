@@ -60,7 +60,7 @@
     "@babel/preset-react": "7.18.6",
     "@babel/preset-typescript": "7.18.6",
     "@testing-library/jest-dom": "5.16.5",
-    "@types/jest": "29.0.1",
+    "@types/jest": "29.0.3",
     "@types/json-buffer": "3.0.0",
     "@types/node": "18.7.17",
     "@types/react": "18.0.19",
