@@ -80,6 +80,6 @@
     "prettier": "2.7.1",
     "react-router-sitemap-generator": "0.0.8",
     "react-test-renderer": "18.2.0",
-    "typescript": "4.8.4"
+    "typescript": "4.9.3"
   }
 }
