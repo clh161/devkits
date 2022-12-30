@@ -7,38 +7,35 @@ type KotlinClass = {
   string: string;
 };
 
-type ClassStructure = {
-  name: string;
-  fields: FieldStructure[];
-};
-
-type FieldStructure = {
-  name: string;
-  isNullable: boolean;
-  isOptional: boolean;
-  type: 'string' | 'integer' | 'decimal' | 'any' | 'class' | 'array';
-};
+type FieldStructure =
+  | {
+      name: string;
+      isNullable: boolean;
+      isOptional: boolean;
+      type: 'string' | 'integer' | 'decimal' | 'any';
+    }
+  | {
+      name: string;
+      isNullable: boolean;
+      isOptional: boolean;
+      type: 'object' | 'array';
+      fields: FieldStructure[];
+    };
 
 export function getClassStructures(
   json: object | Array<object>,
   rootName: string
-): ClassStructure[] {
-  const fields: FieldStructure[] = [];
-  const nestedClasses: ClassStructure[] = [];
-
+): FieldStructure {
   if (json == null) {
-    fields.push({
+    return {
       name: rootName,
       isNullable: true,
       isOptional: false,
       type: 'string',
-    });
+    };
   } else if (Array.isArray(json)) {
-    const classStructures = json
-      .map((object) => getClassStructures(object, ''))
-      .flat();
-    const groups = classStructures
-      .map((classStructure) => classStructure.fields)
+    const groups = json
+      .map((element) => getClassStructures(element, rootName))
       .flat()
       .reduce((group: { [key: string]: FieldStructure[] }, fieldStructure) => {
         if (fieldStructure.name in group) {
@@ -48,8 +45,6 @@ export function getClassStructures(
         group[fieldStructure.name] = [fieldStructure];
         return group;
       }, {});
-
-    const fields: FieldStructure[] = [];
     for (const field of Object.keys(groups)) {
       const types = groups[field].map((fieldStructure) => {
         return fieldStructure.type;
@@ -62,98 +57,86 @@ export function getClassStructures(
         groups[field].find((field) => !field.isNullable) ?? groups[field][0];
 
       if (uniqueTypes.size === 1) {
-        fields.push({ ...fieldStructure, isOptional, isNullable });
+        return { ...fieldStructure, isOptional, isNullable };
       } else {
-        fields.push({ ...fieldStructure, isOptional, isNullable, type: 'any' });
+        return { ...fieldStructure, isOptional, isNullable, type: 'any' };
       }
     }
-
-    return [
-      {
-        name: rootName,
-        fields: fields,
-      },
-    ];
+    return {
+      name: rootName,
+      isNullable: false,
+      isOptional: false,
+      type: 'object',
+      fields: Object.keys(json).map((key) =>
+        getClassStructures(json[key], key)
+      ),
+    };
   } else if (typeof json === 'object') {
-    const keys = Object.keys(json);
-    for (const key of keys) {
-      const value = json[key];
-
-      if (Array.isArray(value)) {
-        fields.push({
-          name: key,
-          isNullable: false,
-          isOptional: false,
-          type: 'array',
-        });
-
-        nestedClasses.push(...getClassStructures(value, key));
-      } else if (typeof value === 'object') {
-        fields.push({
-          name: key,
-          isNullable: false,
-          isOptional: false,
-          type: 'class',
-        });
-
-        const nestedClass = getClassStructures(value, key);
-
-        nestedClasses.push(...nestedClass);
-      } else if (typeof value === 'number') {
-        if (Number.isInteger(value)) {
-          fields.push({
-            name: key,
-            isNullable: false,
-            isOptional: false,
-            type: 'integer',
-          });
-        } else {
-          fields.push({
-            name: key,
-            isNullable: false,
-            isOptional: false,
-            type: 'decimal',
-          });
-        }
-      } else {
-        fields.push({
-          name: key,
-          isNullable: false,
-          isOptional: false,
-          type: 'string',
-        });
-      }
+    return {
+      name: rootName,
+      isNullable: false,
+      isOptional: false,
+      type: 'object',
+      fields: Object.keys(json).map((key) =>
+        getClassStructures(json[key], key)
+      ),
+    };
+  } else if (typeof json === 'number') {
+    if (Number.isInteger(json)) {
+      return {
+        name: rootName,
+        isNullable: false,
+        isOptional: false,
+        type: 'integer',
+      };
+    } else {
+      return {
+        name: rootName,
+        isNullable: false,
+        isOptional: false,
+        type: 'decimal',
+      };
     }
+  } else {
+    return {
+      name: rootName,
+      isNullable: false,
+      isOptional: false,
+      type: 'string',
+    };
   }
-
-  const classStructure: ClassStructure = {
-    name: rootName,
-    fields: fields,
-  };
-
-  return [classStructure, ...nestedClasses];
 }
 
 export function getKotlinClass(
   json: object | Array<object>,
   rootName: string
 ): KotlinClass[] {
-  return getClassStructures(json, rootName).map((classStructure) => {
-    const className = getCapitalCamelCaseName(classStructure.name);
+  const queue = [getClassStructures(json, rootName)];
+  const classes = [];
+  while (queue.length !== 0) {
+    const object = queue.pop();
+    const className = getCapitalCamelCaseName(object.name);
     const classStart = `data class ${className}(`;
     const classEnd = `)`;
-    const fields = classStructure.fields.map((field) => {
-      const fieldType = getKotlinFieldType(field);
-      const nullSymbol = field.isNullable || field.isOptional ? '?' : '';
-      return `${TAB}val ${getCamelCaseName(
-        field.name
-      )}: ${fieldType}${nullSymbol}`;
-    });
-    return {
-      className,
-      string: [classStart, ...fields, classEnd].join('\n'),
-    };
-  });
+    if (object.type === 'object' || object.type === 'array') {
+      const fields = [];
+      for (const field of object.fields) {
+        const fieldType = getKotlinFieldType(field);
+        const nullSymbol = field.isNullable || field.isOptional ? '?' : '';
+        fields.push(
+          `${TAB}val ${getCamelCaseName(field.name)}: ${fieldType}${nullSymbol}`
+        );
+        if (field.type === 'array' || field.type === 'object') {
+          queue.push(field);
+        }
+      }
+      classes.push({
+        className,
+        string: [classStart, ...fields, classEnd].join('\n'),
+      });
+    }
+  }
+  return classes;
 }
 
 function getCamelCaseName(name: string) {
@@ -175,15 +158,11 @@ export function getKotlinFieldType(field: FieldStructure): string {
       return 'Int';
     case 'decimal':
       return 'Float';
-    case 'class':
+    case 'object':
       return getCapitalCamelCaseName(field.name);
     case 'array':
       return `List<${getCapitalCamelCaseName(field.name)}>`;
     case 'any':
       return `Any`;
   }
-  exhaustiveCheck(field.type);
 }
-
-// eslint-disable-next-line no-unused-vars, @typescript-eslint/no-empty-function, @typescript-eslint/no-unused-vars
-function exhaustiveCheck(_value: never) {}
