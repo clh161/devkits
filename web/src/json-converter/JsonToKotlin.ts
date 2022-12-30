@@ -182,4 +182,8 @@ export function getKotlinFieldType(field: FieldStructure): string {
     case 'any':
       return `Any`;
   }
+  exhaustiveCheck(field.type);
 }
+
+// eslint-disable-next-line no-unused-vars, @typescript-eslint/no-empty-function, @typescript-eslint/no-unused-vars
+function exhaustiveCheck(_value: never) {}
