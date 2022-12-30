@@ -7,7 +7,7 @@ type KotlinClass = {
   string: string;
 };
 
-type FieldStructure =
+type JsonStructure =
   | {
       name: string;
       isNullable: boolean;
@@ -19,13 +19,13 @@ type FieldStructure =
       isNullable: boolean;
       isOptional: boolean;
       type: 'object' | 'array';
-      fields: FieldStructure[];
+      fields: JsonStructure[];
     };
 
 export function getClassStructures(
   json: object | Array<object>,
   rootName: string
-): FieldStructure {
+): JsonStructure {
   if (json == null) {
     return {
       name: rootName,
@@ -37,7 +37,7 @@ export function getClassStructures(
     const groups = json
       .map((element) => getClassStructures(element, rootName))
       .flat()
-      .reduce((group: { [key: string]: FieldStructure[] }, fieldStructure) => {
+      .reduce((group: { [key: string]: JsonStructure[] }, fieldStructure) => {
         if (fieldStructure.name in group) {
           group[fieldStructure.name].push(fieldStructure);
           return group;
@@ -150,7 +150,7 @@ function getCapitalCamelCaseName(name: string) {
   return camelCaseName[0].toUpperCase() + camelCaseName.slice(1);
 }
 
-export function getKotlinFieldType(field: FieldStructure): string {
+export function getKotlinFieldType(field: JsonStructure): string {
   switch (field.type) {
     case 'string':
       return 'String';
