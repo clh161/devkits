@@ -81,23 +81,9 @@ export default function Dashboard(): ReactElement {
           })}
         </List>
       </DrawerPaper>
-      <main
-        style={{
-          flexGrow: 1,
-          height: '100vh',
-          overflow: 'auto',
-        }}
-      >
-        <Container
-          maxWidth='lg'
-          style={{
-            paddingTop: 4,
-            paddingBottom: 4,
-          }}
-        >
-          <Outlet />
-        </Container>
-      </main>
+      <Container maxWidth='lg'>
+        <Outlet />
+      </Container>
     </div>
   );
 }

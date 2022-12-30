@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@mui/material';
+import { Stack, Typography } from '@mui/material';
 import React, { ReactElement } from 'react';
 
 import HTMLMeta from '../component/HTMLMeta';
@@ -9,16 +9,15 @@ type Props = {
 };
 export default function Page({ children, pageConfig }: Props): ReactElement {
   return (
-    <div>
+    <Stack sx={{ p: 2 }}>
       <HTMLMeta pageConfig={pageConfig} />
-      <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <Typography component='h1' variant='h4'>
-            {pageConfig.title}
-          </Typography>
-        </Grid>
-      </Grid>
+      <Typography component='h1' gutterBottom variant='h4'>
+        {pageConfig.title}
+      </Typography>
+      <Typography component='h2' gutterBottom variant='subtitle2'>
+        {pageConfig.description}
+      </Typography>
       {children}
-    </div>
+    </Stack>
   );
 }
