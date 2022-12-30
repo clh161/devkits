@@ -1,4 +1,4 @@
-import { Divider, Grid } from '@mui/material';
+import { Divider, Grid, TextField } from '@mui/material';
 import { decode, encode } from 'html-entities';
 import React, { ReactElement, useState } from 'react';
 type Props = {
@@ -31,24 +31,30 @@ export default function HTMLEncoder({
   return (
     <Grid container spacing={3}>
       <Grid item xs={12}>
-        <textarea
+        <TextField
+          label='Decoded HTML'
+          maxRows={15}
+          minRows={5}
+          multiline
           onChange={onDecodedHTMLChanged}
           placeholder='Decoded HTML'
           style={{
             width: '100%',
-            minHeight: 160,
           }}
           value={decodedHTMLText}
         />
       </Grid>
       <Divider />
       <Grid item xs={12}>
-        <textarea
+        <TextField
+          label='Encoded HTML'
+          maxRows={15}
+          minRows={5}
+          multiline
           onChange={onEncodedHTMLChanged}
           placeholder='Encoded HTML'
           style={{
             width: '100%',
-            minHeight: 160,
           }}
           value={encodedHTMLText}
         />
