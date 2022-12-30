@@ -85,7 +85,7 @@ export const RouterConfigs: Array<RouterConfig> = [
     icon: <ViewComfyIcon />,
     title: 'CSV Editor',
     description:
-      'Our CSV editor makes it easy to work with CSV (comma-separated value) files in your web development projects. Simply upload a CSV file or paste your data into the editor, and you can easily add, remove, or modify entries. Our tool also allows you to convert your CSV data to other formats, such as JSON or Excel.',
+      'Our CSV editor makes it easy to work with CSV (comma-separated value) files in your web development projects. Simply upload a CSV file or paste your data into the editor, and you can easily add, remove, or modify entries. Our tool also allows you to convert your CSV data to a grid.',
     keywords: ['csv', 'editor', 'edit', 'preview', 'live editor'],
   },
   {
