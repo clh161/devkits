@@ -12,7 +12,7 @@ export function getKotlinClass(
   const codeClassStart = `data class ${className}(`;
   const codeTab = Array.from({ length: tabCount + 1 }).join(TAB);
   const fields = [];
-  const nestedClasses = [];
+  const nestedClasses: KotlinClass[] = [];
 
   if (typeof json === 'object') {
     const keys = Object.keys(json);
@@ -26,9 +26,14 @@ export function getKotlinClass(
         const valueClassNameCapital =
           valueClassName[0].toUpperCase() + valueClassName.slice(1);
         fields.push(`${codeField}: ${valueClassNameCapital}`);
-        nestedClasses.push(
-          getKotlinClass(value, valueClassNameCapital, tabCount + 1)
+
+        const nestedClass = getKotlinClass(
+          value,
+          valueClassNameCapital,
+          tabCount + 1
         );
+
+        nestedClasses.push(...nestedClass);
       } else {
         fields.push(`${codeField}: String`);
       }
