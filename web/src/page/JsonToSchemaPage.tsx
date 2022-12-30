@@ -16,7 +16,7 @@ export default function JsonToSchemaPage(): ReactElement {
 
   const kotlinClasses = getKotlinClass(JSON.parse(lastValidJson), 'root');
   return (
-    <Stack spacing={1}>
+    <Stack spacing={2}>
       <TextField
         label='Json schema'
         maxRows={15}
