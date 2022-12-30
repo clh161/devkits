@@ -12,10 +12,12 @@ type ClassStructure = {
 type FieldStructure =
   | {
       name: string;
+      isNullable: boolean;
       type: 'string' | 'integer' | 'decimal';
     }
   | {
       name: string;
+      isNullable: boolean;
       type: 'class';
       valueName: string;
     };
@@ -30,6 +32,7 @@ function getClassStructures(
   if (json == null) {
     fields.push({
       name: className,
+      isNullable: true,
       type: 'string',
     });
   } else if (typeof json === 'object') {
@@ -44,6 +47,7 @@ function getClassStructures(
           valueClassName[0].toUpperCase() + valueClassName.slice(1);
         fields.push({
           name: key,
+          isNullable: false,
           type: 'class',
           valueName: valueClassNameCapital,
         });
@@ -55,17 +59,20 @@ function getClassStructures(
         if (Number.isInteger(value)) {
           fields.push({
             name: key,
+            isNullable: false,
             type: 'integer',
           });
         } else {
           fields.push({
             name: key,
+            isNullable: false,
             type: 'decimal',
           });
         }
       } else {
         fields.push({
           name: key,
+          isNullable: false,
           type: 'string',
         });
       }
@@ -89,7 +96,8 @@ export function getKotlinClass(
     const classEnd = `)`;
     const fields = classStructure.fields.map((field) => {
       const fieldType = getKotlinFieldType(field);
-      return `${TAB}val ${field.name}: ${fieldType}`;
+      const nullSymbol = field.isNullable ? '?' : '';
+      return `${TAB}val ${field.name}: ${fieldType}${nullSymbol}`;
     });
     return [classStart, ...fields, classEnd].join('\n');
   });
