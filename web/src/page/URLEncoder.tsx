@@ -1,4 +1,4 @@
-import { Divider, Grid } from '@mui/material';
+import { Divider, Grid, TextField } from '@mui/material';
 import React, { ReactElement, useState } from 'react';
 const DEFAULT_URL =
   'https://devkits.net/json=%7B%0A%20%20%22user%22:%20%7B%0A%20%20%20%20%22id%22:%201,%0A%20%20%20%20%22name%22:%20%22devkits%22%0A%20%20%7D%0A%7D%0A';
@@ -27,24 +27,30 @@ export default function URLEncoder(): ReactElement {
   return (
     <Grid container spacing={3}>
       <Grid item xs={12}>
-        <textarea
+        <TextField
+          label='Encoded URL'
+          maxRows={15}
+          minRows={5}
+          multiline
           onChange={onEncodedURLChange}
           placeholder='Encoded URL'
           style={{
             width: '100%',
-            minHeight: 160,
           }}
           value={encodedURL}
         />
       </Grid>
       <Divider />
       <Grid item xs={12}>
-        <textarea
+        <TextField
+          label='Decoded URL'
+          maxRows={15}
+          minRows={5}
+          multiline
           onChange={onDecodedURLChange}
           placeholder='Decoded URL'
           style={{
             width: '100%',
-            minHeight: 160,
           }}
           value={decodedURL}
         />
