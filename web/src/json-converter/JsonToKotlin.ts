@@ -12,7 +12,7 @@ type ClassStructure = {
 type FieldStructure =
   | {
       name: string;
-      type: 'string';
+      type: 'string' | 'integer' | 'decimal';
     }
   | {
       name: string;
@@ -46,6 +46,18 @@ function getClassStructures(
         const nestedClass = getClassStructures(value, valueClassNameCapital);
 
         nestedClasses.push(...nestedClass);
+      } else if (typeof value === 'number') {
+        if (Number.isInteger(value)) {
+          fields.push({
+            name: key,
+            type: 'integer',
+          });
+        } else {
+          fields.push({
+            name: key,
+            type: 'decimal',
+          });
+        }
       } else {
         fields.push({
           name: key,
@@ -71,9 +83,22 @@ export function getKotlinClass(
     const classStart = `data class ${classStructure.name}(`;
     const classEnd = `)`;
     const fields = classStructure.fields.map((field) => {
-      const fieldType = field.type === 'string' ? 'String' : field.valueName;
+      const fieldType = getKotlinFieldType(field);
       return `${TAB}val ${field.name}: ${fieldType}`;
     });
     return [classStart, ...fields, classEnd].join('\n');
   });
+}
+
+export function getKotlinFieldType(field: FieldStructure): string {
+  switch (field.type) {
+    case 'string':
+      return 'String';
+    case 'integer':
+      return 'Int';
+    case 'decimal':
+      return 'Float';
+    case 'class':
+      return field.valueName;
+  }
 }
