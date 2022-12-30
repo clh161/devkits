@@ -14,7 +14,7 @@ export default function JsonToSchemaPage(): ReactElement {
     }
   }, [json]);
 
-  const kotlin = getKotlinClass(lastValidJson);
+  const kotlinClasses = getKotlinClass(JSON.parse(lastValidJson), 'MyClass');
 
   return (
     <Stack spacing={1}>
@@ -36,17 +36,22 @@ export default function JsonToSchemaPage(): ReactElement {
       {jsonParsingError != null && (
         <Alert color='error'>{jsonParsingError}</Alert>
       )}
-      <TextField
-        label='Json schema'
-        maxRows={15}
-        minRows={5}
-        multiline
-        placeholder='Json schema'
-        style={{
-          width: '100%',
-        }}
-        value={kotlin}
-      />
+      {kotlinClasses.map((kotlinClass) => {
+        return (
+          <TextField
+            key={kotlinClass}
+            label='Json schema'
+            maxRows={15}
+            minRows={5}
+            multiline
+            placeholder='Json schema'
+            style={{
+              width: '100%',
+            }}
+            value={kotlinClass}
+          />
+        );
+      })}
     </Stack>
   );
 }
