@@ -14,7 +14,7 @@ type FieldStructure =
       name: string;
       isNullable: boolean;
       isOptional: boolean;
-      type: 'string' | 'integer' | 'decimal';
+      type: 'string' | 'integer' | 'decimal' | 'any';
     }
   | {
       name: string;
@@ -62,12 +62,13 @@ function getClassStructures(
 
       const isNullable = groups[field].some((field) => field.isNullable);
       const isOptional = groups[field].length !== json.length;
+      const fieldStructure =
+        groups[field].find((field) => !field.isNullable) ?? groups[field][0];
 
       if (uniqueTypes.size === 1) {
-        const fieldStructure =
-          groups[field].find((field) => !field.isNullable) ?? groups[field][0];
-
         fields.push({ ...fieldStructure, isOptional, isNullable });
+      } else {
+        fields.push({ ...fieldStructure, isOptional, isNullable, type: 'any' });
       }
     }
 
@@ -180,5 +181,7 @@ export function getKotlinFieldType(field: FieldStructure): string {
       return getCapitalCamelCaseName(field.name);
     case 'array':
       return `List<${getCapitalCamelCaseName(field.name)}>`;
+    case 'any':
+      return `Any`;
   }
 }
