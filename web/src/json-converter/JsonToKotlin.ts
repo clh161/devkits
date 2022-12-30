@@ -48,21 +48,3 @@ export function getKotlinClass(
 
   return classAll;
 }
-
-function getFields(json: unknown, tabCount = 1): string {
-  const codeTab = Array.from({ length: tabCount + 1 }).join(TAB);
-  if (typeof json === 'object') {
-    const keys = Object.keys(json);
-    return keys
-      .map((key) => {
-        const codeField = `${codeTab}val ${key}`;
-        const value = json[key];
-        if (typeof value === 'object') {
-          return `${codeField} ${getKotlinClass(value, key)}`;
-        }
-        return `${codeTab}val ${key} string`;
-      })
-      .join('\n');
-  }
-  return '';
-}
