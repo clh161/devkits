@@ -3,10 +3,35 @@ import React, { ReactElement, useEffect, useState } from 'react';
 
 import { getKotlinClass } from '../json-converter/JsonToKotlin';
 
+const DEFAULT_JSON = JSON.stringify(
+  {
+    purchases: [
+      {
+        id: 1,
+        products: [
+          {
+            id: 100,
+            name: 'Phone',
+            price: 99.9,
+            manufacturer: 'Orange',
+          },
+          {
+            id: 100,
+            name: 'Phone',
+            price: 18.5,
+          },
+        ],
+      },
+    ],
+  },
+  null,
+  4
+);
+
 export default function JsonToSchemaPage(): ReactElement {
-  const [json, setJson] = useState<string>('{}');
+  const [json, setJson] = useState<string>(DEFAULT_JSON);
   const jsonParsingError = getJsonPrasingError(json);
-  const [lastValidJson, setLastValidJson] = useState<string>('{}');
+  const [lastValidJson, setLastValidJson] = useState<string>(DEFAULT_JSON);
 
   useEffect(() => {
     if (jsonParsingError == null) {
