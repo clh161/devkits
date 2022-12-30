@@ -1,4 +1,4 @@
-import { Button, Divider, Grid, Paper, styled } from '@mui/material';
+import { Button, Divider, Grid, Paper, styled, TextField } from '@mui/material';
 import React, { ReactElement, useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { Spreadsheet } from 'react-spreadsheet';
@@ -95,12 +95,15 @@ export default function CSVEditor(): ReactElement {
         </DropzonePaper>
       </Grid>
       <Grid item xs={12}>
-        <textarea
+        <TextField
+          label='CSV'
+          maxRows={15}
+          minRows={5}
+          multiline
           onChange={onCsvChange}
           placeholder='CSV'
           style={{
             width: '100%',
-            minHeight: 160,
           }}
           value={csv}
         />
