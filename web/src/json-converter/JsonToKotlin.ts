@@ -9,19 +9,12 @@ type ClassStructure = {
   fields: FieldStructure[];
 };
 
-type FieldStructure =
-  | {
-      name: string;
-      isNullable: boolean;
-      isOptional: boolean;
-      type: 'string' | 'integer' | 'decimal' | 'any';
-    }
-  | {
-      name: string;
-      isNullable: boolean;
-      isOptional: boolean;
-      type: 'class' | 'array';
-    };
+type FieldStructure = {
+  name: string;
+  isNullable: boolean;
+  isOptional: boolean;
+  type: 'string' | 'integer' | 'decimal' | 'any' | 'class' | 'array';
+};
 
 function getClassStructures(
   json: object | Array<object>,
