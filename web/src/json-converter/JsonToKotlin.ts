@@ -56,13 +56,17 @@ function getClassStructures(
 
     const fields: FieldStructure[] = [];
     for (const field of Object.keys(groups)) {
-      const types = new Set(
-        groups[field].map((fieldStructure) => {
-          return fieldStructure.type;
-        })
-      );
-      if (types.size === 1) {
-        fields.push(groups[field][0]);
+      const types = groups[field].map((fieldStructure) => {
+        return fieldStructure.type;
+      });
+      const uniqueTypes = new Set(types);
+
+      const isOptional = groups[field].length !== json.length;
+
+      if (uniqueTypes.size === 1) {
+        const fieldStructure = groups[field][0];
+
+        fields.push({ ...fieldStructure, isOptional });
       }
     }
 
