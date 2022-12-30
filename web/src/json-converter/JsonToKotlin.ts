@@ -19,7 +19,7 @@ type FieldStructure = {
   type: 'string' | 'integer' | 'decimal' | 'any' | 'class' | 'array';
 };
 
-function getClassStructures(
+export function getClassStructures(
   json: object | Array<object>,
   rootName: string
 ): ClassStructure[] {
