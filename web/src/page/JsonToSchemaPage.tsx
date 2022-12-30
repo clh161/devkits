@@ -38,8 +38,8 @@ export default function JsonToSchemaPage(): ReactElement {
       {kotlinClasses.map((kotlinClass) => {
         return (
           <TextField
-            key={kotlinClass}
-            label='Json schema'
+            key={kotlinClass.className}
+            label={kotlinClass.className}
             maxRows={15}
             minRows={5}
             multiline
@@ -47,7 +47,7 @@ export default function JsonToSchemaPage(): ReactElement {
             style={{
               width: '100%',
             }}
-            value={kotlinClass}
+            value={kotlinClass.string}
           />
         );
       })}
