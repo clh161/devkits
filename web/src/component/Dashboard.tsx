@@ -9,6 +9,7 @@ import {
   Link,
   List,
   ListItem,
+  ListItemButton,
   ListItemIcon,
   ListItemText,
   styled,
@@ -62,16 +63,18 @@ export default function Dashboard(): ReactElement {
           </Grid>
         </Toolbar>
         <Divider />
-        <List aria-label='main mailbox folders' component='nav'>
+        <List component='nav' disablePadding>
           {RouterConfigs.filter((config) => !config.isHidden).map((config) => {
             switch (config.isHidden) {
               case true:
                 return null;
               case false:
                 return (
-                  <ListItem component='a' href={config.path} key={config.path}>
-                    <ListItemIcon>{config.icon}</ListItemIcon>
-                    <ListItemText primary={config.title} />
+                  <ListItem key={config.path}>
+                    <ListItemButton href={config.path}>
+                      <ListItemIcon>{config.icon}</ListItemIcon>
+                      <ListItemText primary={config.title} />
+                    </ListItemButton>
                   </ListItem>
                 );
             }
