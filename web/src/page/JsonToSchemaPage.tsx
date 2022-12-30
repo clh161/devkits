@@ -14,7 +14,7 @@ export default function JsonToSchemaPage(): ReactElement {
     }
   }, [json]);
 
-  const kotlinClasses = getKotlinClass(JSON.parse(lastValidJson), 'MyClass');
+  const kotlinClasses = getKotlinClass(JSON.parse(lastValidJson), 'root');
   return (
     <Stack spacing={1}>
       <TextField
