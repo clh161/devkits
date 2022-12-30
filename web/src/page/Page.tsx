@@ -11,10 +11,15 @@ export default function Page({ children, pageConfig }: Props): ReactElement {
   return (
     <Stack sx={{ p: 2 }}>
       <HTMLMeta pageConfig={pageConfig} />
-      <Typography component='h1' gutterBottom variant='h4'>
+      <Typography component='h1' variant='h4'>
         {pageConfig.title}
       </Typography>
-      <Typography component='h2' gutterBottom variant='subtitle2'>
+      <Typography
+        component='h2'
+        gutterBottom
+        sx={{ mb: 2 }}
+        variant='subtitle2'
+      >
         {pageConfig.description}
       </Typography>
       {children}
