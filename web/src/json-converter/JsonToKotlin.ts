@@ -26,14 +26,14 @@ type FieldStructure =
 
 function getClassStructures(
   json: object | Array<object>,
-  className: string
+  rootName: string
 ): ClassStructure[] {
   const fields: FieldStructure[] = [];
   const nestedClasses: ClassStructure[] = [];
 
   if (json == null) {
     fields.push({
-      name: className,
+      name: rootName,
       isNullable: true,
       isOptional: false,
       type: 'string',
@@ -74,7 +74,7 @@ function getClassStructures(
 
     return [
       {
-        name: className,
+        name: rootName,
         fields: fields,
       },
     ];
@@ -84,37 +84,25 @@ function getClassStructures(
       const value = json[key];
 
       if (Array.isArray(value)) {
-        const keyName = CASE_TYPES.find(
-          (type) => type.key === 'camel_case'
-        )?.getTextFromNormalText(key);
-
-        const newClassName =
-          className + keyName[0].toUpperCase() + keyName.slice(1);
-
         fields.push({
           name: key,
           isNullable: false,
           isOptional: false,
           type: 'array',
-          className: newClassName,
+          className: key,
         });
 
-        nestedClasses.push(...getClassStructures(value, newClassName));
+        nestedClasses.push(...getClassStructures(value, key));
       } else if (typeof value === 'object') {
-        const valueClassName = CASE_TYPES.find(
-          (type) => type.key === 'camel_case'
-        )?.getTextFromNormalText(key);
-        const valueClassNameCapital =
-          valueClassName[0].toUpperCase() + valueClassName.slice(1);
         fields.push({
           name: key,
           isNullable: false,
           isOptional: false,
           type: 'class',
-          className: valueClassNameCapital,
+          className: key,
         });
 
-        const nestedClass = getClassStructures(value, valueClassNameCapital);
+        const nestedClass = getClassStructures(value, key);
 
         nestedClasses.push(...nestedClass);
       } else if (typeof value === 'number') {
@@ -145,7 +133,7 @@ function getClassStructures(
   }
 
   const classStructure: ClassStructure = {
-    name: className,
+    name: rootName,
     fields: fields,
   };
 
@@ -154,18 +142,33 @@ function getClassStructures(
 
 export function getKotlinClass(
   json: object | Array<object>,
-  className: string
+  rootName: string
 ): KotlinClass[] {
-  return getClassStructures(json, className).map((classStructure) => {
-    const classStart = `data class ${classStructure.name}(`;
+  return getClassStructures(json, rootName).map((classStructure) => {
+    const classStart = `data class ${getCapitalCamelCaseName(
+      classStructure.name
+    )}(`;
     const classEnd = `)`;
     const fields = classStructure.fields.map((field) => {
       const fieldType = getKotlinFieldType(field);
       const nullSymbol = field.isNullable || field.isOptional ? '?' : '';
-      return `${TAB}val ${field.name}: ${fieldType}${nullSymbol}`;
+      return `${TAB}val ${getCamelCaseName(
+        field.name
+      )}: ${fieldType}${nullSymbol}`;
     });
     return [classStart, ...fields, classEnd].join('\n');
   });
+}
+
+function getCamelCaseName(name: string) {
+  return CASE_TYPES.find(
+    (type) => type.key === 'camel_case'
+  )?.getTextFromNormalText(name);
+}
+
+function getCapitalCamelCaseName(name: string) {
+  const camelCaseName = getCamelCaseName(name);
+  return camelCaseName[0].toUpperCase() + camelCaseName.slice(1);
 }
 
 export function getKotlinFieldType(field: FieldStructure): string {
