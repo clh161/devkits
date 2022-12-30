@@ -1,7 +1,6 @@
 import {
   AccessTime as AccessTimeIcon,
   Code as CodeIcon,
-  Home,
   Http as HttpIcon,
   TextFields as TextFieldsIcon,
   ViewComfy as ViewComfyIcon,
@@ -11,6 +10,7 @@ import React, { ReactElement } from 'react';
 import { CASE_TYPES } from '../page/CASE_TYPES';
 import CaseTypeConverter from '../page/CaseTypeConverter';
 import CSVEditor from '../page/CSVEditor';
+import Home from '../page/Home';
 import HTMLEncoder from '../page/HTMLEncoder';
 import TimestampConverter from '../page/TimestampConverter';
 import URLEncoder from '../page/URLEncoder';
