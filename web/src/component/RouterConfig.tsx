@@ -93,7 +93,8 @@ export const RouterConfigs: Array<RouterConfig> = [
     path: '/',
     component: <Home />,
     title: 'Devkits',
-    description: 'Collection of development tools',
+    description:
+      'Devkits is a one-stop shop for web developers, offering a range of tools including an HTML encoder, URL encoder, Unix timestamp converter, case type converter, and CSV editor. Our easy-to-use tools make it simple to streamline your workflow and get the job done faster. Whether you&apos;re a beginner or an experienced developer, Devkits has something to offer. Try us out today and see how we can help you succeed.',
     keywords: [
       'web',
       'web development',
