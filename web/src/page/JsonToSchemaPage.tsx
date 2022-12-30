@@ -1,9 +1,20 @@
 import { Alert, Stack, TextField } from '@mui/material';
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement, useEffect, useState } from 'react';
+
+import { getKotlinClass } from '../json-converter/JsonToKotlin';
 
 export default function JsonToSchemaPage(): ReactElement {
   const [json, setJson] = useState<string>('{}');
   const jsonParsingError = getJsonPrasingError(json);
+  const [lastValidJson, setLastValidJson] = useState<string>('{}');
+
+  useEffect(() => {
+    if (jsonParsingError == null) {
+      setLastValidJson(json);
+    }
+  }, [json]);
+
+  const kotlin = getKotlinClass(lastValidJson);
 
   return (
     <Stack spacing={1}>
@@ -25,6 +36,17 @@ export default function JsonToSchemaPage(): ReactElement {
       {jsonParsingError != null && (
         <Alert color='error'>{jsonParsingError}</Alert>
       )}
+      <TextField
+        label='Json schema'
+        maxRows={15}
+        minRows={5}
+        multiline
+        placeholder='Json schema'
+        style={{
+          width: '100%',
+        }}
+        value={kotlin}
+      />
     </Stack>
   );
 }
