@@ -62,15 +62,6 @@ export function getClassStructures(
         return { ...fieldStructure, isOptional, isNullable, type: 'any' };
       }
     }
-    return {
-      name: rootName,
-      isNullable: false,
-      isOptional: false,
-      type: 'object',
-      fields: Object.keys(json).map((key) =>
-        getClassStructures(json[key], key)
-      ),
-    };
   } else if (typeof json === 'object') {
     return {
       name: rootName,
