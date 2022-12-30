@@ -21,6 +21,11 @@ const DEFAULT_JSON = JSON.stringify(
             price: 18.5,
           },
         ],
+        couponCodes: [
+          {
+            name: 'Discount-2023',
+          },
+        ],
       },
     ],
   },
