@@ -27,7 +27,12 @@ function getClassStructures(
   const fields: FieldStructure[] = [];
   const nestedClasses: ClassStructure[] = [];
 
-  if (typeof json === 'object') {
+  if (json == null) {
+    fields.push({
+      name: className,
+      type: 'string',
+    });
+  } else if (typeof json === 'object') {
     const keys = Object.keys(json);
     for (const key of keys) {
       const value = json[key];
