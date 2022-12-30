@@ -12,6 +12,7 @@ import CaseTypeConverter from '../page/CaseTypeConverter';
 import CSVEditor from '../page/CSVEditor';
 import Home from '../page/Home';
 import HTMLEncoder from '../page/HTMLEncoder';
+import JsonToSchemaPage from '../page/JsonToSchemaPage';
 import TimestampConverter from '../page/TimestampConverter';
 import URLEncoder from '../page/URLEncoder';
 
@@ -33,6 +34,14 @@ export type RouterConfig =
     } & BaseConfig);
 
 export const RouterConfigs: Array<RouterConfig> = [
+  {
+    isHidden: true,
+    path: '/json-to-schema',
+    title: 'Json to schema',
+    component: <JsonToSchemaPage />,
+    description: '',
+    keywords: [],
+  },
   {
     isHidden: false,
     path: '/html-encoding',
