@@ -21,7 +21,6 @@ type FieldStructure =
       isNullable: boolean;
       isOptional: boolean;
       type: 'class' | 'array';
-      className: string;
     };
 
 function getClassStructures(
@@ -89,7 +88,6 @@ function getClassStructures(
           isNullable: false,
           isOptional: false,
           type: 'array',
-          className: key,
         });
 
         nestedClasses.push(...getClassStructures(value, key));
@@ -99,7 +97,6 @@ function getClassStructures(
           isNullable: false,
           isOptional: false,
           type: 'class',
-          className: key,
         });
 
         const nestedClass = getClassStructures(value, key);
@@ -180,8 +177,8 @@ export function getKotlinFieldType(field: FieldStructure): string {
     case 'decimal':
       return 'Float';
     case 'class':
-      return field.className;
+      return getCapitalCamelCaseName(field.name);
     case 'array':
-      return `List<${field.className}>`;
+      return `List<${getCapitalCamelCaseName(field.name)}>`;
   }
 }
