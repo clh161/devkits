@@ -63,14 +63,14 @@ export default function Dashboard(): ReactElement {
           </Grid>
         </Toolbar>
         <Divider />
-        <List component='nav' disablePadding>
+        <List component='nav'>
           {RouterConfigs.filter((config) => !config.isHidden).map((config) => {
             switch (config.isHidden) {
               case true:
                 return null;
               case false:
                 return (
-                  <ListItem key={config.path}>
+                  <ListItem disablePadding key={config.path}>
                     <ListItemButton href={config.path}>
                       <ListItemIcon>{config.icon}</ListItemIcon>
                       <ListItemText primary={config.title} />
