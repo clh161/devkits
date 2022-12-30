@@ -2,7 +2,10 @@ import { CASE_TYPES } from '../page/CASE_TYPES';
 
 const TAB = '    ';
 
-type KotlinClass = string;
+type KotlinClass = {
+  className: string;
+  string: string;
+};
 
 type ClassStructure = {
   name: string;
@@ -136,9 +139,8 @@ export function getKotlinClass(
   rootName: string
 ): KotlinClass[] {
   return getClassStructures(json, rootName).map((classStructure) => {
-    const classStart = `data class ${getCapitalCamelCaseName(
-      classStructure.name
-    )}(`;
+    const className = getCapitalCamelCaseName(classStructure.name);
+    const classStart = `data class ${className}(`;
     const classEnd = `)`;
     const fields = classStructure.fields.map((field) => {
       const fieldType = getKotlinFieldType(field);
@@ -147,7 +149,10 @@ export function getKotlinClass(
         field.name
       )}: ${fieldType}${nullSymbol}`;
     });
-    return [classStart, ...fields, classEnd].join('\n');
+    return {
+      className,
+      string: [classStart, ...fields, classEnd].join('\n'),
+    };
   });
 }
 
