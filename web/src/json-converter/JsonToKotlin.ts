@@ -61,12 +61,14 @@ function getClassStructures(
       });
       const uniqueTypes = new Set(types);
 
+      const isNullable = groups[field].some((field) => field.isNullable);
       const isOptional = groups[field].length !== json.length;
 
       if (uniqueTypes.size === 1) {
-        const fieldStructure = groups[field][0];
+        const fieldStructure =
+          groups[field].find((field) => !field.isNullable) ?? groups[field][0];
 
-        fields.push({ ...fieldStructure, isOptional });
+        fields.push({ ...fieldStructure, isOptional, isNullable });
       }
     }
 
