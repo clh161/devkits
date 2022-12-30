@@ -13,11 +13,13 @@ type FieldStructure =
   | {
       name: string;
       isNullable: boolean;
+      isOptional: boolean;
       type: 'string' | 'integer' | 'decimal';
     }
   | {
       name: string;
       isNullable: boolean;
+      isOptional: boolean;
       type: 'class' | 'array';
       className: string;
     };
@@ -33,6 +35,7 @@ function getClassStructures(
     fields.push({
       name: className,
       isNullable: true,
+      isOptional: false,
       type: 'string',
     });
   } else if (Array.isArray(json)) {
@@ -85,6 +88,7 @@ function getClassStructures(
         fields.push({
           name: key,
           isNullable: false,
+          isOptional: false,
           type: 'array',
           className: newClassName,
         });
@@ -99,6 +103,7 @@ function getClassStructures(
         fields.push({
           name: key,
           isNullable: false,
+          isOptional: false,
           type: 'class',
           className: valueClassNameCapital,
         });
@@ -111,12 +116,14 @@ function getClassStructures(
           fields.push({
             name: key,
             isNullable: false,
+            isOptional: false,
             type: 'integer',
           });
         } else {
           fields.push({
             name: key,
             isNullable: false,
+            isOptional: false,
             type: 'decimal',
           });
         }
@@ -124,6 +131,7 @@ function getClassStructures(
         fields.push({
           name: key,
           isNullable: false,
+          isOptional: false,
           type: 'string',
         });
       }
@@ -147,7 +155,7 @@ export function getKotlinClass(
     const classEnd = `)`;
     const fields = classStructure.fields.map((field) => {
       const fieldType = getKotlinFieldType(field);
-      const nullSymbol = field.isNullable ? '?' : '';
+      const nullSymbol = field.isNullable || field.isOptional ? '?' : '';
       return `${TAB}val ${field.name}: ${fieldType}${nullSymbol}`;
     });
     return [classStart, ...fields, classEnd].join('\n');
