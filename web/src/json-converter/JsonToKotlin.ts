@@ -18,15 +18,8 @@ type JsonStructure =
       name: string;
       isNullable: boolean;
       isOptional: boolean;
-      type: 'object';
+      type: 'object' | 'array';
       fields: JsonStructure[];
-    }
-  | {
-      name: string;
-      isNullable: boolean;
-      isOptional: boolean;
-      type: 'array';
-      object: JsonStructure;
     };
 
 export function getClassStructures(
@@ -74,13 +67,7 @@ export function getClassStructures(
       isNullable: false,
       isOptional: false,
       type: 'array',
-      object: {
-        name: rootName,
-        isNullable: false,
-        isOptional: false,
-        type: 'object',
-        fields: fields,
-      },
+      fields: fields,
     };
   } else if (typeof json === 'object') {
     return {
@@ -147,7 +134,7 @@ export function getKotlinClass(
       });
     }
     if (object.type === 'array') {
-      queue.push(object.object);
+      queue.push(...object.fields);
     }
   }
 
