@@ -18,8 +18,15 @@ type JsonStructure =
       name: string;
       isNullable: boolean;
       isOptional: boolean;
-      type: 'object' | 'array';
+      type: 'object';
       fields: JsonStructure[];
+    }
+  | {
+      name: string;
+      isNullable: boolean;
+      isOptional: boolean;
+      type: 'array';
+      object: JsonStructure;
     };
 
 export function getClassStructures(
@@ -45,7 +52,7 @@ export function getClassStructures(
         group[fieldStructure.name] = [fieldStructure];
         return group;
       }, {});
-    for (const field of Object.keys(groups)) {
+    const fields: JsonStructure[] = Object.keys(groups).map((field) => {
       const types = groups[field].map((fieldStructure) => {
         return fieldStructure.type;
       });
@@ -61,7 +68,20 @@ export function getClassStructures(
       } else {
         return { ...fieldStructure, isOptional, isNullable, type: 'any' };
       }
-    }
+    });
+    return {
+      name: rootName,
+      isNullable: false,
+      isOptional: false,
+      type: 'array',
+      object: {
+        name: rootName,
+        isNullable: false,
+        isOptional: false,
+        type: 'object',
+        fields: fields,
+      },
+    };
   } else if (typeof json === 'object') {
     return {
       name: rootName,
@@ -109,7 +129,7 @@ export function getKotlinClass(
     const className = getCapitalCamelCaseName(object.name);
     const classStart = `data class ${className}(`;
     const classEnd = `)`;
-    if (object.type === 'object' || object.type === 'array') {
+    if (object.type === 'object') {
       const fields = [];
       for (const field of object.fields) {
         const fieldType = getKotlinFieldType(field);
@@ -126,7 +146,11 @@ export function getKotlinClass(
         string: [classStart, ...fields, classEnd].join('\n'),
       });
     }
+    if (object.type === 'array') {
+      queue.push(object.object);
+    }
   }
+
   return classes;
 }
 
