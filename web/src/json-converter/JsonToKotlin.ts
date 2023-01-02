@@ -1,3 +1,5 @@
+import pluralize from 'pluralize';
+
 import { CASE_TYPES } from '../page/CASE_TYPES';
 
 const TAB = '    ';
@@ -135,7 +137,7 @@ export function getKotlinClass(
   const classes: KotlinClass[] = [];
   while (queue.length !== 0) {
     const object = queue.pop();
-    const className = getCapitalCamelCaseName(object.name);
+    const className = getCapitalCamelCaseName(pluralize.singular(object.name));
     const classStart = `data class ${className}(`;
     const classEnd = `)`;
     if (object.type === 'object') {
@@ -184,9 +186,10 @@ export function getKotlinFieldType(field: JsonStructure): string {
     case 'decimal':
       return 'Float';
     case 'object':
-      return getCapitalCamelCaseName(field.name);
-    case 'array':
-      return `List<${getCapitalCamelCaseName(field.name)}>`;
+      return getCapitalCamelCaseName(pluralize.singular(field.name));
+    case 'array': {
+      return `List<${getCapitalCamelCaseName(pluralize.singular(field.name))}>`;
+    }
     case 'any':
       return `Any`;
   }
