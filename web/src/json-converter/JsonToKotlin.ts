@@ -131,6 +131,7 @@ export function getClassStructures(
 
 export function getKotlinClass(
   json: object | Array<object>,
+  packageName: string,
   rootName: string
 ): KotlinClass[] {
   const queue = [getClassStructures(json, rootName)];
@@ -156,7 +157,9 @@ export function getKotlinClass(
       }
       classes.push({
         className,
-        string: [classStart, ...fields, classEnd].join('\n'),
+        string: [packageName + '\n', classStart, ...fields, classEnd].join(
+          '\n'
+        ),
         path: object.path.map((p) => getCapitalCamelCaseName(p)),
       });
     }

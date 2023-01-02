@@ -1,4 +1,11 @@
-import { Alert, Button, Stack, TextField } from '@mui/material';
+import {
+  Alert,
+  Button,
+  Card,
+  CardContent,
+  Stack,
+  TextField,
+} from '@mui/material';
 import JSZip from 'jszip';
 import React, { ReactElement, useEffect, useState } from 'react';
 
@@ -38,6 +45,7 @@ export default function JsonToSchemaPage(): ReactElement {
   const [json, setJson] = useState<string>(DEFAULT_JSON);
   const jsonParsingError = getJsonPrasingError(json);
   const [lastValidJson, setLastValidJson] = useState<string>(DEFAULT_JSON);
+  const [packageName, setPackageName] = useState<string>('com.devkit.model');
 
   useEffect(() => {
     if (jsonParsingError == null) {
@@ -45,9 +53,35 @@ export default function JsonToSchemaPage(): ReactElement {
     }
   }, [json]);
 
-  const kotlinClasses = getKotlinClass(JSON.parse(lastValidJson), 'root');
+  const kotlinClasses = getKotlinClass(
+    JSON.parse(lastValidJson),
+    packageName,
+    'root'
+  );
   return (
     <Stack spacing={2}>
+      <Card>
+        <CardContent>
+          <Stack spacing={2}>
+            <TextField
+              label='Package'
+              onChange={(event) => {
+                setPackageName(event.target.value);
+              }}
+              placeholder='Package'
+              value={packageName}
+            />
+            <Button
+              onClick={() => {
+                onDownload(kotlinClasses);
+              }}
+              variant='contained'
+            >
+              Download
+            </Button>
+          </Stack>
+        </CardContent>
+      </Card>
       <TextField
         label='Json schema'
         maxRows={15}
@@ -66,14 +100,6 @@ export default function JsonToSchemaPage(): ReactElement {
       {jsonParsingError != null && (
         <Alert color='error'>{jsonParsingError}</Alert>
       )}
-      <Button
-        onClick={() => {
-          onDownload(kotlinClasses);
-        }}
-        variant='contained'
-      >
-        Download
-      </Button>
       {kotlinClasses.map((kotlinClass) => {
         const path = kotlinClass.path.join(' > ');
         return (
