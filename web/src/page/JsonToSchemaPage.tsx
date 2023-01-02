@@ -66,14 +66,15 @@ export default function JsonToSchemaPage(): ReactElement {
         <Alert color='error'>{jsonParsingError}</Alert>
       )}
       {kotlinClasses.map((kotlinClass) => {
+        const path = kotlinClass.path.join(' > ');
         return (
           <TextField
-            key={kotlinClass.className}
-            label={kotlinClass.className}
+            key={path}
+            label={path}
             maxRows={15}
             minRows={5}
             multiline
-            placeholder='Json schema'
+            placeholder={path}
             style={{
               width: '100%',
             }}
