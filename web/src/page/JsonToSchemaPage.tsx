@@ -1,10 +1,7 @@
 import { Alert, Stack, TextField } from '@mui/material';
 import React, { ReactElement, useEffect, useState } from 'react';
 
-import {
-  getClassStructures,
-  getKotlinClass,
-} from '../json-converter/JsonToKotlin';
+import { getKotlinClass } from '../json-converter/JsonToKotlin';
 
 const DEFAULT_JSON = JSON.stringify(
   {
@@ -64,25 +61,6 @@ export default function JsonToSchemaPage(): ReactElement {
           width: '100%',
         }}
         value={json}
-      />{' '}
-      <TextField
-        label='Json schema'
-        maxRows={15}
-        minRows={5}
-        multiline
-        onChange={(event) => {
-          const { value } = event.target;
-          setJson(value);
-        }}
-        placeholder='Json schema'
-        style={{
-          width: '100%',
-        }}
-        value={JSON.stringify(
-          getClassStructures(JSON.parse(json), 'root'),
-          null,
-          4
-        )}
       />
       {jsonParsingError != null && (
         <Alert color='error'>{jsonParsingError}</Alert>
