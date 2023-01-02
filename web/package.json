@@ -9,6 +9,7 @@
     "@mui/icons-material": "5.11.0",
     "@mui/material": "5.11.3",
     "html-entities": "2.3.3",
+    "jszip": "^3.10.1",
     "lodash": "4.17.21",
     "pluralize": "^8.0.0",
     "react": "18.2.0",

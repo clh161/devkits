@@ -1,7 +1,8 @@
-import { Alert, Stack, TextField } from '@mui/material';
+import { Alert, Button, Stack, TextField } from '@mui/material';
+import JSZip from 'jszip';
 import React, { ReactElement, useEffect, useState } from 'react';
 
-import { getKotlinClass } from '../json-converter/JsonToKotlin';
+import { getKotlinClass, KotlinClass } from '../json-converter/JsonToKotlin';
 
 const DEFAULT_JSON = JSON.stringify(
   {
@@ -65,6 +66,14 @@ export default function JsonToSchemaPage(): ReactElement {
       {jsonParsingError != null && (
         <Alert color='error'>{jsonParsingError}</Alert>
       )}
+      <Button
+        onClick={() => {
+          onDownload(kotlinClasses);
+        }}
+        variant='contained'
+      >
+        Download
+      </Button>
       {kotlinClasses.map((kotlinClass) => {
         const path = kotlinClass.path.join(' > ');
         return (
@@ -93,4 +102,21 @@ function getJsonPrasingError(json: string): string | null {
     return e.message;
   }
   return null;
+}
+
+function onDownload(kotlinClasses: KotlinClass[]) {
+  const zip = new JSZip();
+  for (const kotlinClass of kotlinClasses) {
+    zip.file(kotlinClass.className + '.kt', kotlinClass.string);
+  }
+
+  zip.generateAsync({ type: 'blob' }).then(function (content) {
+    const element = document.createElement('a');
+
+    element.href = URL.createObjectURL(content);
+    element.download = 'kotlin.zip';
+    document.body?.appendChild(element); // Required for this to work in FireFox
+
+    element.click();
+  });
 }

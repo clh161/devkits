@@ -4,7 +4,7 @@ import { CASE_TYPES } from '../page/CASE_TYPES';
 
 const TAB = '    ';
 
-type KotlinClass = {
+export type KotlinClass = {
   className: string;
   string: string;
   path: string[];
