@@ -5,6 +5,7 @@ const TAB = '    ';
 type KotlinClass = {
   className: string;
   string: string;
+  path: string[];
 };
 
 type JsonStructure =
@@ -12,30 +13,35 @@ type JsonStructure =
       name: string;
       isNullable: boolean;
       isOptional: boolean;
+      path: string[];
       type: 'string' | 'integer' | 'decimal' | 'any';
     }
   | {
       name: string;
       isNullable: boolean;
       isOptional: boolean;
+      path: string[];
       type: 'object' | 'array';
       fields: JsonStructure[];
     };
 
 export function getClassStructures(
   json: object | Array<object>,
-  rootName: string
+  rootName: string,
+  path: string[] = []
 ): JsonStructure {
+  const newPath = [...path, rootName];
   if (json == null) {
     return {
       name: rootName,
       isNullable: true,
       isOptional: false,
       type: 'string',
+      path: newPath,
     };
   } else if (Array.isArray(json)) {
     const groups = json
-      .map((element) => getClassStructures(element, rootName))
+      .map((element) => getClassStructures(element, rootName), newPath)
       .flat()
       .reduce((group: { [key: string]: JsonStructure[] }, fieldStructure) => {
         if (fieldStructure.name in group) {
@@ -57,15 +63,27 @@ export function getClassStructures(
         groups[field].find((field) => !field.isNullable) ?? groups[field][0];
 
       if (uniqueTypes.size === 1) {
-        return { ...fieldStructure, isOptional, isNullable };
+        return {
+          ...fieldStructure,
+          isOptional,
+          isNullable,
+          path: [...newPath, field],
+        };
       } else {
-        return { ...fieldStructure, isOptional, isNullable, type: 'any' };
+        return {
+          ...fieldStructure,
+          isOptional,
+          isNullable,
+          type: 'any',
+          path: [...newPath, field],
+        };
       }
     });
     return {
       name: rootName,
       isNullable: false,
       isOptional: false,
+      path: newPath,
       type: 'array',
       fields: fields,
     };
@@ -74,9 +92,10 @@ export function getClassStructures(
       name: rootName,
       isNullable: false,
       isOptional: false,
+      path: newPath,
       type: 'object',
       fields: Object.keys(json).map((key) =>
-        getClassStructures(json[key], key)
+        getClassStructures(json[key], key, newPath)
       ),
     };
   } else if (typeof json === 'number') {
@@ -85,6 +104,7 @@ export function getClassStructures(
         name: rootName,
         isNullable: false,
         isOptional: false,
+        path: newPath,
         type: 'integer',
       };
     } else {
@@ -92,6 +112,7 @@ export function getClassStructures(
         name: rootName,
         isNullable: false,
         isOptional: false,
+        path: newPath,
         type: 'decimal',
       };
     }
@@ -100,6 +121,7 @@ export function getClassStructures(
       name: rootName,
       isNullable: false,
       isOptional: false,
+      path: newPath,
       type: 'string',
     };
   }
@@ -110,7 +132,7 @@ export function getKotlinClass(
   rootName: string
 ): KotlinClass[] {
   const queue = [getClassStructures(json, rootName)];
-  const classes = [];
+  const classes: KotlinClass[] = [];
   while (queue.length !== 0) {
     const object = queue.pop();
     const className = getCapitalCamelCaseName(object.name);
@@ -131,6 +153,7 @@ export function getKotlinClass(
       classes.push({
         className,
         string: [classStart, ...fields, classEnd].join('\n'),
+        path: object.path.map((p) => getCapitalCamelCaseName(p)),
       });
     }
     if (object.type === 'array') {
