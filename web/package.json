@@ -7,7 +7,7 @@
     "@emotion/styled": "11.10.5",
     "@fontsource/roboto": "^4.5.8",
     "@mui/icons-material": "5.11.0",
-    "@mui/material": "5.11.2",
+    "@mui/material": "5.11.3",
     "html-entities": "2.3.3",
     "lodash": "4.17.21",
     "pluralize": "^8.0.0",
