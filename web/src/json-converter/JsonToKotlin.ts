@@ -146,7 +146,9 @@ export function getKotlinClass(
         const fieldType = getKotlinFieldType(field);
         const nullSymbol = field.isNullable || field.isOptional ? '?' : '';
         fields.push(
-          `${TAB}val ${getCamelCaseName(field.name)}: ${fieldType}${nullSymbol}`
+          `${TAB}val ${getCamelCaseName(
+            field.name
+          )}: ${fieldType}${nullSymbol},`
         );
         if (field.type === 'array' || field.type === 'object') {
           queue.push(field);
