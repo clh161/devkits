@@ -3250,10 +3250,10 @@
     expect "^29.0.0"
     pretty-format "^29.0.0"
 
-"@types/json-buffer@3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@types/json-buffer/-/json-buffer-3.0.0.tgz#85c1ff0f0948fc159810d4b5be35bf8c20875f64"
-  integrity sha512-3YP80IxxFJB4b5tYC2SUPwkg0XQLiu0nWvhRgEatgjf+29IcWO9X1k8xRv5DGssJ/lCrjYTjQPcobJr2yWIVuQ==
+"@types/json-buffer@3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@types/json-buffer/-/json-buffer-3.0.2.tgz#ef6ba3f86ecc4e50ca77c0a501e1fa729062709b"
+  integrity sha512-JdDf/nA+fafue3dkRhEYyUx8j7dCXr3LT2DQadS6sfyg4+tUQlsSYwwpxYTml0sLEnzP1cVamcFTkUaMIzkbCQ==
 
 "@types/json-schema@*", "@types/json-schema@^7.0.5", "@types/json-schema@^7.0.6":
   version "7.0.7"
