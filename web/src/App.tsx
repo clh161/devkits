@@ -3,10 +3,11 @@ import React, { ReactElement } from 'react';
 
 import Router from './component/Router';
 import DKTheme from './DKTheme';
-export default function App(): ReactElement {
-  return (
-    <ThemeProvider theme={DKTheme}>
-      <Router />
-    </ThemeProvider>
-  );
-}
+
+const App = (): ReactElement => (
+  <ThemeProvider theme={DKTheme}>
+    <Router />
+  </ThemeProvider>
+);
+
+export default App;
