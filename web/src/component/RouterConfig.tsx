@@ -21,19 +21,21 @@ type BaseConfig = {
   component: ReactElement;
   title: string;
   description: string;
-  keywords: Array<string>;
+  keywords: string[];
 };
 
-export type RouterConfig =
-  | ({
-      isHidden: true;
-    } & BaseConfig)
-  | ({
-      isHidden: false;
-      icon: ReactElement;
-    } & BaseConfig);
+type HiddenConfig = {
+  isHidden: true;
+} & BaseConfig;
 
-export const RouterConfigs: Array<RouterConfig> = [
+type VisibleConfig = {
+  isHidden: false;
+  icon: ReactElement;
+} & BaseConfig;
+
+export type RouterConfig = HiddenConfig | VisibleConfig;
+
+export const RouterConfigs: RouterConfig[] = [
   {
     isHidden: true,
     path: '/json-to-schema',
@@ -91,8 +93,8 @@ export const RouterConfigs: Array<RouterConfig> = [
     isHidden: false,
     path: '/csv-editor',
     component: <CSVEditor />,
-    icon: <ViewComfyIcon />,
     title: 'CSV Editor',
+    icon: <ViewComfyIcon />,
     description:
       'Our CSV editor makes it easy to work with CSV (comma-separated value) files in your web development projects. Simply upload a CSV file or paste your data into the editor, and you can easily add, remove, or modify entries. Our tool also allows you to convert your CSV data to a grid.',
     keywords: ['csv', 'editor', 'edit', 'preview', 'live editor'],
