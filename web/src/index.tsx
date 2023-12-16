@@ -11,6 +11,6 @@ root != null &&
     <React.StrictMode>
       <App />
     </React.StrictMode>,
-    root
+    document.getElementById('root')
   );
 reportWebVitals();
