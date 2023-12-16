@@ -1,10 +1,12 @@
 import { Divider, Grid, TextField } from '@mui/material';
 import { decode, encode } from 'html-entities';
-import React, { ReactElement, useState } from 'react';
+import React, { ChangeEvent, ReactElement, useState } from 'react';
+
 type Props = {
   initDecodedText?: string;
   initEncodedText?: string;
 };
+
 export default function HTMLEncoder({
   initDecodedText,
   initEncodedText,
@@ -16,17 +18,17 @@ export default function HTMLEncoder({
     initEncodedText ?? encode(initDecodedText)
   );
 
-  function onEncodedHTMLChanged(event) {
+  const onEncodedHTMLChanged = (event: ChangeEvent<HTMLTextAreaElement>) => {
     const { value } = event.target;
     setEncodedHTMLText(value);
     setDecodedHTMLText(decode(value));
-  }
+  };
 
-  function onDecodedHTMLChanged(event) {
+  const onDecodedHTMLChanged = (event: ChangeEvent<HTMLTextAreaElement>) => {
     const { value } = event.target;
     setDecodedHTMLText(value);
     setEncodedHTMLText(encode(value));
-  }
+  };
 
   return (
     <Grid container spacing={3}>
