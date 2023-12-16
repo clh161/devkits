@@ -63,7 +63,7 @@
     "@babel/preset-env": "7.23.6",
     "@babel/preset-react": "7.23.3",
     "@babel/preset-typescript": "7.23.3",
-    "@testing-library/jest-dom": "5.17.0",
+    "@testing-library/jest-dom": "6.1.5",
     "@types/jest": "29.5.11",
     "@types/json-buffer": "3.0.2",
     "@types/node": "18.19.3",
