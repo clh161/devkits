@@ -3115,11 +3115,6 @@
   resolved "https://registry.yarnpkg.com/@trysound/sax/-/sax-0.2.0.tgz#cccaab758af56761eb7bf37af6f03f326dd798ad"
   integrity sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==
 
-"@types/array.prototype.flatmap@^1.2.2":
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@types/array.prototype.flatmap/-/array.prototype.flatmap-1.2.2.tgz#9041c2dc907d583ffb80b8882a782b42436d57c1"
-  integrity sha512-dto5M/8GxPzjaScvQeft2IG0EkoZZfPg2+1noM2BWiU1VR2zsGHf76LonTOnLQKDuJlKDLzKaru4b+5Sci0Yhg==
-
 "@types/babel__core@^7.0.0":
   version "7.1.12"
   resolved "https://registry.npmjs.org/@types/babel__core/-/babel__core-7.1.12.tgz"
@@ -9991,12 +9986,11 @@ react-side-effect@^2.1.0:
   resolved "https://registry.npmjs.org/react-side-effect/-/react-side-effect-2.1.1.tgz"
   integrity sha512-2FoTQzRNTncBVtnzxFOk2mCpcfxQpenBMbk5kSVBg5UcPqV9fRbgY2zhb7GTWWOlpFmAxhClBDlIq8Rsubz1yQ==
 
-react-spreadsheet@0.8.3:
-  version "0.8.3"
-  resolved "https://registry.yarnpkg.com/react-spreadsheet/-/react-spreadsheet-0.8.3.tgz#1addabe063e593ef7a755e8cab61ae1cb1638b39"
-  integrity sha512-Ry++NVtzzybYsVCBoLsexiuj1muZFznkhF1wZZomVaBNxgbNPZIurdWrpFeU/1Ft7U8LcRx/vPcVRDLXV7PZ3Q==
+react-spreadsheet@0.9.2:
+  version "0.9.2"
+  resolved "https://registry.yarnpkg.com/react-spreadsheet/-/react-spreadsheet-0.9.2.tgz#f0c90e7c27f7a3861596fc8157324e4a894b5ad4"
+  integrity sha512-0mjXplhx7HPvxDOX293HRRurezTzPS/1VJsUFD4QxZqYtdbbmARdUR0CqeRe/x6qHaB2wZC8soZuKvcjIWSIkQ==
   dependencies:
-    "@types/array.prototype.flatmap" "^1.2.2"
     array.prototype.flatmap "^1.2.5"
     classnames "^2.3.1"
     fast-formula-parser "^1.0.19"
