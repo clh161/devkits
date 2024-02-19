@@ -3,11 +3,11 @@ env:
   es2021: true
   jest: true
 extends:
-  - "plugin:react/recommended"
-  - "plugin:prettier/recommended"
-  - "plugin:@typescript-eslint/recommended"
+  - 'plugin:react/recommended'
+  - 'plugin:prettier/recommended'
+  - 'plugin:@typescript-eslint/recommended'
 ignorePatterns:
-  - "build/**"
+  - 'build/**'
 parserOptions:
   ecmaFeatures:
     jsx: true
@@ -16,20 +16,20 @@ parserOptions:
 plugins:
   - react
   - simple-import-sort
-  - "@typescript-eslint"
+  - '@typescript-eslint'
 rules:
   {
-    "prettier/prettier": "warn",
-    "react/jsx-filename-extension":
-      ["warn", { "extensions": [".js", ".jsx", "tsx"] }],
-    "react/jsx-sort-props": ["warn"],
-    "no-unused-vars":
+    'prettier/prettier': 'warn',
+    'react/jsx-filename-extension':
+      ['warn', { 'extensions': ['.js', '.jsx', 'tsx'] }],
+    'react/jsx-sort-props': ['warn'],
+    'no-unused-vars':
       [
-        "warn",
-        { "vars": "all", "args": "after-used", "ignoreRestSiblings": false },
+        'warn',
+        { 'vars': 'all', 'args': 'after-used', 'ignoreRestSiblings': false },
       ],
-    "simple-import-sort/imports": "warn",
-    "simple-import-sort/exports": "warn",
+    'simple-import-sort/imports': 'warn',
+    'simple-import-sort/exports': 'warn',
   }
 settings:
   react:
